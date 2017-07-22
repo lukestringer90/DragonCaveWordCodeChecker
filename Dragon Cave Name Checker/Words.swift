@@ -34,14 +34,14 @@ extension Word: Equatable {
     }
 }
 
-class DictionaryWords {
+class Reference {
     
     private static var scrabbleStorage: [Word]?
     private static var englishNamesStorage: [Word]?
     
     static var scrabbleWords: [Word] {
         if scrabbleStorage == nil {
-            scrabbleStorage = DictionaryWords.loadWords(forFileNamed: "scrabble").map { Word.scrabble($0) }
+            scrabbleStorage = Reference.loadWords(forFileNamed: "scrabble").map { Word.scrabble($0) }
         }
         
         return scrabbleStorage!
@@ -49,7 +49,7 @@ class DictionaryWords {
     
     static var englishNames: [Word] {
         if englishNamesStorage == nil {
-            englishNamesStorage = DictionaryWords.loadWords(forFileNamed: "english_names").map { Word.englishName($0) }
+            englishNamesStorage = Reference.loadWords(forFileNamed: "english_names").map { Word.englishName($0) }
         }
         
         return englishNamesStorage!

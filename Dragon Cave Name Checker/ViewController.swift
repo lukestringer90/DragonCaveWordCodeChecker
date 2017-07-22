@@ -8,77 +8,24 @@
 
 import UIKit
 
-extension Int {
-    
-    typealias Range = (start: Int, end: Int)
-    
-    func ranges() -> [Range] {
-        var computed = [Range]()
-        
-        for length in 3...self {
-            
-            var start = 0
-            
-            while start+length-1 < self {
-                let range = (start, start+length)
-                computed.append(range)
-                start += 1
-            }
-            
-        }
-        
-        
-        return computed
-    }
-}
-
-extension String {
-    
-    
-    func allScrabbleWords() -> [String] {
-        return subStrings().filter { subString in
-            let scrabbleWord = Word.scrabble(subString)
-            return DictionaryWords.scrabbleWords.contains(scrabbleWord)
-        }
-    }
-    
-    func allEnglishNames() -> [String] {
-        return subStrings().filter { subString in
-            let englishName = Word.englishName(subString)
-            return DictionaryWords.englishNames.contains(englishName)
-        }
-    }
-    
-    func subStrings() -> [String] {
-        
-        return characters.count.ranges().map { (startValue, endValue) in
-            let substringStartIndex = index(startIndex, offsetBy: startValue)
-            let substringEndIndex = index(startIndex, offsetBy: endValue)
-            
-            let range = substringStartIndex..<substringEndIndex
-            
-            return substring(with: range)
-        }
-    }
-    
-}
-
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private var all = [String]()
-    private var scrabbleWords = [String]()
-    private var englishNames = [String]()
-    
+    fileprivate var allWords = [String]()
+    fileprivate var scrabbleWords = [String]()
+    fileprivate var englishNames = [String]()
+}
+
+extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let text = textField.text {
             activityIndicator.startAnimating()
             DispatchQueue.global().async {
                 self.scrabbleWords = text.allScrabbleWords()
                 self.englishNames = text.allEnglishNames()
-                self.all = self.scrabbleWords + self.englishNames
+                self.allWords = self.scrabbleWords + self.englishNames
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()
@@ -91,18 +38,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         textField.resignFirstResponder()
         return true
     }
-    
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return all.count
+        return allWords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let word = all[indexPath.row]
+        let word = allWords[indexPath.row]
         let cellID = scrabbleWords.contains(word) ? "Scrabble" : "EnglishName"
         
         
@@ -113,12 +62,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let word = all[indexPath.row]
+        let word = allWords[indexPath.row]
         if scrabbleWords.contains(word) {
             let vc = UIReferenceLibraryViewController(term: word)
             present(vc, animated: true, completion: nil)
         }
     }
-
 }
-
