@@ -13,7 +13,7 @@ extension Int {
         var computed = [Range]()
         
         for length in 2...self {
-         
+            
             var start = 0
             
             while start+length-1 < self {
@@ -33,7 +33,7 @@ extension String {
     
     
     func validSubStrings() -> [String] {
-
+        
         return subStrings().flatMap { subString -> String? in
             
             if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: subString) {
