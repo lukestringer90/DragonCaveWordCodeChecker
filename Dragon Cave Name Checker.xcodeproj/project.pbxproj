@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F52ECB001F23CD6A00243F54 /* english_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F52ECAFF1F23CD6A00243F54 /* english_names.txt */; };
+		F5BC8B1D1F23B10D00E3D73B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B1C1F23B10D00E3D73B /* AppDelegate.swift */; };
+		F5BC8B1F1F23B10D00E3D73B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B1E1F23B10D00E3D73B /* ViewController.swift */; };
+		F5BC8B221F23B10D00E3D73B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B201F23B10D00E3D73B /* Main.storyboard */; };
+		F5BC8B241F23B10D00E3D73B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B231F23B10D00E3D73B /* Assets.xcassets */; };
+		F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */; };
+		F5BC8B2F1F23BAC400E3D73B /* DictionaryWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B2E1F23BAC400E3D73B /* DictionaryWords.swift */; };
+		F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5DA59C61F23BDFE00D20850 /* scrabble.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F52ECAFF1F23CD6A00243F54 /* english_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = english_names.txt; sourceTree = "<group>"; };
+		F5BC8B191F23B10D00E3D73B /* Dragon Cave Name Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Cave Name Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5BC8B1C1F23B10D00E3D73B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5BC8B1E1F23B10D00E3D73B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5BC8B211F23B10D00E3D73B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5BC8B231F23B10D00E3D73B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5BC8B261F23B10D00E3D73B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5BC8B281F23B10D00E3D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5BC8B2E1F23BAC400E3D73B /* DictionaryWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryWords.swift; sourceTree = "<group>"; };
+		F5DA59C61F23BDFE00D20850 /* scrabble.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrabble.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5BC8B161F23B10D00E3D73B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5BC8B101F23B10D00E3D73B = {
+			isa = PBXGroup;
+			children = (
+				F5BC8B1B1F23B10D00E3D73B /* Dragon Cave Name Checker */,
+				F5BC8B1A1F23B10D00E3D73B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5BC8B1A1F23B10D00E3D73B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5BC8B191F23B10D00E3D73B /* Dragon Cave Name Checker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5BC8B1B1F23B10D00E3D73B /* Dragon Cave Name Checker */ = {
+			isa = PBXGroup;
+			children = (
+				F5BC8B1C1F23B10D00E3D73B /* AppDelegate.swift */,
+				F5BC8B1E1F23B10D00E3D73B /* ViewController.swift */,
+				F5BC8B201F23B10D00E3D73B /* Main.storyboard */,
+				F5BC8B231F23B10D00E3D73B /* Assets.xcassets */,
+				F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */,
+				F5BC8B281F23B10D00E3D73B /* Info.plist */,
+				F5BC8B2E1F23BAC400E3D73B /* DictionaryWords.swift */,
+				F5DA59C61F23BDFE00D20850 /* scrabble.txt */,
+				F52ECAFF1F23CD6A00243F54 /* english_names.txt */,
+			);
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5BC8B181F23B10D00E3D73B /* Dragon Cave Name Checker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5BC8B2B1F23B10D00E3D73B /* Build configuration list for PBXNativeTarget "Dragon Cave Name Checker" */;
+			buildPhases = (
+				F5BC8B151F23B10D00E3D73B /* Sources */,
+				F5BC8B161F23B10D00E3D73B /* Frameworks */,
+				F5BC8B171F23B10D00E3D73B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dragon Cave Name Checker";
+			productName = "Dragon Cave Name Checker";
+			productReference = F5BC8B191F23B10D00E3D73B /* Dragon Cave Name Checker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5BC8B111F23B10D00E3D73B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = 3Squared;
+				TargetAttributes = {
+					F5BC8B181F23B10D00E3D73B = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F5BC8B141F23B10D00E3D73B /* Build configuration list for PBXProject "Dragon Cave Name Checker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5BC8B101F23B10D00E3D73B;
+			productRefGroup = F5BC8B1A1F23B10D00E3D73B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5BC8B181F23B10D00E3D73B /* Dragon Cave Name Checker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5BC8B171F23B10D00E3D73B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */,
+				F52ECB001F23CD6A00243F54 /* english_names.txt in Resources */,
+				F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */,
+				F5BC8B241F23B10D00E3D73B /* Assets.xcassets in Resources */,
+				F5BC8B221F23B10D00E3D73B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5BC8B151F23B10D00E3D73B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5BC8B1F1F23B10D00E3D73B /* ViewController.swift in Sources */,
+				F5BC8B1D1F23B10D00E3D73B /* AppDelegate.swift in Sources */,
+				F5BC8B2F1F23BAC400E3D73B /* DictionaryWords.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F5BC8B201F23B10D00E3D73B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5BC8B211F23B10D00E3D73B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5BC8B261F23B10D00E3D73B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5BC8B291F23B10D00E3D73B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5BC8B2A1F23B10D00E3D73B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5BC8B2C1F23B10D00E3D73B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dragon Cave Name Checker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Dragon-Cave-Name-Checker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F5BC8B2D1F23B10D00E3D73B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dragon Cave Name Checker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Dragon-Cave-Name-Checker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5BC8B141F23B10D00E3D73B /* Build configuration list for PBXProject "Dragon Cave Name Checker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5BC8B291F23B10D00E3D73B /* Debug */,
+				F5BC8B2A1F23B10D00E3D73B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5BC8B2B1F23B10D00E3D73B /* Build configuration list for PBXNativeTarget "Dragon Cave Name Checker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5BC8B2C1F23B10D00E3D73B /* Debug */,
+				F5BC8B2D1F23B10D00E3D73B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5BC8B111F23B10D00E3D73B /* Project object */;
+}
