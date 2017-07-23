@@ -16,7 +16,11 @@
 		F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */; };
 		F5BC8B2F1F23BAC400E3D73B /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B2E1F23BAC400E3D73B /* Words.swift */; };
 		F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D67DEF1F23F9F5008A1724 /* String+Words.swift */; };
+		F5D67DF21F23FB1A008A1724 /* scroll_1.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF11F23FB1A008A1724 /* scroll_1.html */; };
+		F5D67DF41F240971008A1724 /* scroll_9.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF31F240971008A1724 /* scroll_9.html */; };
+		F5D67DF61F240A73008A1724 /* scroll_group.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF51F240A73008A1724 /* scroll_group.html */; };
 		F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5DA59C61F23BDFE00D20850 /* scrabble.txt */; };
+		F5FE93541F24D94000BBA860 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93531F24D94000BBA860 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +37,11 @@
 		F5BC8B281F23B10D00E3D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5BC8B2E1F23BAC400E3D73B /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		F5D67DEF1F23F9F5008A1724 /* String+Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Words.swift"; sourceTree = "<group>"; };
+		F5D67DF11F23FB1A008A1724 /* scroll_1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scroll_1.html; sourceTree = "<group>"; };
+		F5D67DF31F240971008A1724 /* scroll_9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scroll_9.html; sourceTree = "<group>"; };
+		F5D67DF51F240A73008A1724 /* scroll_group.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scroll_group.html; sourceTree = "<group>"; };
 		F5DA59C61F23BDFE00D20850 /* scrabble.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrabble.txt; sourceTree = "<group>"; };
+		F5FE93531F24D94000BBA860 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +100,11 @@
 				F5BC8B231F23B10D00E3D73B /* Assets.xcassets */,
 				F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */,
 				F5BC8B281F23B10D00E3D73B /* Info.plist */,
+				F5D67DF11F23FB1A008A1724 /* scroll_1.html */,
+				F5D67DF31F240971008A1724 /* scroll_9.html */,
+				F5D67DF51F240A73008A1724 /* scroll_group.html */,
 				F5BC8B2E1F23BAC400E3D73B /* Words.swift */,
+				F5FE93531F24D94000BBA860 /* Config.swift */,
 				F5D67DEF1F23F9F5008A1724 /* String+Words.swift */,
 				F5DA59C61F23BDFE00D20850 /* scrabble.txt */,
 				F52ECAFF1F23CD6A00243F54 /* english_names.txt */,
@@ -165,8 +177,11 @@
 				F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */,
 				F52ECB001F23CD6A00243F54 /* english_names.txt in Resources */,
 				F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */,
+				F5D67DF41F240971008A1724 /* scroll_9.html in Resources */,
+				F5D67DF21F23FB1A008A1724 /* scroll_1.html in Resources */,
 				F5BC8B241F23B10D00E3D73B /* Assets.xcassets in Resources */,
 				F5BC8B221F23B10D00E3D73B /* Main.storyboard in Resources */,
+				F5D67DF61F240A73008A1724 /* scroll_group.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +242,7 @@
 			files = (
 				F5BC8B1F1F23B10D00E3D73B /* ViewController.swift in Sources */,
 				F5BC8B1D1F23B10D00E3D73B /* AppDelegate.swift in Sources */,
+				F5FE93541F24D94000BBA860 /* Config.swift in Sources */,
 				F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */,
 				F5BC8B2F1F23BAC400E3D73B /* Words.swift in Sources */,
 			);

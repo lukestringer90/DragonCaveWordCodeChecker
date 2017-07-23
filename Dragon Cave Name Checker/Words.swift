@@ -63,6 +63,9 @@ class Reference {
         let url = Bundle.main.url(forResource: filename, withExtension: "txt")!
         let data = try! Data(contentsOf: url)
         let string = String(data: data, encoding: .utf8)!
-        return string.lowercased().components(separatedBy: "\n")
+        return string
+            .lowercased()
+            .components(separatedBy: "\n")
+            .filter { return Config.TokenLength.range ~= $0.characters.count }
     }
 }

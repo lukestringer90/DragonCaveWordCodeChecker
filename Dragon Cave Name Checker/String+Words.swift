@@ -15,7 +15,7 @@ extension Int {
     func ranges() -> [Range] {
         var computed = [Range]()
         
-        for length in 3...self {
+        for length in Config.TokenLength.minimum.rawValue...self {
             
             var start = 0
             
@@ -35,14 +35,14 @@ extension String {
     
     func allScrabbleWords() -> [String] {
         return subStrings().filter { subString in
-            let scrabbleWord = Word.scrabble(subString)
+            let scrabbleWord = Word.scrabble(subString.lowercased())
             return Reference.scrabbleWords.contains(scrabbleWord)
         }
     }
     
     func allEnglishNames() -> [String] {
         return subStrings().filter { subString in
-            let englishName = Word.englishName(subString)
+            let englishName = Word.englishName(subString.lowercased())
             return Reference.englishNames.contains(englishName)
         }
     }
