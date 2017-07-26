@@ -288,6 +288,7 @@
 				TargetAttributes = {
 					F5BC8B181F23B10D00E3D73B = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5PMKY4NNPB;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -534,6 +535,7 @@
 			baseConfigurationReference = 76285BE59155D23ED9864A13 /* Pods-Dragon Cave Name Checker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PMKY4NNPB;
 				INFOPLIST_FILE = "Dragon Cave Name Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Dragon-Cave-Name-Checker";
@@ -547,6 +549,7 @@
 			baseConfigurationReference = 0DEF9F522C6F93CBA6B17296 /* Pods-Dragon Cave Name Checker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PMKY4NNPB;
 				INFOPLIST_FILE = "Dragon Cave Name Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Dragon-Cave-Name-Checker";
