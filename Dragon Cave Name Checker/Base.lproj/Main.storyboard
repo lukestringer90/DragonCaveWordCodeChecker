@@ -237,7 +237,7 @@
         <!--Navigation Controller-->
         <scene sceneID="wwn-HB-r4R">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="4Tc-D7-A2a" sceneMemberID="viewController">
+                <navigationController id="4Tc-D7-A2a" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bN-62-S3A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

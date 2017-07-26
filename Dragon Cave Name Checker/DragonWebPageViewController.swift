@@ -17,6 +17,11 @@ class DragonWebPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = dragon.name
+        
+        if let words = dragon.words {
+            navigationItem.rightBarButtonItem?.title = "Words (\(words.count))"
+        }
+
         let request = URLRequest(url: URL(string: "https://dragcave.net/view/\(dragon.code)")!)
         webView.loadRequest(request)
     }

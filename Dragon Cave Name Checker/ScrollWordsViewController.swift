@@ -51,8 +51,6 @@ extension ScrollWordsViewController {
                 
             }
         }
-
-        
     }
 }
 
