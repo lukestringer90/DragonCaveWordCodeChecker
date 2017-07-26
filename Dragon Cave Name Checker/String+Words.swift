@@ -34,7 +34,7 @@ extension Int {
 extension String {
     
     func allScrabbleWords() -> [Word] {
-        return subStrings()
+        return tokens()
             .map { Word.scrabble($0.lowercased()) }
             .filter { word in
             return WordReference.scrabble.contains(word)
@@ -42,14 +42,14 @@ extension String {
     }
     
     func allEnglishNames() -> [Word] {
-        return subStrings()
+        return tokens()
             .map { Word.englishName($0.lowercased()) }
             .filter { word in
             return WordReference.englishNames.contains(word)
         }
     }
     
-    func subStrings() -> [String] {
+    func tokens() -> [String] {
         
         return characters.count.ranges().map { (startValue, endValue) in
             let substringStartIndex = index(startIndex, offsetBy: startValue)
