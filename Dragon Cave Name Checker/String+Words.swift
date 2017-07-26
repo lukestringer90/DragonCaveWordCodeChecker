@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Int {
+fileprivate extension Int {
     
     typealias Range = (start: Int, end: Int)
     
@@ -31,39 +31,30 @@ extension Int {
     }
 }
 
+fileprivate extension Array where Iterator.Element == Word {
+    
+    func filter(matching strings: [String]) -> [Word] {
+        return filter { word -> Bool in
+            let stringContainsWords = strings.contains(where: { string -> Bool in
+                return string.lowercased() == word.text().lowercased()
+            })
+            return stringContainsWords
+        }
+    }
+}
+
 extension String {
     
     func allScrabbleWords() -> [Word] {
-        let tokens = self.tokens()
-        return WordReference.scrabble
-            .filter { word -> Bool in
-                let tokensContainsWords = tokens.contains(where: { token -> Bool in
-                    return token.lowercased() == word.text().lowercased()
-                })
-                return tokensContainsWords
-        }
+        return WordReference.scrabble.filter(matching: tokens())
     }
     
     func allEnglishNames() -> [Word] {
-        let tokens = self.tokens()
-        return WordReference.englishNames
-            .filter { word -> Bool in
-                let tokensContainsWords = tokens.contains(where: { token -> Bool in
-                    return token.lowercased() == word.text().lowercased()
-                })
-                return tokensContainsWords
-        }
+        return WordReference.englishNames.filter(matching: tokens())
     }
     
     func allCountryCodes() -> [Word] {
-        let tokens = self.tokens()
-        return WordReference.countryCodes
-            .filter { word -> Bool in
-               let tokensContainsWords = tokens.contains(where: { token -> Bool in
-                return token.lowercased() == word.text().lowercased()
-               })
-                return tokensContainsWords
-        }
+        return WordReference.countryCodes.filter(matching: tokens())
     }
     
     func tokens() -> [String] {
