@@ -133,12 +133,3 @@ extension ScrollViewController {
         return cell
     }
 }
-
-extension Array {
-    func batches(of batchSize: Int) -> [[Element]] {
-        return stride(from: 0, to: self.count, by: batchSize).map({ (startIndex) -> [Element] in
-            let endIndex = (startIndex.advanced(by: batchSize) > self.count) ? self.count-startIndex : batchSize
-            return Array(self[startIndex..<startIndex.advanced(by: endIndex)])
-        })
-    }
-}

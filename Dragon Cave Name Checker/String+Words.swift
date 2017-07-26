@@ -37,7 +37,7 @@ extension String {
         return subStrings()
             .map { Word.scrabble($0.lowercased()) }
             .filter { word in
-            return Reference.scrabbleWords.contains(word)
+            return WordReference.scrabble.contains(word)
         }
     }
     
@@ -45,7 +45,7 @@ extension String {
         return subStrings()
             .map { Word.englishName($0.lowercased()) }
             .filter { word in
-            return Reference.englishNames.contains(word)
+            return WordReference.englishNames.contains(word)
         }
     }
     

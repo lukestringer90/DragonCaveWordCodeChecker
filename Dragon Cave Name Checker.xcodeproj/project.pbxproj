@@ -14,7 +14,7 @@
 		F5BC8B221F23B10D00E3D73B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B201F23B10D00E3D73B /* Main.storyboard */; };
 		F5BC8B241F23B10D00E3D73B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B231F23B10D00E3D73B /* Assets.xcassets */; };
 		F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */; };
-		F5BC8B2F1F23BAC400E3D73B /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B2E1F23BAC400E3D73B /* Words.swift */; };
+		F5BC8B2F1F23BAC400E3D73B /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B2E1F23BAC400E3D73B /* Word.swift */; };
 		F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D67DEF1F23F9F5008A1724 /* String+Words.swift */; };
 		F5D67DF61F240A73008A1724 /* lulu_witch_word_coded.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */; };
 		F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5DA59C61F23BDFE00D20850 /* scrabble.txt */; };
@@ -37,7 +37,10 @@
 		F5FE937E1F288AB300BBA860 /* lulu_witch_11.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93711F288AB300BBA860 /* lulu_witch_11.html */; };
 		F5FE937F1F288AB300BBA860 /* lulu_witch_12.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93721F288AB300BBA860 /* lulu_witch_12.html */; };
 		F5FE93801F288AB300BBA860 /* lulu_witch_13.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93731F288AB300BBA860 /* lulu_witch_13.html */; };
-		F5FE93821F288C9300BBA860 /* CodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93811F288C9300BBA860 /* CodeProcessor.swift */; };
+		F5FE93821F288C9300BBA860 /* DragonCodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93811F288C9300BBA860 /* DragonCodeProcessor.swift */; };
+		F5FE93841F289ACE00BBA860 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93831F289ACE00BBA860 /* Array+Helpers.swift */; };
+		F5FE93871F289B1900BBA860 /* WordReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93861F289B1900BBA860 /* WordReference.swift */; };
+		F5FE93891F289B7C00BBA860 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93881F289B7C00BBA860 /* Dragon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +55,7 @@
 		F5BC8B231F23B10D00E3D73B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5BC8B261F23B10D00E3D73B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5BC8B281F23B10D00E3D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5BC8B2E1F23BAC400E3D73B /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		F5BC8B2E1F23BAC400E3D73B /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		F5D67DEF1F23F9F5008A1724 /* String+Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Words.swift"; sourceTree = "<group>"; };
 		F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_word_coded.html; sourceTree = "<group>"; };
 		F5DA59C61F23BDFE00D20850 /* scrabble.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrabble.txt; sourceTree = "<group>"; };
@@ -75,7 +78,10 @@
 		F5FE93711F288AB300BBA860 /* lulu_witch_11.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_11.html; sourceTree = "<group>"; };
 		F5FE93721F288AB300BBA860 /* lulu_witch_12.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_12.html; sourceTree = "<group>"; };
 		F5FE93731F288AB300BBA860 /* lulu_witch_13.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_13.html; sourceTree = "<group>"; };
-		F5FE93811F288C9300BBA860 /* CodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeProcessor.swift; sourceTree = "<group>"; };
+		F5FE93811F288C9300BBA860 /* DragonCodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCodeProcessor.swift; sourceTree = "<group>"; };
+		F5FE93831F289ACE00BBA860 /* Array+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
+		F5FE93861F289B1900BBA860 /* WordReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordReference.swift; sourceTree = "<group>"; };
+		F5FE93881F289B7C00BBA860 /* Dragon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,7 @@
 		F5BC8B1B1F23B10D00E3D73B /* Dragon Cave Name Checker */ = {
 			isa = PBXGroup;
 			children = (
+				F5FE93851F289AEF00BBA860 /* Business Logic */,
 				F5FE935F1F25332200BBA860 /* Model */,
 				F5FE935B1F2532DB00BBA860 /* View Controllers */,
 				F5FE935C1F2532E600BBA860 /* Views */,
@@ -170,6 +177,7 @@
 		F5FE935E1F25331100BBA860 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				F5FE93831F289ACE00BBA860 /* Array+Helpers.swift */,
 				F5BC8B281F23B10D00E3D73B /* Info.plist */,
 				F5BC8B231F23B10D00E3D73B /* Assets.xcassets */,
 				F5FE93531F24D94000BBA860 /* Config.swift */,
@@ -181,9 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				F5D67DEF1F23F9F5008A1724 /* String+Words.swift */,
-				F5BC8B2E1F23BAC400E3D73B /* Words.swift */,
-				F5FE93591F24EC5E00BBA860 /* ScrollParser.swift */,
-				F5FE93811F288C9300BBA860 /* CodeProcessor.swift */,
+				F5BC8B2E1F23BAC400E3D73B /* Word.swift */,
+				F5FE93881F289B7C00BBA860 /* Dragon.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -225,6 +232,16 @@
 				F52ECAFF1F23CD6A00243F54 /* english_names.txt */,
 			);
 			name = "Reference Words";
+			sourceTree = "<group>";
+		};
+		F5FE93851F289AEF00BBA860 /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				F5FE93591F24EC5E00BBA860 /* ScrollParser.swift */,
+				F5FE93811F288C9300BBA860 /* DragonCodeProcessor.swift */,
+				F5FE93861F289B1900BBA860 /* WordReference.swift */,
+			);
+			name = "Business Logic";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,12 +388,15 @@
 				F5FE93641F28077F00BBA860 /* WordsViewController.swift in Sources */,
 				F5FE93541F24D94000BBA860 /* Config.swift in Sources */,
 				F5FE93581F24EC1A00BBA860 /* ScrollViewController.swift in Sources */,
-				F5FE93821F288C9300BBA860 /* CodeProcessor.swift in Sources */,
+				F5FE93821F288C9300BBA860 /* DragonCodeProcessor.swift in Sources */,
 				F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */,
+				F5FE93841F289ACE00BBA860 /* Array+Helpers.swift in Sources */,
+				F5FE93891F289B7C00BBA860 /* Dragon.swift in Sources */,
 				F5FE93561F24EB8D00BBA860 /* CodeCell.swift in Sources */,
 				F5FE93621F27E46300BBA860 /* DragonWebPageViewController.swift in Sources */,
 				F5FE935A1F24EC5E00BBA860 /* ScrollParser.swift in Sources */,
-				F5BC8B2F1F23BAC400E3D73B /* Words.swift in Sources */,
+				F5BC8B2F1F23BAC400E3D73B /* Word.swift in Sources */,
+				F5FE93871F289B1900BBA860 /* WordReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
