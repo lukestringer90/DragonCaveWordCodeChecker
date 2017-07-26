@@ -145,7 +145,7 @@
             </objects>
             <point key="canvasLocation" x="600.79999999999995" y="181.25937031484258"/>
         </scene>
-        <!--Words-->
+        <!--Scroll-->
         <scene sceneID="6oD-1S-FeA">
             <objects>
                 <tableViewController id="eFh-Dt-lvQ" customClass="ScrollWordsViewController" customModule="Dragon_Cave_Name_Checker" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,13 @@
                             <outlet property="delegate" destination="eFh-Dt-lvQ" id="zcg-t2-uAP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Words" id="E8z-6D-pM0"/>
+                    <navigationItem key="navigationItem" title="Scroll" id="E8z-6D-pM0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="STr-dH-VLb">
+                            <connections>
+                                <action selector="searchTapped:" destination="eFh-Dt-lvQ" id="gM2-jQ-fCE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKO-ND-nYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

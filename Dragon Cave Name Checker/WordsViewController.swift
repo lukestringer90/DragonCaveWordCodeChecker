@@ -35,8 +35,7 @@ class WordsViewController: UITableViewController {
     }
 }
 
-extension WordsViewController {
-    
+fileprivate extension WordsViewController {
     enum Section: Int {
         case scrabble, englishNames, countryCodes
     }
@@ -58,7 +57,9 @@ extension WordsViewController {
         case .countryCodes: return countryCodes[indexPath.row]
         }
     }
-    
+}
+
+extension WordsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }

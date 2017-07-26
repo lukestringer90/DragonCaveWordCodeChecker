@@ -9,13 +9,22 @@
 import Foundation
 
 class DragonCodeProcessor {
-    fileprivate let operationQueue = OperationQueue()
+    fileprivate var operationQueue: OperationQueue!
     
     static let shared = DragonCodeProcessor()
     
     private init() {
+        setupOperationQueue()
+    }
+    
+    private func setupOperationQueue() {
+        operationQueue = OperationQueue()
         operationQueue.maxConcurrentOperationCount = 1
-        
+    }
+    
+    func cancelAllProcessing() {
+        operationQueue.cancelAllOperations()
+        setupOperationQueue()
     }
     
     func process(dragons: [Dragon], completion: @escaping (_ newDragons: [Dragon]) -> ()) {
