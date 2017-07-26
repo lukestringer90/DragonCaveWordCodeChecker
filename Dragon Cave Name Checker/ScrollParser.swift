@@ -9,12 +9,6 @@
 import Foundation
 import Kanna
 
-struct Dragon {
-    let code: String
-    let name: String
-    let words: [Word]?
-}
-
 protocol ScrollParserDelegate {
     func parser(_ parser: ScrollParser, startedScroll scrollName: String)
     func parser(_ parser: ScrollParser, finishedScroll scrollName: String, error: ScrollParser.Error?)

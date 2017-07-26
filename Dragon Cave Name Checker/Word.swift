@@ -65,39 +65,3 @@ extension Word: Comparable {
         return lhs.charactersCount() > rhs.charactersCount()
     }
 }
-
-class Reference {
-    
-    private static var scrabbleStorage: [Word]?
-    private static var englishNamesStorage: [Word]?
-    
-    static var scrabbleWords: [Word] {
-        if scrabbleStorage == nil {
-            scrabbleStorage = Reference.loadWords(forFileNamed: "scrabble").map { Word.scrabble($0) }
-        }
-        
-        return scrabbleStorage!
-    }
-    
-    static var englishNames: [Word] {
-        if englishNamesStorage == nil {
-            englishNamesStorage = Reference.loadWords(forFileNamed: "english_names").map { Word.englishName($0) }
-        }
-        
-        return englishNamesStorage!
-    }
-    
-    static var allWords: [Word] {
-        return scrabbleWords + englishNames
-    }
-    
-    private static func loadWords(forFileNamed filename: String) -> [String] {
-        let url = Bundle.main.url(forResource: filename, withExtension: "txt")!
-        let data = try! Data(contentsOf: url)
-        let string = String(data: data, encoding: .utf8)!
-        return string
-            .lowercased()
-            .components(separatedBy: "\n")
-            .filter { return Config.TokenLength.range ~= $0.characters.count }
-    }
-}
