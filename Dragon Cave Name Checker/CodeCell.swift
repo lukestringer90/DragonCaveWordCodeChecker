@@ -12,6 +12,7 @@ class CodeCell: UITableViewCell {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
 
 }

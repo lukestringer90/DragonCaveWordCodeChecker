@@ -33,17 +33,19 @@ extension Int {
 
 extension String {
     
-    func allScrabbleWords() -> [String] {
-        return subStrings().filter { subString in
-            let scrabbleWord = Word.scrabble(subString.lowercased())
-            return Reference.scrabbleWords.contains(scrabbleWord)
+    func allScrabbleWords() -> [Word] {
+        return subStrings()
+            .map { Word.scrabble($0.lowercased()) }
+            .filter { word in
+            return Reference.scrabbleWords.contains(word)
         }
     }
     
-    func allEnglishNames() -> [String] {
-        return subStrings().filter { subString in
-            let englishName = Word.englishName(subString.lowercased())
-            return Reference.englishNames.contains(englishName)
+    func allEnglishNames() -> [Word] {
+        return subStrings()
+            .map { Word.englishName($0.lowercased()) }
+            .filter { word in
+            return Reference.englishNames.contains(word)
         }
     }
     

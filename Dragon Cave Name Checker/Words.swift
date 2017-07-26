@@ -34,6 +34,38 @@ extension Word: Equatable {
     }
 }
 
+extension Word {
+    func text() -> String {
+        switch self {
+        case .scrabble(let text): return text
+        case .englishName(let text): return text
+        }
+    }
+}
+
+extension Word: Comparable {
+    
+    private func charactersCount() -> Int {
+        return text().characters.count
+    }
+    
+    public static func <(lhs: Word, rhs: Word) -> Bool {
+        return lhs.charactersCount() < rhs.charactersCount()
+    }
+    
+    static func <=(lhs: Word, rhs: Word) -> Bool {
+        return lhs.charactersCount() <= rhs.charactersCount()
+    }
+    
+    static func >=(lhs: Word, rhs: Word) -> Bool {
+        return lhs.charactersCount() >= rhs.charactersCount()
+    }
+    
+    static func >(lhs: Word, rhs: Word) -> Bool {
+        return lhs.charactersCount() > rhs.charactersCount()
+    }
+}
+
 class Reference {
     
     private static var scrabbleStorage: [Word]?

@@ -38,6 +38,10 @@ class ScrollParser {
 
 extension ScrollParser {
     fileprivate func urlForScroll(named scrollName: String, page pageNumber: Int) -> URL? {
+        if Config.useLocalHTML {
+            let resource = "lulu_witch_\(pageNumber)"
+            return Bundle.main.url(forResource: resource, withExtension: "html")
+        }
         return URL(string: "https://dragcave.net/user/\(scrollName)/\(pageNumber)")
     }
     
@@ -67,7 +71,7 @@ extension ScrollParser {
             
             if let doc = HTML(html: html, encoding: .utf8) {
                 
-                
+                // TODO: The first page will not have more pages, however we still need to parse
                 guard doc.hasMoreScrollPages() else {
                     DispatchQueue.main.async {
                         self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
@@ -114,6 +118,9 @@ extension ScrollParser {
 fileprivate extension HTMLDocument {
     
     func hasMoreScrollPages() -> Bool {
+        return true
+        
+        // TODO: This doesn't work for: https://dragcave.net/user/Velociraptor/100
         // There are more pages if the text "Last" is not a <span>
         return
             xpath("//span[@class=\"_29_1\"]")
