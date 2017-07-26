@@ -39,12 +39,36 @@ class ScrollWordsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
+        
         showScrollNameEntry()
     }
+}
+
+extension ScrollWordsViewController: UIViewControllerPreviewingDelegate {
     
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView?.indexPathForRow(at: location) else { return nil }
+        guard let cell = tableView?.cellForRow(at: indexPath) else { return nil }
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "DragonWebViewController") as? DragonWebPageViewController else { return nil }
+        
+        let dragon = dragons[indexPath.section]
+        viewController.dragon = dragon
+        
+        previewingContext.sourceRect = cell.frame
+        return viewController
+    }
+    
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.show(viewControllerToCommit, sender: self)
+    }
 }
 
 fileprivate extension ScrollWordsViewController {
+    
     @IBAction func searchTapped(_ sender: Any) {
         showScrollNameEntry()
     }
