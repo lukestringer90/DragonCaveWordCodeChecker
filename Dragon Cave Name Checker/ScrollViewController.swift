@@ -47,26 +47,41 @@ extension ScrollViewController {
     
     func processWords(from newDragons: [Dragon]) {
         
-        for batch in newDragons.batches(of: 5) {
+        for batch in newDragons.batches(of: 50) {
             DragonCodeProcessor.shared.process(dragons: batch) { processedDragons in
+                var toReload = [IndexPath]()
+                var toRemove = [IndexPath]()
+                
                 let dragonsWithWords = self.dragons
                     .map { originalDragon -> Dragon in
                         if let newDragon = processedDragons.first(where: { $0.code == originalDragon.code }) {
                             return newDragon
                         }
                         return originalDragon
-                    }.filter { dragon in
+                    }
+                    .filter { dragon in
                         guard let words = dragon.words else { return true }
-                        return words.count > 0
-                    }.sorted(by: { a, b -> Bool in
-                        guard let aWords = a.words, let bWords = b.words else { return false }
-                        return aWords.count > bWords.count
-                    })
+                        
+                        let row = self.dragons.index(where: { $0.code == dragon.code })!
+                        let indexPath = IndexPath(row: row, section: 0 )
+                        if words.count > 0 {
+                            toReload.append(indexPath)
+                            return true
+                        }
+                        else {
+                            toRemove.append(indexPath)
+                            return false
+                        }
+                    }
+                    .sortedByKeepUnprocessedOrder()
                 
                 
                 DispatchQueue.main.async {
                     self.dragons = dragonsWithWords
-                    self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+                    self.tableView.beginUpdates()
+                    self.tableView.reloadRows(at: toReload, with: .fade)
+                    self.tableView.deleteRows(at: toRemove, with: .fade)
+                    self.tableView.endUpdates()
                 }
                 
             }
