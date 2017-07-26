@@ -15,12 +15,13 @@
 		F5BC8B241F23B10D00E3D73B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B231F23B10D00E3D73B /* Assets.xcassets */; };
 		F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */; };
 		F5BC8B2F1F23BAC400E3D73B /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B2E1F23BAC400E3D73B /* Word.swift */; };
+		F5BF4F6B1F28E9A400FD65E7 /* ScrollWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF4F6A1F28E9A400FD65E7 /* ScrollWordsViewController.swift */; };
 		F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D67DEF1F23F9F5008A1724 /* String+Words.swift */; };
 		F5D67DF61F240A73008A1724 /* lulu_witch_word_coded.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */; };
 		F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5DA59C61F23BDFE00D20850 /* scrabble.txt */; };
 		F5FE93541F24D94000BBA860 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93531F24D94000BBA860 /* Config.swift */; };
 		F5FE93561F24EB8D00BBA860 /* CodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93551F24EB8C00BBA860 /* CodeCell.swift */; };
-		F5FE93581F24EC1A00BBA860 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93571F24EC1A00BBA860 /* ScrollViewController.swift */; };
+		F5FE93581F24EC1A00BBA860 /* ScrollDragonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93571F24EC1A00BBA860 /* ScrollDragonsViewController.swift */; };
 		F5FE935A1F24EC5E00BBA860 /* ScrollParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93591F24EC5E00BBA860 /* ScrollParser.swift */; };
 		F5FE93621F27E46300BBA860 /* DragonWebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93611F27E46300BBA860 /* DragonWebPageViewController.swift */; };
 		F5FE93641F28077F00BBA860 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93631F28077F00BBA860 /* WordsViewController.swift */; };
@@ -58,12 +59,13 @@
 		F5BC8B261F23B10D00E3D73B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5BC8B281F23B10D00E3D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5BC8B2E1F23BAC400E3D73B /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		F5BF4F6A1F28E9A400FD65E7 /* ScrollWordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollWordsViewController.swift; sourceTree = "<group>"; };
 		F5D67DEF1F23F9F5008A1724 /* String+Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Words.swift"; sourceTree = "<group>"; };
 		F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_word_coded.html; sourceTree = "<group>"; };
 		F5DA59C61F23BDFE00D20850 /* scrabble.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrabble.txt; sourceTree = "<group>"; };
 		F5FE93531F24D94000BBA860 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F5FE93551F24EB8C00BBA860 /* CodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
-		F5FE93571F24EC1A00BBA860 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		F5FE93571F24EC1A00BBA860 /* ScrollDragonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDragonsViewController.swift; sourceTree = "<group>"; };
 		F5FE93591F24EC5E00BBA860 /* ScrollParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollParser.swift; sourceTree = "<group>"; };
 		F5FE93611F27E46300BBA860 /* DragonWebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonWebPageViewController.swift; sourceTree = "<group>"; };
 		F5FE93631F28077F00BBA860 /* WordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +156,8 @@
 			children = (
 				F5BC8B1C1F23B10D00E3D73B /* AppDelegate.swift */,
 				F5BC8B1E1F23B10D00E3D73B /* ViewController.swift */,
-				F5FE93571F24EC1A00BBA860 /* ScrollViewController.swift */,
+				F5FE93571F24EC1A00BBA860 /* ScrollDragonsViewController.swift */,
+				F5BF4F6A1F28E9A400FD65E7 /* ScrollWordsViewController.swift */,
 				F5FE93611F27E46300BBA860 /* DragonWebPageViewController.swift */,
 				F5FE93631F28077F00BBA860 /* WordsViewController.swift */,
 			);
@@ -394,8 +397,9 @@
 				F5BC8B1F1F23B10D00E3D73B /* ViewController.swift in Sources */,
 				F5BC8B1D1F23B10D00E3D73B /* AppDelegate.swift in Sources */,
 				F5FE93641F28077F00BBA860 /* WordsViewController.swift in Sources */,
+				F5BF4F6B1F28E9A400FD65E7 /* ScrollWordsViewController.swift in Sources */,
 				F5FE93541F24D94000BBA860 /* Config.swift in Sources */,
-				F5FE93581F24EC1A00BBA860 /* ScrollViewController.swift in Sources */,
+				F5FE93581F24EC1A00BBA860 /* ScrollDragonsViewController.swift in Sources */,
 				F5FE93821F288C9300BBA860 /* DragonCodeProcessor.swift in Sources */,
 				F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */,
 				F5FE93841F289ACE00BBA860 /* Array+Helpers.swift in Sources */,

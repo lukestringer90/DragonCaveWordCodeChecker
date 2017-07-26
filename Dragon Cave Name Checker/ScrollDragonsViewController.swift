@@ -9,7 +9,7 @@
 import UIKit
 import Kanna
 
-class ScrollViewController: UITableViewController {
+class ScrollDragonsViewController: UITableViewController {
     
     fileprivate let scrollName = "lulu_witch"
     fileprivate var dragons = [Dragon]()
@@ -25,7 +25,7 @@ class ScrollViewController: UITableViewController {
     }
 }
 
-extension ScrollViewController: ScrollParserDelegate {
+extension ScrollDragonsViewController: ScrollParserDelegate {
     
     func parser(_ parser: ScrollParser, startedScroll scrollName: String) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -43,7 +43,7 @@ extension ScrollViewController: ScrollParserDelegate {
     }
 }
 
-extension ScrollViewController {
+extension ScrollDragonsViewController {
     
     func processWords(from newDragons: [Dragon]) {
         
@@ -92,7 +92,7 @@ extension ScrollViewController {
     
 }
 
-extension ScrollViewController {
+extension ScrollDragonsViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard
             let selectedIndexPatch = tableView.indexPathForSelectedRow,
@@ -118,7 +118,7 @@ extension ScrollViewController {
     }
 }
 
-extension ScrollViewController {
+extension ScrollDragonsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
