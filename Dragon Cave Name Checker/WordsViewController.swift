@@ -57,8 +57,6 @@ extension WordsViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // switch on section
-        
         guard
             let section = Section(rawValue: indexPath.section),
             let cell = tableView.dequeueReusableCell(withIdentifier: section.cellID())
@@ -99,7 +97,10 @@ extension WordsViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == Section.scrabble.rawValue else { return }
+        guard indexPath.section == Section.scrabble.rawValue else {
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
         
         let word = dragon.words![indexPath.row]
         
