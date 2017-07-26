@@ -16,14 +16,28 @@
 		F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */; };
 		F5BC8B2F1F23BAC400E3D73B /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B2E1F23BAC400E3D73B /* Words.swift */; };
 		F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D67DEF1F23F9F5008A1724 /* String+Words.swift */; };
-		F5D67DF21F23FB1A008A1724 /* scroll_1.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF11F23FB1A008A1724 /* scroll_1.html */; };
-		F5D67DF41F240971008A1724 /* scroll_9.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF31F240971008A1724 /* scroll_9.html */; };
-		F5D67DF61F240A73008A1724 /* scroll_group.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF51F240A73008A1724 /* scroll_group.html */; };
+		F5D67DF61F240A73008A1724 /* lulu_witch_word_coded.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */; };
 		F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5DA59C61F23BDFE00D20850 /* scrabble.txt */; };
 		F5FE93541F24D94000BBA860 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93531F24D94000BBA860 /* Config.swift */; };
 		F5FE93561F24EB8D00BBA860 /* CodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93551F24EB8C00BBA860 /* CodeCell.swift */; };
 		F5FE93581F24EC1A00BBA860 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93571F24EC1A00BBA860 /* ScrollViewController.swift */; };
 		F5FE935A1F24EC5E00BBA860 /* ScrollParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93591F24EC5E00BBA860 /* ScrollParser.swift */; };
+		F5FE93621F27E46300BBA860 /* DragonWebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93611F27E46300BBA860 /* DragonWebPageViewController.swift */; };
+		F5FE93641F28077F00BBA860 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93631F28077F00BBA860 /* WordsViewController.swift */; };
+		F5FE93741F288AB300BBA860 /* lulu_witch_1.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93671F288AB300BBA860 /* lulu_witch_1.html */; };
+		F5FE93751F288AB300BBA860 /* lulu_witch_2.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93681F288AB300BBA860 /* lulu_witch_2.html */; };
+		F5FE93761F288AB300BBA860 /* lulu_witch_3.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93691F288AB300BBA860 /* lulu_witch_3.html */; };
+		F5FE93771F288AB300BBA860 /* lulu_witch_4.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE936A1F288AB300BBA860 /* lulu_witch_4.html */; };
+		F5FE93781F288AB300BBA860 /* lulu_witch_5.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE936B1F288AB300BBA860 /* lulu_witch_5.html */; };
+		F5FE93791F288AB300BBA860 /* lulu_witch_6.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE936C1F288AB300BBA860 /* lulu_witch_6.html */; };
+		F5FE937A1F288AB300BBA860 /* lulu_witch_7.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE936D1F288AB300BBA860 /* lulu_witch_7.html */; };
+		F5FE937B1F288AB300BBA860 /* lulu_witch_8.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE936E1F288AB300BBA860 /* lulu_witch_8.html */; };
+		F5FE937C1F288AB300BBA860 /* lulu_witch_9.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE936F1F288AB300BBA860 /* lulu_witch_9.html */; };
+		F5FE937D1F288AB300BBA860 /* lulu_witch_10.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93701F288AB300BBA860 /* lulu_witch_10.html */; };
+		F5FE937E1F288AB300BBA860 /* lulu_witch_11.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93711F288AB300BBA860 /* lulu_witch_11.html */; };
+		F5FE937F1F288AB300BBA860 /* lulu_witch_12.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93721F288AB300BBA860 /* lulu_witch_12.html */; };
+		F5FE93801F288AB300BBA860 /* lulu_witch_13.html in Resources */ = {isa = PBXBuildFile; fileRef = F5FE93731F288AB300BBA860 /* lulu_witch_13.html */; };
+		F5FE93821F288C9300BBA860 /* CodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93811F288C9300BBA860 /* CodeProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,14 +54,28 @@
 		F5BC8B281F23B10D00E3D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5BC8B2E1F23BAC400E3D73B /* Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		F5D67DEF1F23F9F5008A1724 /* String+Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Words.swift"; sourceTree = "<group>"; };
-		F5D67DF11F23FB1A008A1724 /* scroll_1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scroll_1.html; sourceTree = "<group>"; };
-		F5D67DF31F240971008A1724 /* scroll_9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scroll_9.html; sourceTree = "<group>"; };
-		F5D67DF51F240A73008A1724 /* scroll_group.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = scroll_group.html; sourceTree = "<group>"; };
+		F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_word_coded.html; sourceTree = "<group>"; };
 		F5DA59C61F23BDFE00D20850 /* scrabble.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrabble.txt; sourceTree = "<group>"; };
 		F5FE93531F24D94000BBA860 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F5FE93551F24EB8C00BBA860 /* CodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
 		F5FE93571F24EC1A00BBA860 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		F5FE93591F24EC5E00BBA860 /* ScrollParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollParser.swift; sourceTree = "<group>"; };
+		F5FE93611F27E46300BBA860 /* DragonWebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonWebPageViewController.swift; sourceTree = "<group>"; };
+		F5FE93631F28077F00BBA860 /* WordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
+		F5FE93671F288AB300BBA860 /* lulu_witch_1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_1.html; sourceTree = "<group>"; };
+		F5FE93681F288AB300BBA860 /* lulu_witch_2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_2.html; sourceTree = "<group>"; };
+		F5FE93691F288AB300BBA860 /* lulu_witch_3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_3.html; sourceTree = "<group>"; };
+		F5FE936A1F288AB300BBA860 /* lulu_witch_4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_4.html; sourceTree = "<group>"; };
+		F5FE936B1F288AB300BBA860 /* lulu_witch_5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_5.html; sourceTree = "<group>"; };
+		F5FE936C1F288AB300BBA860 /* lulu_witch_6.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_6.html; sourceTree = "<group>"; };
+		F5FE936D1F288AB300BBA860 /* lulu_witch_7.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_7.html; sourceTree = "<group>"; };
+		F5FE936E1F288AB300BBA860 /* lulu_witch_8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_8.html; sourceTree = "<group>"; };
+		F5FE936F1F288AB300BBA860 /* lulu_witch_9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_9.html; sourceTree = "<group>"; };
+		F5FE93701F288AB300BBA860 /* lulu_witch_10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_10.html; sourceTree = "<group>"; };
+		F5FE93711F288AB300BBA860 /* lulu_witch_11.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_11.html; sourceTree = "<group>"; };
+		F5FE93721F288AB300BBA860 /* lulu_witch_12.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_12.html; sourceTree = "<group>"; };
+		F5FE93731F288AB300BBA860 /* lulu_witch_13.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_13.html; sourceTree = "<group>"; };
+		F5FE93811F288C9300BBA860 /* CodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +144,8 @@
 				F5BC8B1C1F23B10D00E3D73B /* AppDelegate.swift */,
 				F5BC8B1E1F23B10D00E3D73B /* ViewController.swift */,
 				F5FE93571F24EC1A00BBA860 /* ScrollViewController.swift */,
+				F5FE93611F27E46300BBA860 /* DragonWebPageViewController.swift */,
+				F5FE93631F28077F00BBA860 /* WordsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -153,6 +183,7 @@
 				F5D67DEF1F23F9F5008A1724 /* String+Words.swift */,
 				F5BC8B2E1F23BAC400E3D73B /* Words.swift */,
 				F5FE93591F24EC5E00BBA860 /* ScrollParser.swift */,
+				F5FE93811F288C9300BBA860 /* CodeProcessor.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -160,13 +191,40 @@
 		F5FE93601F25333000BBA860 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F5D67DF11F23FB1A008A1724 /* scroll_1.html */,
-				F5D67DF31F240971008A1724 /* scroll_9.html */,
-				F5D67DF51F240A73008A1724 /* scroll_group.html */,
+				F5FE93651F288A9700BBA860 /* HTML */,
+				F5FE93661F288AA000BBA860 /* Reference Words */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F5FE93651F288A9700BBA860 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				F5FE93671F288AB300BBA860 /* lulu_witch_1.html */,
+				F5FE93681F288AB300BBA860 /* lulu_witch_2.html */,
+				F5FE93691F288AB300BBA860 /* lulu_witch_3.html */,
+				F5FE936A1F288AB300BBA860 /* lulu_witch_4.html */,
+				F5FE936B1F288AB300BBA860 /* lulu_witch_5.html */,
+				F5FE936C1F288AB300BBA860 /* lulu_witch_6.html */,
+				F5FE936D1F288AB300BBA860 /* lulu_witch_7.html */,
+				F5FE936E1F288AB300BBA860 /* lulu_witch_8.html */,
+				F5FE936F1F288AB300BBA860 /* lulu_witch_9.html */,
+				F5FE93701F288AB300BBA860 /* lulu_witch_10.html */,
+				F5FE93711F288AB300BBA860 /* lulu_witch_11.html */,
+				F5FE93721F288AB300BBA860 /* lulu_witch_12.html */,
+				F5FE93731F288AB300BBA860 /* lulu_witch_13.html */,
+				F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
+		F5FE93661F288AA000BBA860 /* Reference Words */ = {
+			isa = PBXGroup;
+			children = (
 				F5DA59C61F23BDFE00D20850 /* scrabble.txt */,
 				F52ECAFF1F23CD6A00243F54 /* english_names.txt */,
 			);
-			name = Resources;
+			name = "Reference Words";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,13 +290,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */,
+				F5FE937C1F288AB300BBA860 /* lulu_witch_9.html in Resources */,
+				F5FE937A1F288AB300BBA860 /* lulu_witch_7.html in Resources */,
+				F5FE93791F288AB300BBA860 /* lulu_witch_6.html in Resources */,
+				F5FE93771F288AB300BBA860 /* lulu_witch_4.html in Resources */,
+				F5FE937D1F288AB300BBA860 /* lulu_witch_10.html in Resources */,
 				F52ECB001F23CD6A00243F54 /* english_names.txt in Resources */,
+				F5FE93801F288AB300BBA860 /* lulu_witch_13.html in Resources */,
+				F5FE937E1F288AB300BBA860 /* lulu_witch_11.html in Resources */,
+				F5FE937B1F288AB300BBA860 /* lulu_witch_8.html in Resources */,
+				F5FE93781F288AB300BBA860 /* lulu_witch_5.html in Resources */,
 				F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */,
-				F5D67DF41F240971008A1724 /* scroll_9.html in Resources */,
-				F5D67DF21F23FB1A008A1724 /* scroll_1.html in Resources */,
 				F5BC8B241F23B10D00E3D73B /* Assets.xcassets in Resources */,
 				F5BC8B221F23B10D00E3D73B /* Main.storyboard in Resources */,
-				F5D67DF61F240A73008A1724 /* scroll_group.html in Resources */,
+				F5FE93751F288AB300BBA860 /* lulu_witch_2.html in Resources */,
+				F5FE93741F288AB300BBA860 /* lulu_witch_1.html in Resources */,
+				F5FE93761F288AB300BBA860 /* lulu_witch_3.html in Resources */,
+				F5D67DF61F240A73008A1724 /* lulu_witch_word_coded.html in Resources */,
+				F5FE937F1F288AB300BBA860 /* lulu_witch_12.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,10 +368,13 @@
 			files = (
 				F5BC8B1F1F23B10D00E3D73B /* ViewController.swift in Sources */,
 				F5BC8B1D1F23B10D00E3D73B /* AppDelegate.swift in Sources */,
+				F5FE93641F28077F00BBA860 /* WordsViewController.swift in Sources */,
 				F5FE93541F24D94000BBA860 /* Config.swift in Sources */,
 				F5FE93581F24EC1A00BBA860 /* ScrollViewController.swift in Sources */,
+				F5FE93821F288C9300BBA860 /* CodeProcessor.swift in Sources */,
 				F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */,
 				F5FE93561F24EB8D00BBA860 /* CodeCell.swift in Sources */,
+				F5FE93621F27E46300BBA860 /* DragonWebPageViewController.swift in Sources */,
 				F5FE935A1F24EC5E00BBA860 /* ScrollParser.swift in Sources */,
 				F5BC8B2F1F23BAC400E3D73B /* Words.swift in Sources */,
 			);

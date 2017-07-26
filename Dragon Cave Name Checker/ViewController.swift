@@ -19,58 +19,13 @@ class ViewController: UIViewController {
     fileprivate var englishNames = [String]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        activityIndicator.startAnimating()
-        DispatchQueue.global().async {
-            let url = Bundle.main.url(forResource: "scroll_1", withExtension: "html")!
-            let data = try! Data(contentsOf: url)
-            let html = String(data: data, encoding: .utf8)!
-            
-            if let doc = HTML(html: html, encoding: .utf8) {
-                
-                let codes = doc.xpath("//*[@id=\"udragonlist\"]/tbody/tr/td/a").flatMap { pathObject -> String? in
-                    if let text = pathObject["href"], let code = text.components(separatedBy: "/").last {
-                        return code
-                    }
-                    return nil
-                }
-                
-                let allScrabbleWords = codes.flatMap { code -> [String] in
-                    print("Starting \(code)")
-                    return code.allScrabbleWords()
-                    }.sorted(by: { a, b -> Bool in
-                        return a.characters.count > b.characters.count
-                    }).sorted()
-                
-                
-                
-                self.allWords = allScrabbleWords
-                self.scrabbleWords = allScrabbleWords
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.activityIndicator.stopAnimating()
-            }
-        }
-        
+        super.viewDidLoad()        
     }
 }
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text {
-            activityIndicator.startAnimating()
-            DispatchQueue.global().async {
-                self.scrabbleWords = text.allScrabbleWords()
-                self.englishNames = text.allEnglishNames()
-                self.allWords = self.scrabbleWords + self.englishNames
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.activityIndicator.stopAnimating()
-                }
-            }
-        }
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
