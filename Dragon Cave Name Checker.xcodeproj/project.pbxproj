@@ -41,6 +41,8 @@
 		F5FE93841F289ACE00BBA860 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93831F289ACE00BBA860 /* Array+Helpers.swift */; };
 		F5FE93871F289B1900BBA860 /* WordReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93861F289B1900BBA860 /* WordReference.swift */; };
 		F5FE93891F289B7C00BBA860 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE93881F289B7C00BBA860 /* Dragon.swift */; };
+		F5FE938B1F28B5A700BBA860 /* countries_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5FE938A1F28B5A700BBA860 /* countries_names.txt */; };
+		F5FE938D1F28B67C00BBA860 /* country_codes.csv in Resources */ = {isa = PBXBuildFile; fileRef = F5FE938C1F28B67C00BBA860 /* country_codes.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		F5FE93831F289ACE00BBA860 /* Array+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
 		F5FE93861F289B1900BBA860 /* WordReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordReference.swift; sourceTree = "<group>"; };
 		F5FE93881F289B7C00BBA860 /* Dragon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
+		F5FE938A1F28B5A700BBA860 /* countries_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries_names.txt; sourceTree = "<group>"; };
+		F5FE938C1F28B67C00BBA860 /* country_codes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_codes.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,8 @@
 			children = (
 				F5DA59C61F23BDFE00D20850 /* scrabble.txt */,
 				F52ECAFF1F23CD6A00243F54 /* english_names.txt */,
+				F5FE938A1F28B5A700BBA860 /* countries_names.txt */,
+				F5FE938C1F28B67C00BBA860 /* country_codes.csv */,
 			);
 			name = "Reference Words";
 			sourceTree = "<group>";
@@ -309,6 +315,8 @@
 				F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */,
 				F5FE937C1F288AB300BBA860 /* lulu_witch_9.html in Resources */,
 				F5FE937A1F288AB300BBA860 /* lulu_witch_7.html in Resources */,
+				F5FE938B1F28B5A700BBA860 /* countries_names.txt in Resources */,
+				F5FE938D1F28B67C00BBA860 /* country_codes.csv in Resources */,
 				F5FE93791F288AB300BBA860 /* lulu_witch_6.html in Resources */,
 				F5FE93771F288AB300BBA860 /* lulu_witch_4.html in Resources */,
 				F5FE937D1F288AB300BBA860 /* lulu_witch_10.html in Resources */,

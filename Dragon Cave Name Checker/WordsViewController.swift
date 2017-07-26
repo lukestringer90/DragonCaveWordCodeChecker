@@ -10,36 +10,97 @@ import UIKit
 
 class WordsViewController: UITableViewController {
 
+    fileprivate var scrabbleWords = [Word]()
+    fileprivate var englishNames = [Word]()
+    fileprivate var countryCodes = [Word]()
+    
     var dragon: Dragon! {
         didSet {
             title = dragon.name
+            if let allWords = dragon.words {
+                scrabbleWords = allWords.filter { word -> Bool in
+                    if case Word.scrabble(_) = word { return true }
+                    return false
+                }
+                englishNames = allWords.filter { word -> Bool in
+                    if case Word.englishName(_) = word { return true }
+                    return false
+                }
+                countryCodes = allWords.filter { word -> Bool in
+                    if case Word.countryCode(_) = word { return true }
+                    return false
+                }
+            }
         }
     }
 }
 
 extension WordsViewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    enum Section: Int {
+        case scrabble, englishNames, countryCodes
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let words = dragon.words {
-            return words.count
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection sectionIndex: Int) -> Int {
+        guard let section = Section(rawValue: sectionIndex) else { return 0 }
+        
+        switch section {
+        case .scrabble: return scrabbleWords.count
+        case .englishNames: return englishNames.count
+        case .countryCodes: return countryCodes.count
         }
-        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let word = dragon.words![indexPath.row]
+        // switch on section
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: word.cellID())!
+        guard
+            let section = Section(rawValue: indexPath.section),
+            let cell = tableView.dequeueReusableCell(withIdentifier: section.cellID())
+            else {
+                fatalError("Cannot dequeue cell for section")
+        }
+        
+        let word: Word = {
+            switch section {
+            case .scrabble: return scrabbleWords[indexPath.row]
+            case .englishNames: return englishNames[indexPath.row]
+            case .countryCodes: return countryCodes[indexPath.row]
+            }
+        }()
         cell.textLabel?.text = word.text()
+        
+        if case Word.countryCode(_, let country) = word {
+            cell.detailTextLabel?.text = country
+        }
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection sectionIndex: Int) -> String? {
+        guard let section = Section(rawValue: sectionIndex) else { return nil }
+        
+        switch section {
+        case .scrabble:
+            guard scrabbleWords.count > 0 else { return nil }
+            return "Words (\(scrabbleWords.count))"
+        case .englishNames:
+            guard englishNames.count > 0 else { return nil }
+            return "Names (\(englishNames.count))"
+        case .countryCodes:
+            guard countryCodes.count > 0 else { return nil }
+            return "Country Codes (\(countryCodes.count))"
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section == Section.scrabble.rawValue else { return }
+        
         let word = dragon.words![indexPath.row]
         
         switch word {
@@ -55,11 +116,12 @@ extension WordsViewController {
     
 }
 
-fileprivate extension Word {
+extension WordsViewController.Section {
     func cellID() -> String {
         switch self {
-        case .englishName(_): return "EnglishName"
-        case .scrabble(_): return "Scrabble"
+        case .englishNames: return "EnglishName"
+        case .scrabble: return "Scrabble"
+        case .countryCodes: return "CountryCode"
         }
     }
 }
