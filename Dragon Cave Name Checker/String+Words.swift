@@ -34,18 +34,35 @@ extension Int {
 extension String {
     
     func allScrabbleWords() -> [Word] {
-        return tokens()
-            .map { Word.scrabble($0.lowercased()) }
-            .filter { word in
-            return WordReference.scrabble.contains(word)
+        let tokens = self.tokens()
+        return WordReference.scrabble
+            .filter { word -> Bool in
+                let tokensContainsWords = tokens.contains(where: { token -> Bool in
+                    return token.lowercased() == word.text().lowercased()
+                })
+                return tokensContainsWords
         }
     }
     
     func allEnglishNames() -> [Word] {
-        return tokens()
-            .map { Word.englishName($0.lowercased()) }
-            .filter { word in
-            return WordReference.englishNames.contains(word)
+        let tokens = self.tokens()
+        return WordReference.englishNames
+            .filter { word -> Bool in
+                let tokensContainsWords = tokens.contains(where: { token -> Bool in
+                    return token.lowercased() == word.text().lowercased()
+                })
+                return tokensContainsWords
+        }
+    }
+    
+    func allCountryCodes() -> [Word] {
+        let tokens = self.tokens()
+        return WordReference.countryCodes
+            .filter { word -> Bool in
+               let tokensContainsWords = tokens.contains(where: { token -> Bool in
+                return token.lowercased() == word.text().lowercased()
+               })
+                return tokensContainsWords
         }
     }
     

@@ -11,6 +11,7 @@ import Foundation
 enum Word {
     case scrabble(String)
     case englishName(String)
+    case countryCode(code: String, country: String)
 }
 
 extension Word: Equatable {
@@ -30,6 +31,13 @@ extension Word: Equatable {
             default:
                 return false
             }
+        case .countryCode(let countryCodeLHS, _):
+            switch rhs {
+            case .countryCode(let countryCodeRHS, _):
+                return countryCodeLHS == countryCodeRHS
+            default:
+                return false
+            }
         }
     }
 }
@@ -39,6 +47,7 @@ extension Word {
         switch self {
         case .scrabble(let text): return text
         case .englishName(let text): return text
+        case .countryCode(let code, _): return code
         }
     }
 }
