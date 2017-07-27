@@ -11,7 +11,7 @@ import Kanna
 
 class ScrollDragonsViewController: UITableViewController {
     
-    fileprivate let scrollName = "lulu_witch"
+    fileprivate let scrollName = "Eleeveen"
     fileprivate var dragons = [Dragon]()
     
     fileprivate var scrollParser: ScrollParser!
@@ -19,9 +19,33 @@ class ScrollDragonsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
+        
         title = scrollName
         scrollParser = ScrollParser(scrollName: scrollName, delegate: self)
         scrollParser.start()
+    }
+}
+
+extension ScrollDragonsViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView?.indexPathForRow(at: location) else { return nil }
+        guard let cell = tableView?.cellForRow(at: indexPath) else { return nil }
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "DragonWebViewController") as? DragonWebPageViewController else { return nil }
+        
+        let dragon = dragons[indexPath.row]
+        viewController.dragon = dragon
+        
+        previewingContext.sourceRect = cell.frame
+        return viewController
+    }
+    
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.show(viewControllerToCommit, sender: self)
     }
 }
 
@@ -109,13 +133,13 @@ extension ScrollDragonsViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let wordsViewController = segue.destination as? WordsViewController {
+        if let webViewController = segue.destination as? DragonWebPageViewController {
             guard let row = tableView.indexPathForSelectedRow?.row else { return }
             let dragon = dragons[row]
-            
-            wordsViewController.dragon = dragon
+            webViewController.dragon = dragon
         }
     }
+    
 }
 
 extension ScrollDragonsViewController {

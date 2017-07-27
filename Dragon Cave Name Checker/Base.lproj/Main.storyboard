@@ -130,7 +130,7 @@
                                     <outlet property="codeLabel" destination="c5a-qi-RLR" id="9Hy-VY-akf"/>
                                     <outlet property="countLabel" destination="0RC-Pl-Uw9" id="S7c-kM-eIY"/>
                                     <outlet property="nameLabel" destination="7JW-fo-nZv" id="G7V-C9-flF"/>
-                                    <segue destination="CI8-vf-sXE" kind="show" id="gJn-Az-JfV"/>
+                                    <segue destination="GSV-rQ-ad0" kind="show" id="hVc-Nz-kGp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -348,6 +348,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gJn-Az-JfV"/>
+        <segue reference="hVc-Nz-kGp"/>
     </inferredMetricsTieBreakers>
 </document>
