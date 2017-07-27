@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PlQ-sh-LyR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jx0-YE-YJL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -130,7 +130,7 @@
                                     <outlet property="codeLabel" destination="c5a-qi-RLR" id="9Hy-VY-akf"/>
                                     <outlet property="countLabel" destination="0RC-Pl-Uw9" id="S7c-kM-eIY"/>
                                     <outlet property="nameLabel" destination="7JW-fo-nZv" id="G7V-C9-flF"/>
-                                    <segue destination="aZF-Cd-4tF" kind="showDetail" trigger="accessoryAction" id="qBX-i1-sDH"/>
+                                    <segue destination="GSV-rQ-ad0" kind="show" id="PZ6-Su-LZS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -266,22 +266,6 @@
             </objects>
             <point key="canvasLocation" x="-164" y="961"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8fF-z7-mw4">
-            <objects>
-                <navigationController id="aZF-Cd-4tF" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhw-mW-cGq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="GSV-rQ-ad0" kind="relationship" relationship="rootViewController" id="Hbb-eo-1pT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3jj-83-9g4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1598" y="-335"/>
-        </scene>
         <!--Code-->
         <scene sceneID="mxK-vc-aGc">
             <objects>
@@ -362,22 +346,8 @@
             </objects>
             <point key="canvasLocation" x="2449" y="467"/>
         </scene>
-        <!--Split View Controller-->
-        <scene sceneID="bpR-UH-HVZ">
-            <objects>
-                <splitViewController id="PlQ-sh-LyR" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="aZF-Cd-4tF" kind="relationship" relationship="detailViewController" id="01z-OS-q4Y"/>
-                        <segue destination="Jx0-YE-YJL" kind="relationship" relationship="masterViewController" id="9jR-Qo-Ff5"/>
-                    </connections>
-                </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TXf-uj-mEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="601" y="-627"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qBX-i1-sDH"/>
-        <segue reference="tX6-m1-g3o"/>
+        <segue reference="PZ6-Su-LZS"/>
     </inferredMetricsTieBreakers>
 </document>
