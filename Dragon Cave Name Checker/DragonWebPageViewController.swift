@@ -10,12 +10,18 @@ import UIKit
 
 class DragonWebPageViewController: UIViewController {
 
-    var dragon: Dragon!
+    var dragon: Dragon? = nil
     
     @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let dragon = self.dragon else {
+            title = nil
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            return
+        }
+        
         title = dragon.name
         
         if let words = dragon.words {
