@@ -45,6 +45,9 @@ extension Dragon: Equatable {
         if let lhsWords = lhs.words, let rhsWords = rhs.words {
             return lhsWords == rhsWords
         }
+        else if lhs.words == nil && rhs.words == nil {
+            return true
+        }
         
         return false
     }
