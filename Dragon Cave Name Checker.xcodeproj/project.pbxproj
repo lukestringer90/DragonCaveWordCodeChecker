@@ -16,6 +16,7 @@
 		F5BC8B271F23B10D00E3D73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BC8B251F23B10D00E3D73B /* LaunchScreen.storyboard */; };
 		F5BC8B2F1F23BAC400E3D73B /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC8B2E1F23BAC400E3D73B /* Word.swift */; };
 		F5BF4F6B1F28E9A400FD65E7 /* ScrollWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF4F6A1F28E9A400FD65E7 /* ScrollWordsViewController.swift */; };
+		F5C7DE491F2A6A7000072BED /* DragonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7DE481F2A6A7000072BED /* DragonTests.swift */; };
 		F5D67DF01F23F9F5008A1724 /* String+Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D67DEF1F23F9F5008A1724 /* String+Words.swift */; };
 		F5D67DF61F240A73008A1724 /* lulu_witch_word_coded.html in Resources */ = {isa = PBXBuildFile; fileRef = F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */; };
 		F5DA59C71F23BDFE00D20850 /* scrabble.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5DA59C61F23BDFE00D20850 /* scrabble.txt */; };
@@ -46,6 +47,16 @@
 		F5FE938D1F28B67C00BBA860 /* country_codes.csv in Resources */ = {isa = PBXBuildFile; fileRef = F5FE938C1F28B67C00BBA860 /* country_codes.csv */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F5C7DE4B1F2A6A7000072BED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5BC8B111F23B10D00E3D73B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5BC8B181F23B10D00E3D73B;
+			remoteInfo = "Dragon Cave Name Checker";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0AB2B5701CAC0DEC50BBAB8B /* Pods_Dragon_Cave_Name_Checker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dragon_Cave_Name_Checker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEF9F522C6F93CBA6B17296 /* Pods-Dragon Cave Name Checker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dragon Cave Name Checker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dragon Cave Name Checker/Pods-Dragon Cave Name Checker.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +71,9 @@
 		F5BC8B281F23B10D00E3D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5BC8B2E1F23BAC400E3D73B /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		F5BF4F6A1F28E9A400FD65E7 /* ScrollWordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollWordsViewController.swift; sourceTree = "<group>"; };
+		F5C7DE461F2A6A7000072BED /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5C7DE481F2A6A7000072BED /* DragonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonTests.swift; sourceTree = "<group>"; };
+		F5C7DE4A1F2A6A7000072BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5D67DEF1F23F9F5008A1724 /* String+Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Words.swift"; sourceTree = "<group>"; };
 		F5D67DF51F240A73008A1724 /* lulu_witch_word_coded.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_word_coded.html; sourceTree = "<group>"; };
 		F5DA59C61F23BDFE00D20850 /* scrabble.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrabble.txt; sourceTree = "<group>"; };
@@ -99,6 +113,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F5C7DE431F2A6A7000072BED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F5BC8B1B1F23B10D00E3D73B /* Dragon Cave Name Checker */,
+				F5C7DE471F2A6A7000072BED /* UnitTests */,
 				F5BC8B1A1F23B10D00E3D73B /* Products */,
 				D0948658052FA3E04B161384 /* Pods */,
 				B0B48FC031AE8BC65AD589D4 /* Frameworks */,
@@ -133,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				F5BC8B191F23B10D00E3D73B /* Dragon Cave.app */,
+				F5C7DE461F2A6A7000072BED /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +172,15 @@
 				F5FE935E1F25331100BBA860 /* Other */,
 			);
 			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F5C7DE471F2A6A7000072BED /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7DE481F2A6A7000072BED /* DragonTests.swift */,
+				F5C7DE4A1F2A6A7000072BED /* Info.plist */,
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 		F5FE935B1F2532DB00BBA860 /* View Controllers */ = {
@@ -276,6 +308,24 @@
 			productReference = F5BC8B191F23B10D00E3D73B /* Dragon Cave.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F5C7DE451F2A6A7000072BED /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5C7DE4F1F2A6A7000072BED /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				F5C7DE421F2A6A7000072BED /* Sources */,
+				F5C7DE431F2A6A7000072BED /* Frameworks */,
+				F5C7DE441F2A6A7000072BED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5C7DE4C1F2A6A7000072BED /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = F5C7DE461F2A6A7000072BED /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -290,6 +340,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 5PMKY4NNPB;
 						ProvisioningStyle = Automatic;
+					};
+					F5C7DE451F2A6A7000072BED = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F5BC8B181F23B10D00E3D73B;
 					};
 				};
 			};
@@ -307,6 +362,7 @@
 			projectRoot = "";
 			targets = (
 				F5BC8B181F23B10D00E3D73B /* Dragon Cave Name Checker */,
+				F5C7DE451F2A6A7000072BED /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -337,6 +393,13 @@
 				F5FE93761F288AB300BBA860 /* lulu_witch_3.html in Resources */,
 				F5D67DF61F240A73008A1724 /* lulu_witch_word_coded.html in Resources */,
 				F5FE937F1F288AB300BBA860 /* lulu_witch_12.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5C7DE441F2A6A7000072BED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +476,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F5C7DE421F2A6A7000072BED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5C7DE491F2A6A7000072BED /* DragonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5C7DE4C1F2A6A7000072BED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5BC8B181F23B10D00E3D73B /* Dragon Cave Name Checker */;
+			targetProxy = F5C7DE4B1F2A6A7000072BED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F5BC8B201F23B10D00E3D73B /* Main.storyboard */ = {
@@ -558,6 +637,32 @@
 			};
 			name = Release;
 		};
+		F5C7DE4D1F2A6A7000072BED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.lukestringer.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon Cave.app/Dragon Cave";
+			};
+			name = Debug;
+		};
+		F5C7DE4E1F2A6A7000072BED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.lukestringer.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon Cave.app/Dragon Cave";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,6 +683,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F5C7DE4F1F2A6A7000072BED /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5C7DE4D1F2A6A7000072BED /* Debug */,
+				F5C7DE4E1F2A6A7000072BED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
