@@ -9,14 +9,14 @@
 import UIKit
 
 class WordsViewController: UITableViewController {
-
+    
     fileprivate var scrabbleWords = [Word]()
     fileprivate var englishNames = [Word]()
     fileprivate var countryCodes = [Word]()
     
     var dragon: Dragon! {
         didSet {
-            title = dragon.name
+            title = "\(dragon.name)"
             if let allWords = dragon.words {
                 scrabbleWords = allWords.filter { word -> Bool in
                     if case Word.scrabble(_) = word { return true }
@@ -35,16 +35,34 @@ class WordsViewController: UITableViewController {
     }
 }
 
-extension WordsViewController {
-    
+fileprivate extension WordsViewController {
     enum Section: Int {
         case scrabble, englishNames, countryCodes
     }
     
+    func showDefinition(for word: Word) {
+        if case .scrabble(let text) = word {
+            guard UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: text) else { return }
+            
+            let definitionViewController = UIReferenceLibraryViewController(term: text)
+            present(definitionViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func word(at indexPath: IndexPath) -> Word {
+        let section = Section(rawValue: indexPath.section)!
+        switch section {
+        case .scrabble: return scrabbleWords[indexPath.row]
+        case .englishNames: return englishNames[indexPath.row]
+        case .countryCodes: return countryCodes[indexPath.row]
+        }
+    }
+}
+
+extension WordsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection sectionIndex: Int) -> Int {
         guard let section = Section(rawValue: sectionIndex) else { return 0 }
@@ -56,6 +74,11 @@ extension WordsViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let word = self.word(at: indexPath)
+        showDefinition(for: word)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let section = Section(rawValue: indexPath.section),
@@ -64,17 +87,19 @@ extension WordsViewController {
                 fatalError("Cannot dequeue cell for section")
         }
         
-        let word: Word = {
-            switch section {
-            case .scrabble: return scrabbleWords[indexPath.row]
-            case .englishNames: return englishNames[indexPath.row]
-            case .countryCodes: return countryCodes[indexPath.row]
-            }
-        }()
+        let word = self.word(at: indexPath)
         cell.textLabel?.text = word.text()
         
         if case Word.countryCode(_, let country) = word {
             cell.detailTextLabel?.text = country
+        }
+        else if case Word.scrabble(let text) = word {
+            if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: text) {
+                cell.accessoryType = .detailButton
+            }
+            else {
+                cell.accessoryType = .none
+            }
         }
         
         return cell
@@ -97,22 +122,9 @@ extension WordsViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == Section.scrabble.rawValue else {
-            tableView.deselectRow(at: indexPath, animated: true)
-            return
-        }
-        
-        let word = dragon.words![indexPath.row]
-        
-        switch word {
-        case .scrabble(let text):
-            let definitionViewController = UIReferenceLibraryViewController(term: text)
-            present(definitionViewController, animated: true, completion: nil)
-            
-        default:
-            tableView.deselectRow(at: indexPath, animated: true)
-            return
-        }
+        let word = self.word(at: indexPath)
+        showDefinition(for: word)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

@@ -19,6 +19,6 @@ enum Config {
         }
     }
     
-    static let useLocalHTML = true
+    static let useLocalHTML = false
     
 }

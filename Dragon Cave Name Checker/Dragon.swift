@@ -22,6 +22,15 @@ extension Array where Iterator.Element == Dragon {
     }
 }
 
+extension Array where Iterator.Element == Word {
+    func maxWordLength() -> Int {
+        let longestWord = sorted(by: { a, b -> Bool in
+            return a.text().characters.count > b.text().characters.count
+        }).first!
+        return longestWord.text().characters.count
+    }
+}
+
 extension Dragon: Equatable {
     
     static func ==(lhs: Dragon, rhs: Dragon) -> Bool {
@@ -50,8 +59,12 @@ extension Dragon: Comparable {
         return words.count
     }
     
+    
     public static func <(lhs: Dragon, rhs: Dragon) -> Bool {
-        if lhs.wordCount() == rhs.wordCount() {
+        if let lhsWords = lhs.words, let rhsWords = rhs.words {
+            return rhsWords.maxWordLength() < lhsWords.maxWordLength()
+        }
+        else if lhs.wordCount() == rhs.wordCount() {
             let comparison = lhs.code.caseInsensitiveCompare(rhs.code)
             return comparison == .orderedAscending
         }
@@ -60,6 +73,9 @@ extension Dragon: Comparable {
     }
     
     static func <=(lhs: Dragon, rhs: Dragon) -> Bool {
+        if let lhsWords = lhs.words, let rhsWords = rhs.words {
+            return rhsWords.maxWordLength() <= lhsWords.maxWordLength()
+        }
         if lhs.wordCount() == rhs.wordCount() {
             let comparison = lhs.code.caseInsensitiveCompare(rhs.code)
             return comparison == .orderedAscending || comparison == .orderedSame
@@ -69,6 +85,9 @@ extension Dragon: Comparable {
     }
     
     static func >=(lhs: Dragon, rhs: Dragon) -> Bool {
+        if let lhsWords = lhs.words, let rhsWords = rhs.words {
+            return rhsWords.maxWordLength() >= lhsWords.maxWordLength()
+        }
         if lhs.wordCount() == rhs.wordCount() {
             let comparison = lhs.code.caseInsensitiveCompare(rhs.code)
             return comparison == .orderedDescending || comparison == .orderedSame
@@ -78,6 +97,9 @@ extension Dragon: Comparable {
     }
     
     static func >(lhs: Dragon, rhs: Dragon) -> Bool {
+        if let lhsWords = lhs.words, let rhsWords = rhs.words {
+            return rhsWords.maxWordLength() > lhsWords.maxWordLength()
+        }
         if lhs.wordCount() == rhs.wordCount() {
             let comparison = lhs.code.caseInsensitiveCompare(rhs.code)
             return comparison == .orderedDescending

@@ -9,13 +9,22 @@
 import Foundation
 
 class DragonCodeProcessor {
-    fileprivate let operationQueue = OperationQueue()
+    fileprivate var operationQueue: OperationQueue!
     
     static let shared = DragonCodeProcessor()
     
     private init() {
+        setupOperationQueue()
+    }
+    
+    private func setupOperationQueue() {
+        operationQueue = OperationQueue()
         operationQueue.maxConcurrentOperationCount = 1
-        
+    }
+    
+    func cancelAllProcessing() {
+        operationQueue.cancelAllOperations()
+        setupOperationQueue()
     }
     
     func process(dragons: [Dragon], completion: @escaping (_ newDragons: [Dragon]) -> ()) {
@@ -24,7 +33,7 @@ class DragonCodeProcessor {
         
         let operation = BlockOperation {
             processedDragons = dragons.map { dragon -> Dragon in
-                let words = dragon.code.allScrabbleWords() + dragon.code.allEnglishNames() + dragon.code.allCountryCodes()
+                let words = dragon.code.allScrabbleWords() + dragon.code.allEnglishNames()
                 let sorted = words.sorted()
                 return Dragon(code: dragon.code, name: dragon.name, words: sorted)
             }

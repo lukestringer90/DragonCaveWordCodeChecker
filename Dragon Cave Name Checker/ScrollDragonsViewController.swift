@@ -9,9 +9,9 @@
 import UIKit
 import Kanna
 
-class ScrollViewController: UITableViewController {
+class ScrollDragonsViewController: UITableViewController {
     
-    fileprivate let scrollName = "lulu_witch"
+    fileprivate let scrollName = "Eleeveen"
     fileprivate var dragons = [Dragon]()
     
     fileprivate var scrollParser: ScrollParser!
@@ -19,13 +19,37 @@ class ScrollViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
+        
         title = scrollName
         scrollParser = ScrollParser(scrollName: scrollName, delegate: self)
         scrollParser.start()
     }
 }
 
-extension ScrollViewController: ScrollParserDelegate {
+extension ScrollDragonsViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView?.indexPathForRow(at: location) else { return nil }
+        guard let cell = tableView?.cellForRow(at: indexPath) else { return nil }
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "DragonWebViewController") as? DragonWebPageViewController else { return nil }
+        
+        let dragon = dragons[indexPath.row]
+        viewController.dragon = dragon
+        
+        previewingContext.sourceRect = cell.frame
+        return viewController
+    }
+    
+    public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.show(viewControllerToCommit, sender: self)
+    }
+}
+
+extension ScrollDragonsViewController: ScrollParserDelegate {
     
     func parser(_ parser: ScrollParser, startedScroll scrollName: String) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -43,7 +67,7 @@ extension ScrollViewController: ScrollParserDelegate {
     }
 }
 
-extension ScrollViewController {
+extension ScrollDragonsViewController {
     
     func processWords(from newDragons: [Dragon]) {
         
@@ -92,7 +116,7 @@ extension ScrollViewController {
     
 }
 
-extension ScrollViewController {
+extension ScrollDragonsViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard
             let selectedIndexPatch = tableView.indexPathForSelectedRow,
@@ -109,16 +133,16 @@ extension ScrollViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let wordsViewController = segue.destination as? WordsViewController {
+        if let webViewController = segue.destination as? DragonWebPageViewController {
             guard let row = tableView.indexPathForSelectedRow?.row else { return }
             let dragon = dragons[row]
-            
-            wordsViewController.dragon = dragon
+            webViewController.dragon = dragon
         }
     }
+    
 }
 
-extension ScrollViewController {
+extension ScrollDragonsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -139,7 +163,7 @@ extension ScrollViewController {
         cell.nameLabel.text = "\(dragon.name)"
         
         if let words = dragon.words {
-            cell.countLabel.text = String(words.count)
+            cell.countLabel.text = "\(String(words.count)), longest \(words.maxWordLength())"
         }
         else {
             cell.activityIndicator?.startAnimating()
