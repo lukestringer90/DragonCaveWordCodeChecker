@@ -139,7 +139,7 @@ extension ScrollDragonsViewController {
         cell.nameLabel.text = "\(dragon.name)"
         
         if let words = dragon.words {
-            cell.countLabel.text = String(words.count)
+            cell.countLabel.text = "\(String(words.count)), longest \(words.maxWordLength())"
         }
         else {
             cell.activityIndicator?.startAnimating()

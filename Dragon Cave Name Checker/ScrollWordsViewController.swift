@@ -22,9 +22,11 @@ class ScrollWordsViewController: UITableViewController {
             guard let scrollName = scrollName else { return }
             
             // Update UI
+            remainingProcessingCount = 0
             dragons = []
             tableView.reloadData()
             title = scrollName
+            updateProcessingText()
             
             // Start parser
             scrollParser = nil
@@ -32,7 +34,23 @@ class ScrollWordsViewController: UITableViewController {
             scrollParser.start()
         }
     }
+    
+    fileprivate var processingText: String {
+        let wordCount = dragons.reduce(0) { result, dragon -> Int in
+            if let words = dragon.words {
+                return result + words.count
+            }
+            return result
+        }
+        if remainingProcessingCount > 0 {
+            return "\(wordCount) words from \(dragons.count)/\(remainingProcessingCount + dragons.count) dragons"
+        }
+        return "\(wordCount) words from \(dragons.count) dragons"
+    }
+    
     fileprivate var dragons = [Dragon]()
+    
+    @IBOutlet weak var processingTextBarButtonItem: UIBarButtonItem!
     
     fileprivate var scrollParser: ScrollParser!
     
@@ -45,7 +63,23 @@ class ScrollWordsViewController: UITableViewController {
         
         showScrollNameEntry()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.isToolbarHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.isToolbarHidden = true
+    }
+    
+    
+    fileprivate func updateProcessingText() {
+        processingTextBarButtonItem.title = processingText
+    }
 }
+
 
 extension ScrollWordsViewController: UIViewControllerPreviewingDelegate {
     
@@ -63,6 +97,7 @@ extension ScrollWordsViewController: UIViewControllerPreviewingDelegate {
     }
     
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.isToolbarHidden = false
         navigationController?.show(viewControllerToCommit, sender: self)
     }
 }
@@ -119,6 +154,7 @@ extension ScrollWordsViewController {
                 self.dragons = self.dragons + processedDragons
                 self.remainingProcessingCount -= batchSize
                 DispatchQueue.main.async {
+                    self.updateProcessingText()
                     self.tableView.reloadData()
                 }
                 
@@ -133,6 +169,7 @@ extension ScrollWordsViewController {
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
             let dragon = dragons[selectedIndexPath.section]
             webViewController.dragon = dragon
+            navigationController?.isToolbarHidden = true
         }
     }
 }

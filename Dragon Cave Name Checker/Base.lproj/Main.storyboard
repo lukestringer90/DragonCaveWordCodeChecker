@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Tc-D7-A2a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jx0-YE-YJL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,13 +31,13 @@
         <!--Scroll-->
         <scene sceneID="MVf-Sm-r3x">
             <objects>
-                <tableViewController id="2bJ-av-Z7k" customClass="ScrollDragonsViewController" customModule="Dragon_Cave_Name_Checker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2bJ-av-Z7k" customClass="ScrollDragonsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="kfv-AH-53c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processing" rowHeight="60" id="fbd-3D-1Xz" customClass="CodeCell" customModule="Dragon_Cave_Name_Checker" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processing" rowHeight="60" id="fbd-3D-1Xz" customClass="CodeCell" customModule="Dragon_Cave" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbd-3D-1Xz" id="1Xt-5A-O33">
@@ -83,7 +83,7 @@
                                     <outlet property="nameLabel" destination="v5i-75-t5o" id="uqZ-gc-TOh"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processed" rowHeight="60" id="BYR-AP-Gqz" customClass="CodeCell" customModule="Dragon_Cave_Name_Checker" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processed" rowHeight="60" id="BYR-AP-Gqz" customClass="CodeCell" customModule="Dragon_Cave" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BYR-AP-Gqz" id="5jC-qn-JYJ">
@@ -91,26 +91,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dmw-p7-CbX">
-                                            <rect key="frame" x="18" y="10.5" width="307" height="38.5"/>
+                                            <rect key="frame" x="18" y="10.5" width="198" height="38.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5a-qi-RLR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="307" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subheading goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JW-fo-nZv">
-                                                    <rect key="frame" x="0.0" y="20.5" width="307" height="18"/>
+                                                    <rect key="frame" x="0.0" y="20.5" width="198" height="18"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nnn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-Pl-Uw9">
-                                            <rect key="frame" x="334" y="19" width="29" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nnn, (longest nnn)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0RC-Pl-Uw9">
+                                            <rect key="frame" x="224" y="19" width="139" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="29" id="HR9-kF-qHd"/>
+                                                <constraint firstAttribute="width" constant="139" id="HR9-kF-qHd"/>
                                                 <constraint firstAttribute="height" constant="21" id="YYn-LE-8Xl"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -119,7 +119,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="0RC-Pl-Uw9" firstAttribute="leading" secondItem="Dmw-p7-CbX" secondAttribute="trailing" constant="9" id="LTV-yB-JFC"/>
+                                        <constraint firstItem="0RC-Pl-Uw9" firstAttribute="leading" secondItem="Dmw-p7-CbX" secondAttribute="trailing" constant="8" id="LTV-yB-JFC"/>
                                         <constraint firstItem="Dmw-p7-CbX" firstAttribute="leading" secondItem="5jC-qn-JYJ" secondAttribute="leadingMargin" constant="10" id="QJD-tf-FCq"/>
                                         <constraint firstItem="Dmw-p7-CbX" firstAttribute="centerY" secondItem="5jC-qn-JYJ" secondAttribute="centerY" id="tKr-W0-TrG"/>
                                         <constraint firstItem="0RC-Pl-Uw9" firstAttribute="centerY" secondItem="5jC-qn-JYJ" secondAttribute="centerY" id="vV6-73-v7w"/>
@@ -148,7 +148,7 @@
         <!--Scroll-->
         <scene sceneID="6oD-1S-FeA">
             <objects>
-                <tableViewController id="eFh-Dt-lvQ" customClass="ScrollWordsViewController" customModule="Dragon_Cave_Name_Checker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eFh-Dt-lvQ" customClass="ScrollWordsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V88-99-i2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,6 +187,12 @@
                             <outlet property="delegate" destination="eFh-Dt-lvQ" id="zcg-t2-uAP"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9cH-Al-1db"/>
+                        <barButtonItem title="Processing n/n dragons, found n words" id="QkP-kp-YC9"/>
+                        <barButtonItem id="nH0-qI-s6C"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ZrV-Yy-NxX"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Scroll" id="E8z-6D-pM0">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="STr-dH-VLb">
                             <connections>
@@ -194,6 +200,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="processingTextBarButtonItem" destination="QkP-kp-YC9" id="fl3-wE-cTF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKO-ND-nYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,7 +212,7 @@
         <!--Dragon Name-->
         <scene sceneID="3Fu-ZZ-SoP">
             <objects>
-                <viewController storyboardIdentifier="DragonWebViewController" title="Dragon Name" id="GSV-rQ-ad0" customClass="DragonWebPageViewController" customModule="Dragon_Cave_Name_Checker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DragonWebViewController" title="Dragon Name" id="GSV-rQ-ad0" customClass="DragonWebPageViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JgO-k2-JOe"/>
                         <viewControllerLayoutGuide type="bottom" id="uUK-Jp-15Q"/>
@@ -259,7 +269,7 @@
         <!--Code-->
         <scene sceneID="mxK-vc-aGc">
             <objects>
-                <tableViewController id="CI8-vf-sXE" customClass="WordsViewController" customModule="Dragon_Cave_Name_Checker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CI8-vf-sXE" customClass="WordsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RG6-eV-XfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,6 +348,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jqt-bH-x6G"/>
+        <segue reference="gJn-Az-JfV"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -51,7 +51,7 @@
 		0DEF9F522C6F93CBA6B17296 /* Pods-Dragon Cave Name Checker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dragon Cave Name Checker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dragon Cave Name Checker/Pods-Dragon Cave Name Checker.release.xcconfig"; sourceTree = "<group>"; };
 		76285BE59155D23ED9864A13 /* Pods-Dragon Cave Name Checker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dragon Cave Name Checker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dragon Cave Name Checker/Pods-Dragon Cave Name Checker.debug.xcconfig"; sourceTree = "<group>"; };
 		F52ECAFF1F23CD6A00243F54 /* english_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = english_names.txt; sourceTree = "<group>"; };
-		F5BC8B191F23B10D00E3D73B /* Dragon Cave Name Checker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Cave Name Checker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5BC8B191F23B10D00E3D73B /* Dragon Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BC8B1C1F23B10D00E3D73B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BC8B1E1F23B10D00E3D73B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5BC8B211F23B10D00E3D73B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		F5BC8B1A1F23B10D00E3D73B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5BC8B191F23B10D00E3D73B /* Dragon Cave Name Checker.app */,
+				F5BC8B191F23B10D00E3D73B /* Dragon Cave.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			);
 			name = "Dragon Cave Name Checker";
 			productName = "Dragon Cave Name Checker";
-			productReference = F5BC8B191F23B10D00E3D73B /* Dragon Cave Name Checker.app */;
+			productReference = F5BC8B191F23B10D00E3D73B /* Dragon Cave.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -539,7 +539,7 @@
 				INFOPLIST_FILE = "Dragon Cave Name Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Dragon-Cave-Name-Checker";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dragon Cave";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -553,7 +553,7 @@
 				INFOPLIST_FILE = "Dragon Cave Name Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Dragon-Cave-Name-Checker";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dragon Cave";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
