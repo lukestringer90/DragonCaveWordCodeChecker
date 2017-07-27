@@ -62,7 +62,15 @@ extension ScrollDragonsViewController: ScrollParserDelegate {
     
     func parser(_ parser: ScrollParser, parsed parsedDragons: [Dragon], from scrollName: String) {
         self.dragons = self.dragons + parsedDragons
-        self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        
+        let indexPaths = parsedDragons.flatMap { dragon -> IndexPath? in
+            guard let row = self.dragons.index(of: dragon) else { return nil }
+            return IndexPath(row: row, section: 0)
+        }
+        
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: indexPaths, with: .fade)
+        self.tableView.endUpdates()
         processWords(from: parsedDragons)
     }
 }
