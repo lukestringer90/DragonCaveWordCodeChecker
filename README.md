@@ -22,8 +22,8 @@ Currently the app can perform most of the logic detailed above (the scroll scrap
 
 ## Word List
 
-http://i.imgur.com/zvYUvnD.mp4
+![](http://i.imgur.com/zvYUvnD.gifv)
 
 ## Dragon List
 
-http://imgur.com/LbXl7P9.mp4
+![](http://imgur.com/LbXl7P9.gifv)
