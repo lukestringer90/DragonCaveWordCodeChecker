@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		231D07FBF90609640034A33D /* Pods_Word_Code_Checker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB2B75019B83C0C28AC78B2 /* Pods_Word_Code_Checker.framework */; };
+		F53621EB1F2B6E40006F1FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F53621EA1F2B6E40006F1FC0 /* Assets.xcassets */; };
+		F53624051F2B6E8E006F1FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623DC1F2B6E8E006F1FC0 /* AppDelegate.swift */; };
+		F53624061F2B6E8E006F1FC0 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623DD1F2B6E8E006F1FC0 /* Array+Helpers.swift */; };
+		F53624081F2B6E8E006F1FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53623DF1F2B6E8E006F1FC0 /* LaunchScreen.storyboard */; };
+		F53624091F2B6E8E006F1FC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53623E11F2B6E8E006F1FC0 /* Main.storyboard */; };
+		F536240A1F2B6E8E006F1FC0 /* CodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E31F2B6E8E006F1FC0 /* CodeCell.swift */; };
+		F536240B1F2B6E8E006F1FC0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E41F2B6E8E006F1FC0 /* Config.swift */; };
+		F536240C1F2B6E8E006F1FC0 /* countries_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F53623E51F2B6E8E006F1FC0 /* countries_names.txt */; };
+		F536240D1F2B6E8E006F1FC0 /* country_codes.csv in Resources */ = {isa = PBXBuildFile; fileRef = F53623E61F2B6E8E006F1FC0 /* country_codes.csv */; };
+		F536240E1F2B6E8E006F1FC0 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E71F2B6E8E006F1FC0 /* Dragon.swift */; };
+		F536240F1F2B6E8E006F1FC0 /* DragonCodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E81F2B6E8E006F1FC0 /* DragonCodeProcessor.swift */; };
+		F53624101F2B6E8E006F1FC0 /* DragonWebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E91F2B6E8E006F1FC0 /* DragonWebPageViewController.swift */; };
+		F53624111F2B6E8E006F1FC0 /* english_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F53623EA1F2B6E8E006F1FC0 /* english_names.txt */; };
+		F53624131F2B6E8E006F1FC0 /* lower_english_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F53623EC1F2B6E8E006F1FC0 /* lower_english_names.txt */; };
+		F53624141F2B6E8E006F1FC0 /* lower_scrabble.text in Sources */ = {isa = PBXBuildFile; fileRef = F53623ED1F2B6E8E006F1FC0 /* lower_scrabble.text */; };
+		F53624151F2B6E8E006F1FC0 /* lulu_witch_1.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623EE1F2B6E8E006F1FC0 /* lulu_witch_1.html */; };
+		F53624161F2B6E8E006F1FC0 /* lulu_witch_10.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623EF1F2B6E8E006F1FC0 /* lulu_witch_10.html */; };
+		F53624171F2B6E8E006F1FC0 /* lulu_witch_11.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F01F2B6E8E006F1FC0 /* lulu_witch_11.html */; };
+		F53624181F2B6E8E006F1FC0 /* lulu_witch_12.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F11F2B6E8E006F1FC0 /* lulu_witch_12.html */; };
+		F53624191F2B6E8E006F1FC0 /* lulu_witch_13.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F21F2B6E8E006F1FC0 /* lulu_witch_13.html */; };
+		F536241A1F2B6E8E006F1FC0 /* lulu_witch_2.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F31F2B6E8E006F1FC0 /* lulu_witch_2.html */; };
+		F536241B1F2B6E8E006F1FC0 /* lulu_witch_3.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F41F2B6E8E006F1FC0 /* lulu_witch_3.html */; };
+		F536241C1F2B6E8E006F1FC0 /* lulu_witch_4.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F51F2B6E8E006F1FC0 /* lulu_witch_4.html */; };
+		F536241D1F2B6E8E006F1FC0 /* lulu_witch_5.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F61F2B6E8E006F1FC0 /* lulu_witch_5.html */; };
+		F536241E1F2B6E8E006F1FC0 /* lulu_witch_6.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F71F2B6E8E006F1FC0 /* lulu_witch_6.html */; };
+		F536241F1F2B6E8E006F1FC0 /* lulu_witch_7.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F81F2B6E8E006F1FC0 /* lulu_witch_7.html */; };
+		F53624201F2B6E8E006F1FC0 /* lulu_witch_8.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F91F2B6E8E006F1FC0 /* lulu_witch_8.html */; };
+		F53624211F2B6E8E006F1FC0 /* lulu_witch_9.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623FA1F2B6E8E006F1FC0 /* lulu_witch_9.html */; };
+		F53624221F2B6E8E006F1FC0 /* lulu_witch_word_coded.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623FB1F2B6E8E006F1FC0 /* lulu_witch_word_coded.html */; };
+		F53624231F2B6E8E006F1FC0 /* scrabble.txt in Resources */ = {isa = PBXBuildFile; fileRef = F53623FC1F2B6E8E006F1FC0 /* scrabble.txt */; };
+		F53624241F2B6E8E006F1FC0 /* ScrollDragonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623FD1F2B6E8E006F1FC0 /* ScrollDragonsViewController.swift */; };
+		F53624251F2B6E8E006F1FC0 /* ScrollParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623FE1F2B6E8E006F1FC0 /* ScrollParser.swift */; };
+		F53624261F2B6E8E006F1FC0 /* ScrollWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623FF1F2B6E8E006F1FC0 /* ScrollWordsViewController.swift */; };
+		F53624271F2B6E8E006F1FC0 /* String+Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53624001F2B6E8E006F1FC0 /* String+Words.swift */; };
+		F53624281F2B6E8E006F1FC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53624011F2B6E8E006F1FC0 /* ViewController.swift */; };
+		F53624291F2B6E8E006F1FC0 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53624021F2B6E8E006F1FC0 /* Word.swift */; };
+		F536242A1F2B6E8E006F1FC0 /* WordReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53624031F2B6E8E006F1FC0 /* WordReference.swift */; };
+		F536242B1F2B6E8E006F1FC0 /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53624041F2B6E8E006F1FC0 /* WordsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2CB2B75019B83C0C28AC78B2 /* Pods_Word_Code_Checker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Word_Code_Checker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E78B0EF4CBF5CEF46FACDB2 /* Pods-Word Code Checker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word Code Checker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Word Code Checker/Pods-Word Code Checker.release.xcconfig"; sourceTree = "<group>"; };
+		6488939A557D80E8062BB3EF /* Pods-Word Code Checker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word Code Checker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Word Code Checker/Pods-Word Code Checker.debug.xcconfig"; sourceTree = "<group>"; };
+		F53621E01F2B6E40006F1FC0 /* Dragon Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F53621EA1F2B6E40006F1FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F53621EF1F2B6E40006F1FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F53623DC1F2B6E8E006F1FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F53623DD1F2B6E8E006F1FC0 /* Array+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
+		F53623E01F2B6E8E006F1FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F53623E21F2B6E8E006F1FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F53623E31F2B6E8E006F1FC0 /* CodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
+		F53623E41F2B6E8E006F1FC0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F53623E51F2B6E8E006F1FC0 /* countries_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries_names.txt; sourceTree = "<group>"; };
+		F53623E61F2B6E8E006F1FC0 /* country_codes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_codes.csv; sourceTree = "<group>"; };
+		F53623E71F2B6E8E006F1FC0 /* Dragon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
+		F53623E81F2B6E8E006F1FC0 /* DragonCodeProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonCodeProcessor.swift; sourceTree = "<group>"; };
+		F53623E91F2B6E8E006F1FC0 /* DragonWebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonWebPageViewController.swift; sourceTree = "<group>"; };
+		F53623EA1F2B6E8E006F1FC0 /* english_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = english_names.txt; sourceTree = "<group>"; };
+		F53623EC1F2B6E8E006F1FC0 /* lower_english_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lower_english_names.txt; sourceTree = "<group>"; };
+		F53623ED1F2B6E8E006F1FC0 /* lower_scrabble.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = lower_scrabble.text; sourceTree = "<group>"; };
+		F53623EE1F2B6E8E006F1FC0 /* lulu_witch_1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_1.html; sourceTree = "<group>"; };
+		F53623EF1F2B6E8E006F1FC0 /* lulu_witch_10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_10.html; sourceTree = "<group>"; };
+		F53623F01F2B6E8E006F1FC0 /* lulu_witch_11.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_11.html; sourceTree = "<group>"; };
+		F53623F11F2B6E8E006F1FC0 /* lulu_witch_12.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_12.html; sourceTree = "<group>"; };
+		F53623F21F2B6E8E006F1FC0 /* lulu_witch_13.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_13.html; sourceTree = "<group>"; };
+		F53623F31F2B6E8E006F1FC0 /* lulu_witch_2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_2.html; sourceTree = "<group>"; };
+		F53623F41F2B6E8E006F1FC0 /* lulu_witch_3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_3.html; sourceTree = "<group>"; };
+		F53623F51F2B6E8E006F1FC0 /* lulu_witch_4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_4.html; sourceTree = "<group>"; };
+		F53623F61F2B6E8E006F1FC0 /* lulu_witch_5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_5.html; sourceTree = "<group>"; };
+		F53623F71F2B6E8E006F1FC0 /* lulu_witch_6.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_6.html; sourceTree = "<group>"; };
+		F53623F81F2B6E8E006F1FC0 /* lulu_witch_7.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_7.html; sourceTree = "<group>"; };
+		F53623F91F2B6E8E006F1FC0 /* lulu_witch_8.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_8.html; sourceTree = "<group>"; };
+		F53623FA1F2B6E8E006F1FC0 /* lulu_witch_9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_9.html; sourceTree = "<group>"; };
+		F53623FB1F2B6E8E006F1FC0 /* lulu_witch_word_coded.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lulu_witch_word_coded.html; sourceTree = "<group>"; };
+		F53623FC1F2B6E8E006F1FC0 /* scrabble.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scrabble.txt; sourceTree = "<group>"; };
+		F53623FD1F2B6E8E006F1FC0 /* ScrollDragonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDragonsViewController.swift; sourceTree = "<group>"; };
+		F53623FE1F2B6E8E006F1FC0 /* ScrollParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollParser.swift; sourceTree = "<group>"; };
+		F53623FF1F2B6E8E006F1FC0 /* ScrollWordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollWordsViewController.swift; sourceTree = "<group>"; };
+		F53624001F2B6E8E006F1FC0 /* String+Words.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Words.swift"; sourceTree = "<group>"; };
+		F53624011F2B6E8E006F1FC0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F53624021F2B6E8E006F1FC0 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		F53624031F2B6E8E006F1FC0 /* WordReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordReference.swift; sourceTree = "<group>"; };
+		F53624041F2B6E8E006F1FC0 /* WordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F53621DD1F2B6E40006F1FC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231D07FBF90609640034A33D /* Pods_Word_Code_Checker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E4A03DCC9D544D3388BD447 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6488939A557D80E8062BB3EF /* Pods-Word Code Checker.debug.xcconfig */,
+				3E78B0EF4CBF5CEF46FACDB2 /* Pods-Word Code Checker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		37500DE4E9A147233CECF9B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CB2B75019B83C0C28AC78B2 /* Pods_Word_Code_Checker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F53621D71F2B6E40006F1FC0 = {
+			isa = PBXGroup;
+			children = (
+				F53621E21F2B6E40006F1FC0 /* Word Code Checker */,
+				F53621E11F2B6E40006F1FC0 /* Products */,
+				0E4A03DCC9D544D3388BD447 /* Pods */,
+				37500DE4E9A147233CECF9B8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F53621E11F2B6E40006F1FC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F53621E01F2B6E40006F1FC0 /* Dragon Cave.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F53621E21F2B6E40006F1FC0 /* Word Code Checker */ = {
+			isa = PBXGroup;
+			children = (
+				F536242E1F2B6EE6006F1FC0 /* Business Logic */,
+				F536242F1F2B6F14006F1FC0 /* Models */,
+				F536242D1F2B6EC9006F1FC0 /* View Controllers */,
+				F536242C1F2B6EB6006F1FC0 /* Storyboards */,
+				F53624301F2B6F1F006F1FC0 /* Helpers */,
+				F53624311F2B6F26006F1FC0 /* Views */,
+				F53624321F2B6F31006F1FC0 /* Resources */,
+				F53623DB1F2B6E8E006F1FC0 /* Dragon Cave Name Checker */,
+				F53621EA1F2B6E40006F1FC0 /* Assets.xcassets */,
+				F53621EF1F2B6E40006F1FC0 /* Info.plist */,
+			);
+			path = "Word Code Checker";
+			sourceTree = "<group>";
+		};
+		F53623DB1F2B6E8E006F1FC0 /* Dragon Cave Name Checker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F536242C1F2B6EB6006F1FC0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F53623DF1F2B6E8E006F1FC0 /* LaunchScreen.storyboard */,
+				F53623E11F2B6E8E006F1FC0 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F536242D1F2B6EC9006F1FC0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F53623DC1F2B6E8E006F1FC0 /* AppDelegate.swift */,
+				F53623E91F2B6E8E006F1FC0 /* DragonWebPageViewController.swift */,
+				F53623FD1F2B6E8E006F1FC0 /* ScrollDragonsViewController.swift */,
+				F53623FF1F2B6E8E006F1FC0 /* ScrollWordsViewController.swift */,
+				F53624011F2B6E8E006F1FC0 /* ViewController.swift */,
+				F53624041F2B6E8E006F1FC0 /* WordsViewController.swift */,
+			);
+			name = "View Controllers";
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F536242E1F2B6EE6006F1FC0 /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				F53624001F2B6E8E006F1FC0 /* String+Words.swift */,
+				F53623E81F2B6E8E006F1FC0 /* DragonCodeProcessor.swift */,
+				F53623FE1F2B6E8E006F1FC0 /* ScrollParser.swift */,
+				F53624031F2B6E8E006F1FC0 /* WordReference.swift */,
+			);
+			name = "Business Logic";
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F536242F1F2B6F14006F1FC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F53623E71F2B6E8E006F1FC0 /* Dragon.swift */,
+				F53624021F2B6E8E006F1FC0 /* Word.swift */,
+			);
+			name = Models;
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F53624301F2B6F1F006F1FC0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F53623DD1F2B6E8E006F1FC0 /* Array+Helpers.swift */,
+				F53623E41F2B6E8E006F1FC0 /* Config.swift */,
+			);
+			name = Helpers;
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F53624311F2B6F26006F1FC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F53623E31F2B6E8E006F1FC0 /* CodeCell.swift */,
+			);
+			name = Views;
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+		F53624321F2B6F31006F1FC0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F53623EA1F2B6E8E006F1FC0 /* english_names.txt */,
+				F53623EC1F2B6E8E006F1FC0 /* lower_english_names.txt */,
+				F53623E51F2B6E8E006F1FC0 /* countries_names.txt */,
+				F53623E61F2B6E8E006F1FC0 /* country_codes.csv */,
+				F53623ED1F2B6E8E006F1FC0 /* lower_scrabble.text */,
+				F53623EE1F2B6E8E006F1FC0 /* lulu_witch_1.html */,
+				F53623EF1F2B6E8E006F1FC0 /* lulu_witch_10.html */,
+				F53623F01F2B6E8E006F1FC0 /* lulu_witch_11.html */,
+				F53623F11F2B6E8E006F1FC0 /* lulu_witch_12.html */,
+				F53623F21F2B6E8E006F1FC0 /* lulu_witch_13.html */,
+				F53623F31F2B6E8E006F1FC0 /* lulu_witch_2.html */,
+				F53623F41F2B6E8E006F1FC0 /* lulu_witch_3.html */,
+				F53623F51F2B6E8E006F1FC0 /* lulu_witch_4.html */,
+				F53623F61F2B6E8E006F1FC0 /* lulu_witch_5.html */,
+				F53623F71F2B6E8E006F1FC0 /* lulu_witch_6.html */,
+				F53623F81F2B6E8E006F1FC0 /* lulu_witch_7.html */,
+				F53623F91F2B6E8E006F1FC0 /* lulu_witch_8.html */,
+				F53623FA1F2B6E8E006F1FC0 /* lulu_witch_9.html */,
+				F53623FB1F2B6E8E006F1FC0 /* lulu_witch_word_coded.html */,
+				F53623FC1F2B6E8E006F1FC0 /* scrabble.txt */,
+			);
+			name = Resources;
+			path = "Dragon Cave Name Checker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F53621DF1F2B6E40006F1FC0 /* Word Code Checker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F53621F21F2B6E40006F1FC0 /* Build configuration list for PBXNativeTarget "Word Code Checker" */;
+			buildPhases = (
+				09DDC1BEC3F1743626A00464 /* [CP] Check Pods Manifest.lock */,
+				F53621DC1F2B6E40006F1FC0 /* Sources */,
+				F53621DD1F2B6E40006F1FC0 /* Frameworks */,
+				F53621DE1F2B6E40006F1FC0 /* Resources */,
+				EA2F1E0662356C774523D51C /* [CP] Embed Pods Frameworks */,
+				C2E87A1534928F5D150C9D32 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Word Code Checker";
+			productName = "Word Code Checker";
+			productReference = F53621E01F2B6E40006F1FC0 /* Dragon Cave.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F53621D81F2B6E40006F1FC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Luke Stringer";
+				TargetAttributes = {
+					F53621DF1F2B6E40006F1FC0 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F53621DB1F2B6E40006F1FC0 /* Build configuration list for PBXProject "Word Code Checker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F53621D71F2B6E40006F1FC0;
+			productRefGroup = F53621E11F2B6E40006F1FC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F53621DF1F2B6E40006F1FC0 /* Word Code Checker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F53621DE1F2B6E40006F1FC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F536241A1F2B6E8E006F1FC0 /* lulu_witch_2.html in Resources */,
+				F53624081F2B6E8E006F1FC0 /* LaunchScreen.storyboard in Resources */,
+				F53624111F2B6E8E006F1FC0 /* english_names.txt in Resources */,
+				F536241C1F2B6E8E006F1FC0 /* lulu_witch_4.html in Resources */,
+				F536241F1F2B6E8E006F1FC0 /* lulu_witch_7.html in Resources */,
+				F53624221F2B6E8E006F1FC0 /* lulu_witch_word_coded.html in Resources */,
+				F53624181F2B6E8E006F1FC0 /* lulu_witch_12.html in Resources */,
+				F536241B1F2B6E8E006F1FC0 /* lulu_witch_3.html in Resources */,
+				F53624131F2B6E8E006F1FC0 /* lower_english_names.txt in Resources */,
+				F536241E1F2B6E8E006F1FC0 /* lulu_witch_6.html in Resources */,
+				F536240C1F2B6E8E006F1FC0 /* countries_names.txt in Resources */,
+				F53624151F2B6E8E006F1FC0 /* lulu_witch_1.html in Resources */,
+				F53621EB1F2B6E40006F1FC0 /* Assets.xcassets in Resources */,
+				F536240D1F2B6E8E006F1FC0 /* country_codes.csv in Resources */,
+				F53624231F2B6E8E006F1FC0 /* scrabble.txt in Resources */,
+				F53624091F2B6E8E006F1FC0 /* Main.storyboard in Resources */,
+				F53624171F2B6E8E006F1FC0 /* lulu_witch_11.html in Resources */,
+				F53624191F2B6E8E006F1FC0 /* lulu_witch_13.html in Resources */,
+				F53624211F2B6E8E006F1FC0 /* lulu_witch_9.html in Resources */,
+				F536241D1F2B6E8E006F1FC0 /* lulu_witch_5.html in Resources */,
+				F53624201F2B6E8E006F1FC0 /* lulu_witch_8.html in Resources */,
+				F53624161F2B6E8E006F1FC0 /* lulu_witch_10.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09DDC1BEC3F1743626A00464 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2E87A1534928F5D150C9D32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Word Code Checker/Pods-Word Code Checker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA2F1E0662356C774523D51C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Word Code Checker/Pods-Word Code Checker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F53621DC1F2B6E40006F1FC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F53624051F2B6E8E006F1FC0 /* AppDelegate.swift in Sources */,
+				F53624291F2B6E8E006F1FC0 /* Word.swift in Sources */,
+				F536242B1F2B6E8E006F1FC0 /* WordsViewController.swift in Sources */,
+				F536242A1F2B6E8E006F1FC0 /* WordReference.swift in Sources */,
+				F536240B1F2B6E8E006F1FC0 /* Config.swift in Sources */,
+				F53624271F2B6E8E006F1FC0 /* String+Words.swift in Sources */,
+				F53624101F2B6E8E006F1FC0 /* DragonWebPageViewController.swift in Sources */,
+				F536240A1F2B6E8E006F1FC0 /* CodeCell.swift in Sources */,
+				F53624141F2B6E8E006F1FC0 /* lower_scrabble.text in Sources */,
+				F53624261F2B6E8E006F1FC0 /* ScrollWordsViewController.swift in Sources */,
+				F53624251F2B6E8E006F1FC0 /* ScrollParser.swift in Sources */,
+				F53624281F2B6E8E006F1FC0 /* ViewController.swift in Sources */,
+				F53624241F2B6E8E006F1FC0 /* ScrollDragonsViewController.swift in Sources */,
+				F536240E1F2B6E8E006F1FC0 /* Dragon.swift in Sources */,
+				F536240F1F2B6E8E006F1FC0 /* DragonCodeProcessor.swift in Sources */,
+				F53624061F2B6E8E006F1FC0 /* Array+Helpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F53623DF1F2B6E8E006F1FC0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F53623E01F2B6E8E006F1FC0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F53623E11F2B6E8E006F1FC0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F53623E21F2B6E8E006F1FC0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F53621F01F2B6E40006F1FC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F53621F11F2B6E40006F1FC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F53621F31F2B6E40006F1FC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6488939A557D80E8062BB3EF /* Pods-Word Code Checker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Word Code Checker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
+				PRODUCT_NAME = "Dragon Cave";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F53621F41F2B6E40006F1FC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E78B0EF4CBF5CEF46FACDB2 /* Pods-Word Code Checker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Word Code Checker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
+				PRODUCT_NAME = "Dragon Cave";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F53621DB1F2B6E40006F1FC0 /* Build configuration list for PBXProject "Word Code Checker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F53621F01F2B6E40006F1FC0 /* Debug */,
+				F53621F11F2B6E40006F1FC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F53621F21F2B6E40006F1FC0 /* Build configuration list for PBXNativeTarget "Word Code Checker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F53621F31F2B6E40006F1FC0 /* Debug */,
+				F53621F41F2B6E40006F1FC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F53621D81F2B6E40006F1FC0 /* Project object */;
+}

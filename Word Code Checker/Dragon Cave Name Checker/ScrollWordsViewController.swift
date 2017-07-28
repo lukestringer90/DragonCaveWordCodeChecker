@@ -157,7 +157,6 @@ extension ScrollWordsViewController {
                     self.updateProcessingText()
                     self.tableView.reloadData()
                 }
-                
             }
         }
     }
