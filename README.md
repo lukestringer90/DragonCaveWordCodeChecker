@@ -22,8 +22,8 @@ Currently the app can perform most of the logic detailed above (the scroll scrap
 
 ## Word List
 
-![](https://user-images.githubusercontent.com/987146/28723461-b72e0582-73ae-11e7-8780-6589fd23f88d.gif)
+![](https://user-images.githubusercontent.com/987146/28723462-b7538b18-73ae-11e7-8895-917874a1b47d.gif)
 
 ## Dragon List
 
-![](https://user-images.githubusercontent.com/987146/28723462-b7538b18-73ae-11e7-8895-917874a1b47d.gif)
+![](https://user-images.githubusercontent.com/987146/28723461-b72e0582-73ae-11e7-8780-6589fd23f88d.gif)
