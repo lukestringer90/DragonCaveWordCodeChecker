@@ -18,18 +18,24 @@ class WordsViewController: UITableViewController {
         didSet {
             title = "\(dragon.name)"
             if let allWords = dragon.words {
-                scrabbleWords = allWords.filter { word -> Bool in
-                    if case Word.scrabble(_) = word { return true }
-                    return false
-                }
-                englishNames = allWords.filter { word -> Bool in
-                    if case Word.englishName(_) = word { return true }
-                    return false
-                }
-                countryCodes = allWords.filter { word -> Bool in
-                    if case Word.countryCode(_) = word { return true }
-                    return false
-                }
+                scrabbleWords = allWords
+                    .filter { word -> Bool in
+                        if case Word.scrabble(_) = word { return true }
+                        return false
+                    }
+                    .sorted()
+                englishNames = allWords
+                    .filter { word -> Bool in
+                        if case Word.englishName(_) = word { return true }
+                        return false
+                    }
+                    .sorted()
+                countryCodes = allWords
+                    .filter { word -> Bool in
+                        if case Word.countryCode(_) = word { return true }
+                        return false
+                    }
+                    .sorted()
             }
         }
     }

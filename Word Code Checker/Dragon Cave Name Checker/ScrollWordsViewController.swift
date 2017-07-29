@@ -9,12 +9,17 @@
 import UIKit
 
 class ScrollWordsViewController: UITableViewController {
-    fileprivate var remainingProcessingCount = 0 {
+    fileprivate var totalDragonsSeen = 0
+    fileprivate var remainingDragonsToProcess = 0 {
         didSet {
-            if remainingProcessingCount == 0 {
+            if remainingDragonsToProcess == 0 {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
+    }
+    
+    fileprivate var totalProcessedDragons: Int {
+        return totalDragonsSeen - remainingDragonsToProcess
     }
     
     fileprivate var scrollName: String? = nil {
@@ -22,8 +27,9 @@ class ScrollWordsViewController: UITableViewController {
             guard let scrollName = scrollName else { return }
             
             // Update UI
-            remainingProcessingCount = 0
-            dragons = []
+            remainingDragonsToProcess = 0
+            totalDragonsSeen = 0
+            wordToDragons = []
             tableView.reloadData()
             title = scrollName
             updateProcessingText()
@@ -36,19 +42,14 @@ class ScrollWordsViewController: UITableViewController {
     }
     
     fileprivate var processingText: String {
-        let wordCount = dragons.reduce(0) { result, dragon -> Int in
-            if let words = dragon.words {
-                return result + words.count
-            }
-            return result
+        let wordCount = wordToDragons.count
+        if remainingDragonsToProcess > 0 {
+            return "\(wordCount) words from \(totalProcessedDragons)/\(totalDragonsSeen) dragons"
         }
-        if remainingProcessingCount > 0 {
-            return "\(wordCount) words from \(dragons.count)/\(remainingProcessingCount + dragons.count) dragons"
-        }
-        return "\(wordCount) words from \(dragons.count) dragons"
+        return "\(wordCount) words from \(totalDragonsSeen) dragons"
     }
     
-    fileprivate var dragons = [Dragon]()
+    fileprivate var wordToDragons = [WordToDragon]()
     
     @IBOutlet weak var processingTextBarButtonItem: UIBarButtonItem!
     
@@ -89,7 +90,7 @@ extension ScrollWordsViewController: UIViewControllerPreviewingDelegate {
         guard let cell = tableView?.cellForRow(at: indexPath) else { return nil }
         guard let viewController = storyboard?.instantiateViewController(withIdentifier: "DragonWebViewController") as? DragonWebPageViewController else { return nil }
         
-        let dragon = dragons[indexPath.section]
+        let dragon = wordToDragons[indexPath.section].dragon
         viewController.dragon = dragon
         
         previewingContext.sourceRect = cell.frame
@@ -140,7 +141,8 @@ extension ScrollWordsViewController: ScrollParserDelegate {
     }
     
     func parser(_ parser: ScrollParser, parsed parsedDragons: [Dragon], from scrollName: String) {
-        remainingProcessingCount += parsedDragons.count
+        remainingDragonsToProcess += parsedDragons.count
+        totalDragonsSeen += parsedDragons.count
         processWords(from: parsedDragons)
     }
 }
@@ -151,11 +153,31 @@ extension ScrollWordsViewController {
         let batchSize = 1
         for batch in newDragons.batches(of: batchSize) {
             DragonCodeProcessor.shared.process(dragons: batch) { processedDragons in
-                self.dragons = self.dragons + processedDragons
-                self.remainingProcessingCount -= batchSize
+                self.remainingDragonsToProcess -= batchSize
+                
+                let newEntries = processedDragons
+                    .flatMap { dragon -> [WordToDragon]? in
+                        if let words = dragon.words {
+                            return words.map { WordToDragon(word: $0, dragon: dragon) }
+                        }
+                        return nil
+                    }
+                    .flatMap { $0 }
+                self.wordToDragons.append(contentsOf: newEntries)
+                self.wordToDragons.sort()
+                
+                let newIndexPaths = newEntries.flatMap { wordDragon -> IndexPath? in
+                    if let row = self.wordToDragons.index(of: wordDragon) {
+                        return IndexPath(row: row, section: 0)
+                    }
+                    return nil
+                }
+                
                 DispatchQueue.main.async {
                     self.updateProcessingText()
-                    self.tableView.reloadData()
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRows(at: newIndexPaths, with: .fade)
+                    self.tableView.endUpdates()
                 }
             }
         }
@@ -166,7 +188,7 @@ extension ScrollWordsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let webViewController = segue.destination as? DragonWebPageViewController {
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-            let dragon = dragons[selectedIndexPath.section]
+            let dragon = wordToDragons[selectedIndexPath.section].dragon
             webViewController.dragon = dragon
             navigationController?.isToolbarHidden = true
         }
@@ -175,27 +197,21 @@ extension ScrollWordsViewController {
 
 extension ScrollWordsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return dragons.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let dragon = dragons[section]
-        if let words = dragon.words {
-            return words.count
-        }
-        return 0
+        return wordToDragons.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dragon = dragons[indexPath.section]
-        guard let words = dragon.words else { fatalError("Dragon has no words") }
-        let word = words[indexPath.row]
+        let wordToDragon = wordToDragons[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Word")!
         
-        cell.textLabel?.text = word.text()
-        cell.detailTextLabel?.text = dragon.name
+        cell.textLabel?.text = wordToDragon.word.text()
+        cell.detailTextLabel?.text = wordToDragon.dragon.name
         
         return cell
     }
