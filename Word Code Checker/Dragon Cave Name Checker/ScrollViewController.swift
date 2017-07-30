@@ -224,5 +224,6 @@ fileprivate extension ScrollViewController {
         
         scrollParser = ScrollParser(scrollName: scrollName, delegate: self )
         scrollParser?.start()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
 }

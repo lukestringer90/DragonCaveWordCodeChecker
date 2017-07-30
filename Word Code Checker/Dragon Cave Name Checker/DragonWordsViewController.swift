@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WordsViewController: UITableViewController {
+class DragonWordsViewController: UITableViewController {
     
     fileprivate var scrabbleWords = [Word]()
     fileprivate var englishNames = [Word]()
@@ -41,7 +41,7 @@ class WordsViewController: UITableViewController {
     }
 }
 
-fileprivate extension WordsViewController {
+fileprivate extension DragonWordsViewController {
     enum Section: Int {
         case scrabble, englishNames, countryCodes
     }
@@ -65,7 +65,7 @@ fileprivate extension WordsViewController {
     }
 }
 
-extension WordsViewController {
+extension DragonWordsViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -135,7 +135,7 @@ extension WordsViewController {
     
 }
 
-extension WordsViewController.Section {
+extension DragonWordsViewController.Section {
     func cellID() -> String {
         switch self {
         case .englishNames: return "EnglishName"

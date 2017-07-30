@@ -269,11 +269,6 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="ggy-fE-hRv">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Filter" id="B8I-UV-BfD">
-                            <connections>
-                                <action selector="filterTapped:" destination="6Gs-22-JWZ" id="Hn9-Pr-UHM"/>
-                            </connections>
-                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Dfi-1F-Ek4">
                             <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -307,7 +302,7 @@
         <!--Code-->
         <scene sceneID="mxK-vc-aGc">
             <objects>
-                <tableViewController id="CI8-vf-sXE" customClass="WordsViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CI8-vf-sXE" customClass="DragonWordsViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RG6-eV-XfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
