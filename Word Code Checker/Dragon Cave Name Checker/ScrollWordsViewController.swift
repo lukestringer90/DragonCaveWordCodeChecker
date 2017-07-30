@@ -13,8 +13,6 @@ class ScrollWordsViewController: UITableViewController {
     
     fileprivate var wordToDragons = [WordToDragon]()
     
-    fileprivate var scrollParser: ScrollParser!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

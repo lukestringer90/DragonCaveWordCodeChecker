@@ -48,32 +48,8 @@ extension ScrollDragonsViewController: UIViewControllerPreviewingDelegate {
     }
 }
 
-extension ScrollDragonsViewController: ScrollParserDelegate {
-    
-    func parser(_ parser: ScrollParser, startedScroll scrollName: String) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func parser(_ parser: ScrollParser, finishedScroll scrollName: String, error: ScrollParser.Error?) {
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-    
-    func parser(_ parser: ScrollParser, parsed parsedDragons: [Dragon], from scrollName: String) {
-        self.dragons = self.dragons + parsedDragons
-        
-        let indexPaths = parsedDragons.flatMap { dragon -> IndexPath? in
-            guard let row = self.dragons.index(of: dragon) else { return nil }
-            return IndexPath(row: row, section: 0)
-        }
-        
-        self.tableView.beginUpdates()
-        self.tableView.insertRows(at: indexPaths, with: .fade)
-        self.tableView.endUpdates()
-    }
-}
-
 extension ScrollDragonsViewController: DisplayDragons {
+    
     func display(dragons newDragons: [Dragon]) {
         let dragonsWithWords = newDragons
             .filter { dragon -> Bool in
@@ -91,12 +67,11 @@ extension ScrollDragonsViewController: DisplayDragons {
             return nil
         }
         
+        // TODO: This doesn't always work, something to do with scrolling
+        // For example a row will show dragon A, but really at that index it should be showing dragon B
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: newIndexPaths, with: .fade)
         self.tableView.endUpdates()
-        
-        
-        
     }
     
     func reset() {
