@@ -126,6 +126,7 @@
                                 <connections>
                                     <outlet property="codeLabel" destination="Tck-Qu-2Tp" id="chb-8K-KNy"/>
                                     <outlet property="wordLabel" destination="6AP-fp-vIf" id="Wxn-yH-14o"/>
+                                    <segue destination="GSV-rQ-ad0" kind="show" id="fPv-TA-taj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -343,4 +344,7 @@
             <point key="canvasLocation" x="2449" y="467"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fPv-TA-taj"/>
+    </inferredMetricsTieBreakers>
 </document>
