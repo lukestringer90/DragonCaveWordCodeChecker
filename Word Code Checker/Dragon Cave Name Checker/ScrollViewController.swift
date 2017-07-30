@@ -195,7 +195,7 @@ fileprivate extension ScrollViewController {
         let alert = UIAlertController(title: "Scroll Name", message: "Enter a scroll name to look for words.", preferredStyle: .alert)
         alert.addTextField { textField in
             textField.placeholder = "Scroll name"
-            textField.text = "lulu_witch"
+            textField.text = Config.defaultScrollName
             textField.clearButtonMode = .always
         }
         
