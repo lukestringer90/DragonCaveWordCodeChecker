@@ -33,7 +33,7 @@ class ScrollParser {
 extension ScrollParser {
     fileprivate func urlForScroll(named scrollName: String, page pageNumber: Int) -> URL? {
         if Config.useLocalHTML {
-            let resource = "lulu_witch_\(pageNumber)"
+            let resource = "velociraptor_\(pageNumber)"
             return Bundle.main.url(forResource: resource, withExtension: "html")
         }
         return URL(string: "https://dragcave.net/user/\(scrollName)/\(pageNumber)")
@@ -42,7 +42,7 @@ extension ScrollParser {
     func start() {
         self.delegate.parser(self, startedScroll: scrollName)
         
-        parse(page: 1)
+        parse(page: 10)
     }
     
     private func parse(page pageNumber: Int) {

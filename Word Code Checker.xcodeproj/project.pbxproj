@@ -48,6 +48,7 @@
 		F55BFFCC1F2D2C3C00415DFF /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFCB1F2D2C3C00415DFF /* EmptySegue.swift */; };
 		F55BFFCE1F2D2D5300415DFF /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFCD1F2D2D5300415DFF /* ScrollViewController.swift */; };
 		F55BFFD21F2DF8B200415DFF /* DisplayDragons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFD11F2DF8B200415DFF /* DisplayDragons.swift */; };
+		F55BFFD41F2E099000415DFF /* velociraptor_10.html in Resources */ = {isa = PBXBuildFile; fileRef = F55BFFD31F2E099000415DFF /* velociraptor_10.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		F55BFFCB1F2D2C3C00415DFF /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		F55BFFCD1F2D2D5300415DFF /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		F55BFFD11F2DF8B200415DFF /* DisplayDragons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayDragons.swift; sourceTree = "<group>"; };
+		F55BFFD31F2E099000415DFF /* velociraptor_10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = velociraptor_10.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				F53623F81F2B6E8E006F1FC0 /* lulu_witch_7.html */,
 				F53623F91F2B6E8E006F1FC0 /* Word.html */,
 				F53623FA1F2B6E8E006F1FC0 /* lulu_witch_9.html */,
+				F55BFFD31F2E099000415DFF /* velociraptor_10.html */,
 				F53623FB1F2B6E8E006F1FC0 /* lulu_witch_word_coded.html */,
 				F53623FC1F2B6E8E006F1FC0 /* scrabble.txt */,
 			);
@@ -363,6 +366,7 @@
 				F536241D1F2B6E8E006F1FC0 /* lulu_witch_5.html in Resources */,
 				F53624201F2B6E8E006F1FC0 /* Word.html in Resources */,
 				F53624161F2B6E8E006F1FC0 /* lulu_witch_10.html in Resources */,
+				F55BFFD41F2E099000415DFF /* velociraptor_10.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
