@@ -35,7 +35,7 @@ class DragonWebPageViewController: UIViewController {
 
 extension DragonWebPageViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let wordsViewController = segue.destination as? WordsViewController {
+        if let wordsViewController = segue.destination as? DragonWordsViewController {
             wordsViewController.dragon = dragon
         }
     }

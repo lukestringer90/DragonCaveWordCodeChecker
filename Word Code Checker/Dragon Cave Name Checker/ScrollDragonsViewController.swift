@@ -118,20 +118,14 @@ extension ScrollDragonsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dragon = dragons[indexPath.row]
-        let words = dragon.words
+        let words = dragon.words!
         
-        let cellID = words != nil ? "Processed" : "Processing";
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! CodeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Dragon") as! ScrollDragonCell
         
         cell.codeLabel.text = "\(dragon.code)"
         cell.nameLabel.text = "\(dragon.name)"
         
-        if let words = dragon.words {
-            cell.countLabel.text = "\(String(words.count)), longest \(words.maxWordLength())"
-        }
-        else {
-            cell.activityIndicator?.startAnimating()
-        }
+        cell.countLabel.text = "\(String(words.count)), longest \(words.maxWordLength())"
         
         return cell
     }

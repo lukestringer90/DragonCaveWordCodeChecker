@@ -8,9 +8,8 @@
 
 import UIKit
 
-class CodeCell: UITableViewCell {
+class ScrollDragonCell: UITableViewCell {
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
