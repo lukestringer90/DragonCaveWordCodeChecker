@@ -9,43 +9,6 @@
 import XCTest
 @testable import Word_Code_Checker
 
-extension Array where Iterator.Element: Equatable {
-    
-    func changes(to next: Array<Iterator.Element>) -> ChangeSet {
-        
-        let mappedInsertions = next.flatMap { nextElement -> Int? in
-            if !contains(nextElement) {
-                return next.index(of: nextElement)
-            }
-            return nil
-        }
-        let insertions = mappedInsertions.count > 0 ? mappedInsertions : nil
-        
-        let mappedMoves = flatMap { currentElement -> Move? in
-            if next.contains(currentElement) {
-                let currentIndex = index(of: currentElement)!
-                let newIndex = next.index(of: currentElement)!
-                
-                if currentIndex != newIndex {
-                    return Move(from: currentIndex, to: newIndex)
-                }
-            }
-            return nil
-        }
-        let moves = mappedMoves.count > 0 ? mappedMoves : nil
-        
-        let mappedDeletions = flatMap { currentElement -> Int? in
-            if !next.contains(currentElement) {
-                return index(of: currentElement)
-            }
-            return nil
-        }
-        let deletions = mappedDeletions.count > 0 ? mappedDeletions : nil
-        
-        return ChangeSet(insertions: insertions, moves: moves, deletions: deletions)
-    }
-}
-
 class ChangeSetTests: XCTestCase {
     
     let A = "A"

@@ -36,19 +36,16 @@ extension ScrollWordsViewController: DisplayDragons {
                 return nil
             }
             .flatMap { $0 }
+        
+        let before = wordToDragons
+        
         self.wordToDragons.append(contentsOf: newEntries)
         self.wordToDragons.sort()
         
-        let newIndexPaths = newEntries.flatMap { wordDragon -> IndexPath? in
-            if let row = self.wordToDragons.index(of: wordDragon) {
-                return IndexPath(row: row, section: 0)
-            }
-            return nil
-        }
+        let after = wordToDragons
         
-        self.tableView.beginUpdates()
-        self.tableView.insertRows(at: newIndexPaths, with: .fade)
-        self.tableView.endUpdates()
+        let changeSet = before.changes(to: after)
+        changeSet.executeUpdates(to: tableView)
     }
     
     func reset() {
