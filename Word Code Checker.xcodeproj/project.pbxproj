@@ -394,6 +394,7 @@
 				TargetAttributes = {
 					F53621DF1F2B6E40006F1FC0 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5PMKY4NNPB;
 						ProvisioningStyle = Automatic;
 					};
 					F55BFFD81F2E29C500415DFF = {
@@ -732,6 +733,7 @@
 			baseConfigurationReference = 6488939A557D80E8062BB3EF /* Pods-Word Code Checker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PMKY4NNPB;
 				INFOPLIST_FILE = "Word Code Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
@@ -746,6 +748,7 @@
 			baseConfigurationReference = 3E78B0EF4CBF5CEF46FACDB2 /* Pods-Word Code Checker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5PMKY4NNPB;
 				INFOPLIST_FILE = "Word Code Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
