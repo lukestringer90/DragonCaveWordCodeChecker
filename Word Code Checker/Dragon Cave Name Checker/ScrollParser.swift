@@ -65,8 +65,7 @@ extension ScrollParser {
             
             if let doc = HTML(html: html, encoding: .utf8) {
                 
-                // TODO: The first page will not have more pages, however we still need to parse
-                guard doc.hasMoreScrollPages() && pageNumber <= 2 else {
+                guard pageNumber == 1 || doc.hasMoreScrollPages() else {
                     DispatchQueue.main.async {
                         self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
                     }
