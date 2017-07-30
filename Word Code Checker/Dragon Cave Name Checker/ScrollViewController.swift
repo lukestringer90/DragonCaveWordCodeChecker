@@ -151,11 +151,10 @@ extension ScrollViewController {
             viewControllerToSwap = dragonsViewController!
         }
         
-        
         guard childViewControllers.count > 0 else {
             addChildViewController(wordsViewController!)
-            segue.destination.view.frame = containerView.frame
             view.addSubview(wordsViewController!.view)
+            segue.destination.view.frame = containerView.frame
             segue.destination.didMove(toParentViewController: self)
             return
         }
