@@ -79,7 +79,7 @@ extension ScrollWordsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let webViewController = segue.destination as? DragonWebPageViewController {
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-            let dragon = wordToDragons[selectedIndexPath.section].dragon
+            let dragon = wordToDragons[selectedIndexPath.row].dragon
             webViewController.dragon = dragon
             navigationController?.isToolbarHidden = true
         }
