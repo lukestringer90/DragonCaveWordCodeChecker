@@ -20,5 +20,5 @@ enum Config {
     }
     
     static let useLocalHTML = false
-    static let defaultScrollName: String = "velociraptor"
+    static let defaultScrollName: String = "Velociraptor"
 }

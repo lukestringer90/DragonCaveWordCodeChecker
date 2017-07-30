@@ -192,7 +192,7 @@ fileprivate extension ScrollViewController {
 fileprivate extension ScrollViewController {
     
     func showScrollNameEntry() {
-        let alert = UIAlertController(title: "Scroll Name", message: "Enter a scroll name to look for words.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Scroll Name", message: "Enter a scroll name to look for words. Note: scroll names are case sensitive.", preferredStyle: .alert)
         alert.addTextField { textField in
             textField.placeholder = "Scroll name"
             textField.text = Config.defaultScrollName
