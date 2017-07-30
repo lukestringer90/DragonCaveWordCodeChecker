@@ -172,16 +172,10 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9cH-Al-1db"/>
-                        <barButtonItem title="Processing n/n dragons, found n words" id="QkP-kp-YC9"/>
-                        <barButtonItem id="nH0-qI-s6C"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ZrV-Yy-NxX"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Scroll" id="E8z-6D-pM0"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="processingTextBarButtonItem" destination="QkP-kp-YC9" id="fl3-wE-cTF"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKO-ND-nYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,6 +262,11 @@
                             <constraint firstItem="oLg-rg-cUV" firstAttribute="top" secondItem="3b1-eB-ogQ" secondAttribute="bottom" id="trc-aw-FAs"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Fll-xf-jGh"/>
+                        <barButtonItem title="Starting Process..." id="9np-b9-911"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="qxu-hW-fbx"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="ggy-fE-hRv">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="B8I-UV-BfD">
@@ -295,6 +294,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="containerView" destination="oLg-rg-cUV" id="Ene-94-72c"/>
+                        <outlet property="processingTextBarButtonItem" destination="9np-b9-911" id="1GX-I4-rhv"/>
                         <outlet property="segmentedControl" destination="Dfi-1F-Ek4" id="cvY-zB-ZnU"/>
                         <segue destination="eFh-Dt-lvQ" kind="custom" identifier="EmbedWords" customClass="EmptySegue" customModule="Dragon_Cave" customModuleProvider="target" id="I9q-Td-Lqa"/>
                         <segue destination="2bJ-av-Z7k" kind="custom" identifier="EmbedDragons" customClass="EmptySegue" customModule="Dragon_Cave" customModuleProvider="target" id="p2R-0d-s2v"/>
@@ -386,6 +386,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PZ6-Su-LZS"/>
+        <segue reference="tX6-m1-g3o"/>
     </inferredMetricsTieBreakers>
 </document>

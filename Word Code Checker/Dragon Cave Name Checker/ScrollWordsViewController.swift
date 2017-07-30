@@ -11,45 +11,7 @@ import UIKit
 class ScrollWordsViewController: UITableViewController {
     var dragonDataSource: DragonsDataSource? = nil
     
-    fileprivate var totalDragonsSeen = 0
-    
-    fileprivate var remainingDragonsToProcess = 0 {
-        didSet {
-            if remainingDragonsToProcess == 0 {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            }
-        }
-    }
-    
-    fileprivate var totalProcessedDragons: Int {
-        return totalDragonsSeen - remainingDragonsToProcess
-    }
-    
-    fileprivate var scrollName: String? = nil {
-        didSet {
-            guard let scrollName = scrollName else { return }
-            
-            // Update UI
-            remainingDragonsToProcess = 0
-            totalDragonsSeen = 0
-            wordToDragons = []
-            tableView.reloadData()
-            title = scrollName
-            updateProcessingText()
-        }
-    }
-    
-    fileprivate var processingText: String {
-        let wordCount = wordToDragons.count
-        if remainingDragonsToProcess > 0 {
-            return "\(wordCount) words from \(totalProcessedDragons)/\(totalDragonsSeen) dragons"
-        }
-        return "\(wordCount) words from \(totalDragonsSeen) dragons"
-    }
-    
     fileprivate var wordToDragons = [WordToDragon]()
-    
-    @IBOutlet weak var processingTextBarButtonItem: UIBarButtonItem!
     
     fileprivate var scrollParser: ScrollParser!
     
@@ -63,21 +25,6 @@ class ScrollWordsViewController: UITableViewController {
         if let dataSource = dragonDataSource {
             display(dragons: dataSource.initalDragons())
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.isToolbarHidden = false
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        navigationController?.isToolbarHidden = true
-    }
-    
-    
-    fileprivate func updateProcessingText() {
-        processingTextBarButtonItem.title = processingText
     }
 }
 
@@ -104,7 +51,11 @@ extension ScrollWordsViewController: DisplayDragons {
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: newIndexPaths, with: .fade)
         self.tableView.endUpdates()
-
+    }
+    
+    func reset() {
+        wordToDragons = []
+        tableView.reloadSections(IndexSet([0]), with: .automatic)
     }
 }
 

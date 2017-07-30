@@ -99,16 +99,10 @@ extension ScrollDragonsViewController: DisplayDragons {
         
     }
     
-    //        dragons = dragons + dragonsWithWords
-    //        let indexPaths = newDragons.flatMap { dragon -> IndexPath? in
-    //            guard let row = self.dragons.index(of: dragon) else { return nil }
-    //            return IndexPath(row: row, section: 0)
-    //        }
-    //
-    //        self.tableView.beginUpdates()
-    //        self.tableView.insertRows(at: indexPaths, with: .fade)
-    //        self.tableView.endUpdates()
-    //    }
+    func reset() {
+        dragons = []
+        tableView.reloadSections(IndexSet([0]), with: .automatic)
+    }
 }
 
 extension ScrollDragonsViewController {

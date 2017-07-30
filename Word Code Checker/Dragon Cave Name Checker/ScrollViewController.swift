@@ -12,6 +12,7 @@ class ScrollViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var processingTextBarButtonItem: UIBarButtonItem!
     
     fileprivate var wordsViewController: ScrollWordsViewController?
     fileprivate var dragonsViewController: ScrollDragonsViewController?
@@ -19,11 +20,61 @@ class ScrollViewController: UIViewController {
     fileprivate var dragons = [Dragon]()
     fileprivate var scrollParser: ScrollParser?
     
+    fileprivate var totalDragonsSeen = 0
+    
+    fileprivate var remainingDragonsToProcess = 0 {
+        didSet {
+            if remainingDragonsToProcess == 0 {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
+        }
+    }
+    
+    fileprivate var totalProcessedDragons: Int {
+        return totalDragonsSeen - remainingDragonsToProcess
+    }
+    
+    fileprivate var wordCount: Int {
+        return dragons.reduce(0, { previous, dragon -> Int in
+            if let words = dragon.words {
+                return previous + words.count
+            }
+            return previous
+        })
+    }
+    
+    fileprivate var processingText: String {
+        guard totalDragonsSeen > 0 else {
+            return "Starting Process..."
+        }
+        
+        let wordCount = self.wordCount
+        if remainingDragonsToProcess > 0 {
+            return "\(wordCount) words from \(totalProcessedDragons)/\(totalDragonsSeen) dragons"
+        }
+        return "\(wordCount) words from \(totalDragonsSeen) dragons"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         performSegue(withIdentifier: "EmbedWords", sender: nil)
         
         showScrollNameEntry()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.isToolbarHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.isToolbarHidden = true
+    }
+    
+    
+    fileprivate func updateProcessingText() {
+        processingTextBarButtonItem.title = processingText
     }
 }
 
@@ -39,16 +90,25 @@ extension ScrollViewController: ScrollParserDelegate {
     
     func parser(_ parser: ScrollParser, finishedScroll scrollName: String, error: ScrollParser.Error?) {}
     
-    func parser(_ parser: ScrollParser, parsed dragons: [Dragon], from scrollName: String) {
+    func parser(_ parser: ScrollParser, parsed newDragons: [Dragon], from scrollName: String) {
         
-        wordsViewController?.display(dragons: dragons)
-        dragonsViewController?.display(dragons: dragons)
+        totalDragonsSeen += newDragons.count
+        remainingDragonsToProcess +=  newDragons.count
+        self.updateProcessingText()
+        
+        wordsViewController?.display(dragons: newDragons)
+        dragonsViewController?.display(dragons: newDragons)
         
         let batchSize = 5
-        for batch in dragons.batches(of: batchSize) {
+        for batch in newDragons.batches(of: batchSize) {
             DragonCodeProcessor.shared.process(dragons: batch) { processedDragons in
+                
                 self.dragons.append(contentsOf: processedDragons)
+                self.remainingDragonsToProcess -=  batchSize
+                
                 DispatchQueue.main.async {
+                    self.updateProcessingText()
+                    
                     self.wordsViewController?.display(dragons: processedDragons)
                     self.dragonsViewController?.display(dragons: processedDragons)
                 }
@@ -143,13 +203,26 @@ fileprivate extension ScrollViewController {
         
         let done = UIAlertAction(title: "Done", style: .default, handler: { _ in
             guard let scrollName = alert.textFields?[0].text, scrollName.characters.count > 0 else { return }
-            self.scrollParser = ScrollParser(scrollName: scrollName, delegate: self )
-            self.scrollParser?.start()
+            self.parseScroll(named: scrollName)
         })
         
         alert.addAction(cancel)
         alert.addAction(done)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func parseScroll(named scrollName: String) {
+        scrollParser = nil
+        DragonCodeProcessor.shared.cancelAllProcessing()
+        dragons.removeAll()
+        remainingDragonsToProcess = 0
+        totalDragonsSeen = 0
+        updateProcessingText()
+        wordsViewController?.reset()
+        dragonsViewController?.reset()
+        
+        scrollParser = ScrollParser(scrollName: scrollName, delegate: self )
+        scrollParser?.start()
     }
 }

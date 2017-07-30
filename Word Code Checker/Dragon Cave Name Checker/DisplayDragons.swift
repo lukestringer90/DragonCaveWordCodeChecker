@@ -11,6 +11,7 @@ import Foundation
 protocol DisplayDragons {
     var dragonDataSource: DragonsDataSource? { get set }
     func display(dragons: [Dragon])
+    func reset()
 }
 
 protocol DragonsDataSource {
