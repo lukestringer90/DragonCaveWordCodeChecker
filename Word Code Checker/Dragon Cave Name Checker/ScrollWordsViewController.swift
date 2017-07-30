@@ -102,10 +102,10 @@ extension ScrollWordsViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let wordToDragon = wordToDragons[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Word")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Word") as! ScrollWordCell
         
-        cell.textLabel?.text = wordToDragon.word.text()
-        cell.detailTextLabel?.text = wordToDragon.dragon.name
+        cell.wordLabel?.text = wordToDragon.word.text()
+        cell.codeLabel?.text = wordToDragon.dragon.name
         
         return cell
     }

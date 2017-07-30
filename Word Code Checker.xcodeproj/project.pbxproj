@@ -14,7 +14,7 @@
 		F53624061F2B6E8E006F1FC0 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623DD1F2B6E8E006F1FC0 /* Array+Helpers.swift */; };
 		F53624081F2B6E8E006F1FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53623DF1F2B6E8E006F1FC0 /* LaunchScreen.storyboard */; };
 		F53624091F2B6E8E006F1FC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F53623E11F2B6E8E006F1FC0 /* Main.storyboard */; };
-		F536240A1F2B6E8E006F1FC0 /* CodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E31F2B6E8E006F1FC0 /* CodeCell.swift */; };
+		F536240A1F2B6E8E006F1FC0 /* ScrollDragonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E31F2B6E8E006F1FC0 /* ScrollDragonCell.swift */; };
 		F536240B1F2B6E8E006F1FC0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623E41F2B6E8E006F1FC0 /* Config.swift */; };
 		F536240C1F2B6E8E006F1FC0 /* countries_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F53623E51F2B6E8E006F1FC0 /* countries_names.txt */; };
 		F536240D1F2B6E8E006F1FC0 /* country_codes.csv in Resources */ = {isa = PBXBuildFile; fileRef = F53623E61F2B6E8E006F1FC0 /* country_codes.csv */; };
@@ -63,6 +63,7 @@
 		F55BFFEE1F2E2F2000415DFF /* lulu_witch_5.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F61F2B6E8E006F1FC0 /* lulu_witch_5.html */; };
 		F55BFFEF1F2E2F2000415DFF /* lulu_witch_6.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F71F2B6E8E006F1FC0 /* lulu_witch_6.html */; };
 		F55BFFF01F2E2F2000415DFF /* lulu_witch_7.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F81F2B6E8E006F1FC0 /* lulu_witch_7.html */; };
+		F55BFFF21F2E391F00415DFF /* ScrollWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFF11F2E391F00415DFF /* ScrollWordCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +90,7 @@
 		F53623DD1F2B6E8E006F1FC0 /* Array+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Helpers.swift"; sourceTree = "<group>"; };
 		F53623E01F2B6E8E006F1FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F53623E21F2B6E8E006F1FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F53623E31F2B6E8E006F1FC0 /* CodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
+		F53623E31F2B6E8E006F1FC0 /* ScrollDragonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDragonCell.swift; sourceTree = "<group>"; };
 		F53623E41F2B6E8E006F1FC0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F53623E51F2B6E8E006F1FC0 /* countries_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries_names.txt; sourceTree = "<group>"; };
 		F53623E61F2B6E8E006F1FC0 /* country_codes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = country_codes.csv; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 		F55BFFDB1F2E29C500415DFF /* ScrollParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollParserTests.swift; sourceTree = "<group>"; };
 		F55BFFDD1F2E29C500415DFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F55BFFE41F2E2D3200415DFF /* HTMLDocument+XPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTMLDocument+XPath.swift"; sourceTree = "<group>"; };
+		F55BFFF11F2E391F00415DFF /* ScrollWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollWordCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,7 +274,8 @@
 		F53624311F2B6F26006F1FC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F53623E31F2B6E8E006F1FC0 /* CodeCell.swift */,
+				F53623E31F2B6E8E006F1FC0 /* ScrollDragonCell.swift */,
+				F55BFFF11F2E391F00415DFF /* ScrollWordCell.swift */,
 				F55BFFCB1F2D2C3C00415DFF /* EmptySegue.swift */,
 			);
 			name = Views;
@@ -574,10 +577,11 @@
 				F536242B1F2B6E8E006F1FC0 /* DragonWordsViewController.swift in Sources */,
 				F536242A1F2B6E8E006F1FC0 /* WordReference.swift in Sources */,
 				F536240B1F2B6E8E006F1FC0 /* Config.swift in Sources */,
+				F55BFFF21F2E391F00415DFF /* ScrollWordCell.swift in Sources */,
 				F55BFFCA1F2D204A00415DFF /* WordToDragon.swift in Sources */,
 				F53624271F2B6E8E006F1FC0 /* String+Words.swift in Sources */,
 				F53624101F2B6E8E006F1FC0 /* DragonWebPageViewController.swift in Sources */,
-				F536240A1F2B6E8E006F1FC0 /* CodeCell.swift in Sources */,
+				F536240A1F2B6E8E006F1FC0 /* ScrollDragonCell.swift in Sources */,
 				F53624261F2B6E8E006F1FC0 /* ScrollWordsViewController.swift in Sources */,
 				F53624251F2B6E8E006F1FC0 /* ScrollParser.swift in Sources */,
 				F55BFFD21F2DF8B200415DFF /* DisplayDragons.swift in Sources */,
