@@ -13,7 +13,7 @@
         <!--Scroll-->
         <scene sceneID="MVf-Sm-r3x">
             <objects>
-                <tableViewController id="2bJ-av-Z7k" customClass="ScrollDragonsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DragonsViewController" id="2bJ-av-Z7k" customClass="ScrollDragonsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="kfv-AH-53c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
         <!--Scroll-->
         <scene sceneID="6oD-1S-FeA">
             <objects>
-                <tableViewController id="eFh-Dt-lvQ" customClass="ScrollWordsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WordsViewController" id="eFh-Dt-lvQ" customClass="ScrollWordsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V88-99-i2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,13 +177,7 @@
                         <barButtonItem id="nH0-qI-s6C"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ZrV-Yy-NxX"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Scroll" id="E8z-6D-pM0">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="STr-dH-VLb">
-                            <connections>
-                                <action selector="searchTapped:" destination="eFh-Dt-lvQ" id="gM2-jQ-fCE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Scroll" id="E8z-6D-pM0"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="processingTextBarButtonItem" destination="QkP-kp-YC9" id="fl3-wE-cTF"/>
@@ -276,6 +270,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="ggy-fE-hRv">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="B8I-UV-BfD">
+                            <connections>
+                                <action selector="filterTapped:" destination="6Gs-22-JWZ" id="Hn9-Pr-UHM"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Dfi-1F-Ek4">
                             <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -287,6 +286,11 @@
                                 <action selector="segmentedControlValueChanged:" destination="6Gs-22-JWZ" eventType="valueChanged" id="yOR-Xr-cYP"/>
                             </connections>
                         </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Rsh-Nl-dT4">
+                            <connections>
+                                <action selector="inputScrollTapped:" destination="6Gs-22-JWZ" id="5xL-9x-G9P"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -382,6 +386,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tX6-m1-g3o"/>
+        <segue reference="PZ6-Su-LZS"/>
     </inferredMetricsTieBreakers>
 </document>

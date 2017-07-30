@@ -11,11 +11,10 @@ import Kanna
 
 class ScrollDragonsViewController: UITableViewController {
     
-    fileprivate let scrollName = "Eleeveen"
+    var dragonDataSource: DragonsDataSource? = nil
+    
     fileprivate var dragons = [Dragon]()
     
-    fileprivate var scrollParser: ScrollParser!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,9 +22,9 @@ class ScrollDragonsViewController: UITableViewController {
             registerForPreviewing(with: self, sourceView: view)
         }
         
-        title = scrollName
-        scrollParser = ScrollParser(scrollName: scrollName, delegate: self)
-        scrollParser.start()
+        if let dataSource = dragonDataSource {
+            display(dragons: dataSource.initalDragons())
+        }
     }
 }
 
@@ -71,57 +70,45 @@ extension ScrollDragonsViewController: ScrollParserDelegate {
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: indexPaths, with: .fade)
         self.tableView.endUpdates()
-        processWords(from: parsedDragons)
     }
 }
 
-extension ScrollDragonsViewController {
-    
-    func processWords(from newDragons: [Dragon]) {
-        
-        for batch in newDragons.batches(of: 50) {
-            DragonCodeProcessor.shared.process(dragons: batch) { processedDragons in
-                var toReload = [IndexPath]()
-                var toRemove = [IndexPath]()
-                
-                let dragonsWithWords = self.dragons
-                    .map { originalDragon -> Dragon in
-                        if let newDragon = processedDragons.first(where: { $0.code == originalDragon.code }) {
-                            return newDragon
-                        }
-                        return originalDragon
-                    }
-                    .filter { dragon in
-                        guard let words = dragon.words else { return true }
-                        
-                        let row = self.dragons.index(where: { $0.code == dragon.code })!
-                        let indexPath = IndexPath(row: row, section: 0 )
-                        if words.count > 0 {
-                            toReload.append(indexPath)
-                            return true
-                        }
-                        else {
-                            toRemove.append(indexPath)
-                            return false
-                        }
-                    }
-                    .sortedByKeepUnprocessedOrder()
-                
-                
-                DispatchQueue.main.async {
-                    self.dragons = dragonsWithWords
-                    self.tableView.beginUpdates()
-                    self.tableView.reloadRows(at: toReload, with: .fade)
-                    self.tableView.deleteRows(at: toRemove, with: .fade)
-                    self.tableView.endUpdates()
-                }
-                
+extension ScrollDragonsViewController: DisplayDragons {
+    func display(dragons newDragons: [Dragon]) {
+        let dragonsWithWords = newDragons
+            .filter { dragon -> Bool in
+                guard let words = dragon.words else { return false }
+                return words.count > 0
             }
+        
+        self.dragons.append(contentsOf: dragonsWithWords)
+        self.dragons.sort()
+        
+        let newIndexPaths = dragonsWithWords.flatMap { newDragon -> IndexPath? in
+            if let row = dragons.index(where: { $0.code == newDragon.code }) {
+                return IndexPath(row: row, section: 0)
+            }
+            return nil
         }
+        
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: newIndexPaths, with: .fade)
+        self.tableView.endUpdates()
+        
         
         
     }
     
+    //        dragons = dragons + dragonsWithWords
+    //        let indexPaths = newDragons.flatMap { dragon -> IndexPath? in
+    //            guard let row = self.dragons.index(of: dragon) else { return nil }
+    //            return IndexPath(row: row, section: 0)
+    //        }
+    //
+    //        self.tableView.beginUpdates()
+    //        self.tableView.insertRows(at: indexPaths, with: .fade)
+    //        self.tableView.endUpdates()
+    //    }
 }
 
 extension ScrollDragonsViewController {
@@ -132,7 +119,7 @@ extension ScrollDragonsViewController {
             else {
                 return false
         }
-    
+        
         if words.count > 0 {
             return true
         }

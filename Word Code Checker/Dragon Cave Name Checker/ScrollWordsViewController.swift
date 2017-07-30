@@ -9,7 +9,10 @@
 import UIKit
 
 class ScrollWordsViewController: UITableViewController {
+    var dragonDataSource: DragonsDataSource? = nil
+    
     fileprivate var totalDragonsSeen = 0
+    
     fileprivate var remainingDragonsToProcess = 0 {
         didSet {
             if remainingDragonsToProcess == 0 {
@@ -33,11 +36,6 @@ class ScrollWordsViewController: UITableViewController {
             tableView.reloadData()
             title = scrollName
             updateProcessingText()
-            
-            // Start parser
-            scrollParser = nil
-            scrollParser = ScrollParser(scrollName: scrollName, delegate: self)
-            scrollParser.start()
         }
     }
     
@@ -62,7 +60,9 @@ class ScrollWordsViewController: UITableViewController {
             registerForPreviewing(with: self, sourceView: view)
         }
         
-        showScrollNameEntry()
+        if let dataSource = dragonDataSource {
+            display(dragons: dataSource.initalDragons())
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,6 +81,32 @@ class ScrollWordsViewController: UITableViewController {
     }
 }
 
+extension ScrollWordsViewController: DisplayDragons {
+    func display(dragons: [Dragon]) {
+        let newEntries = dragons
+            .flatMap { dragon -> [WordToDragon]? in
+                if let words = dragon.words {
+                    return words.map { WordToDragon(word: $0, dragon: dragon) }
+                }
+                return nil
+            }
+            .flatMap { $0 }
+        self.wordToDragons.append(contentsOf: newEntries)
+        self.wordToDragons.sort()
+        
+        let newIndexPaths = newEntries.flatMap { wordDragon -> IndexPath? in
+            if let row = self.wordToDragons.index(of: wordDragon) {
+                return IndexPath(row: row, section: 0)
+            }
+            return nil
+        }
+        
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: newIndexPaths, with: .fade)
+        self.tableView.endUpdates()
+
+    }
+}
 
 extension ScrollWordsViewController: UIViewControllerPreviewingDelegate {
     
@@ -100,87 +126,6 @@ extension ScrollWordsViewController: UIViewControllerPreviewingDelegate {
     public func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.isToolbarHidden = false
         navigationController?.show(viewControllerToCommit, sender: self)
-    }
-}
-
-fileprivate extension ScrollWordsViewController {
-    
-    @IBAction func searchTapped(_ sender: Any) {
-        showScrollNameEntry()
-    }
-    
-    func showScrollNameEntry() {
-        let alert = UIAlertController(title: "Scroll Name", message: "Enter a scroll name to look for words.", preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.placeholder = "Scroll name"
-            textField.text = "lulu_witch"
-            textField.clearButtonMode = .always
-        }
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        let done = UIAlertAction(title: "Done", style: .default, handler: { _ in
-            guard let text = alert.textFields?[0].text, text.characters.count > 0 else { return }
-            self.scrollName = text
-        })
-        
-        alert.addAction(cancel)
-        alert.addAction(done)
-        
-        present(alert, animated: true, completion: nil)
-    }
-}
-
-extension ScrollWordsViewController: ScrollParserDelegate {
-    
-    func parser(_ parser: ScrollParser, startedScroll scrollName: String) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-    
-    func parser(_ parser: ScrollParser, finishedScroll scrollName: String, error: ScrollParser.Error?) {
-    }
-    
-    func parser(_ parser: ScrollParser, parsed parsedDragons: [Dragon], from scrollName: String) {
-        remainingDragonsToProcess += parsedDragons.count
-        totalDragonsSeen += parsedDragons.count
-        processWords(from: parsedDragons)
-    }
-}
-
-extension ScrollWordsViewController {
-    func processWords(from newDragons: [Dragon]) {
-        
-        let batchSize = 1
-        for batch in newDragons.batches(of: batchSize) {
-            DragonCodeProcessor.shared.process(dragons: batch) { processedDragons in
-                self.remainingDragonsToProcess -= batchSize
-                
-                let newEntries = processedDragons
-                    .flatMap { dragon -> [WordToDragon]? in
-                        if let words = dragon.words {
-                            return words.map { WordToDragon(word: $0, dragon: dragon) }
-                        }
-                        return nil
-                    }
-                    .flatMap { $0 }
-                self.wordToDragons.append(contentsOf: newEntries)
-                self.wordToDragons.sort()
-                
-                let newIndexPaths = newEntries.flatMap { wordDragon -> IndexPath? in
-                    if let row = self.wordToDragons.index(of: wordDragon) {
-                        return IndexPath(row: row, section: 0)
-                    }
-                    return nil
-                }
-                
-                DispatchQueue.main.async {
-                    self.updateProcessingText()
-                    self.tableView.beginUpdates()
-                    self.tableView.insertRows(at: newIndexPaths, with: .fade)
-                    self.tableView.endUpdates()
-                }
-            }
-        }
     }
 }
 
