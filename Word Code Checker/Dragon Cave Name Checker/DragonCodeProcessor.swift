@@ -19,7 +19,7 @@ class DragonCodeProcessor {
     
     private func setupOperationQueue() {
         operationQueue = OperationQueue()
-        operationQueue.maxConcurrentOperationCount = 1
+        operationQueue.maxConcurrentOperationCount = 5
     }
     
     func cancelAllProcessing() {
@@ -40,6 +40,7 @@ class DragonCodeProcessor {
         }
         
         operation.completionBlock = {
+            guard !operation.isCancelled else { return }
             completion(processedDragons)
         }
         
