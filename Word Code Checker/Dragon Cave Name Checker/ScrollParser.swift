@@ -111,19 +111,18 @@ extension ScrollParser {
 fileprivate extension HTMLDocument {
     
     func hasMoreScrollPages() -> Bool {
-        return true
+//        return true
         
         // TODO: This doesn't work for: https://dragcave.net/user/Velociraptor/100
         // There are more pages if the text "Last" is not a <span>
-        return
-            xpath("//span[@class=\"_29_1\"]")
-            .filter { element -> Bool in
+            let allLastMatches = xpath("//span[@class=\"_29_1\"]")
+            .flatMap { element -> String? in
                 if let text = element.text, text.contains("Last") {
-                    return true
+                    return text
                 }
-                return false
+                return nil
             }
-            .count == 0
+            return Set(allLastMatches).count == 0
     }
     
     func dragonHTML() -> XPathObject {
