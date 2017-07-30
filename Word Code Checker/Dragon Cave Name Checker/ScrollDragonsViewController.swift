@@ -57,21 +57,15 @@ extension ScrollDragonsViewController: DisplayDragons {
                 return words.count > 0
             }
         
+        let before = self.dragons
+        
         self.dragons.append(contentsOf: dragonsWithWords)
         self.dragons.sort()
         
-        let newIndexPaths = dragonsWithWords.flatMap { newDragon -> IndexPath? in
-            if let row = dragons.index(where: { $0.code == newDragon.code }) {
-                return IndexPath(row: row, section: 0)
-            }
-            return nil
-        }
+        let after = self.dragons
         
-        // TODO: This doesn't always work, something to do with scrolling
-        // For example a row will show dragon A, but really at that index it should be showing dragon B
-        self.tableView.beginUpdates()
-        self.tableView.insertRows(at: newIndexPaths, with: .fade)
-        self.tableView.endUpdates()
+        let changeSet = before.changes(to: after)
+        changeSet.executeUpdates(to: tableView)
     }
     
     func reset() {

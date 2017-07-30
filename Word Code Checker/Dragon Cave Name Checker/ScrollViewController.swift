@@ -50,7 +50,7 @@ class ScrollViewController: UIViewController {
         
         let wordCount = self.wordCount
         if remainingDragonsToProcess > 0 {
-            return "\(wordCount) words from \(totalProcessedDragons)/\(totalDragonsSeen) dragons"
+            return "Processing \(wordCount) words from \(totalProcessedDragons)/\(totalDragonsSeen) dragons..."
         }
         return "\(wordCount) words from \(totalDragonsSeen) dragons"
     }

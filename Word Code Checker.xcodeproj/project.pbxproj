@@ -64,6 +64,8 @@
 		F55BFFEF1F2E2F2000415DFF /* lulu_witch_6.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F71F2B6E8E006F1FC0 /* lulu_witch_6.html */; };
 		F55BFFF01F2E2F2000415DFF /* lulu_witch_7.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F81F2B6E8E006F1FC0 /* lulu_witch_7.html */; };
 		F55BFFF21F2E391F00415DFF /* ScrollWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFF11F2E391F00415DFF /* ScrollWordCell.swift */; };
+		F5CF980B1F2E5D30005CAF49 /* ChangeSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF980A1F2E5D30005CAF49 /* ChangeSetTests.swift */; };
+		F5CF980D1F2E7235005CAF49 /* ChangeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF980C1F2E7235005CAF49 /* ChangeSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		F55BFFDD1F2E29C500415DFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F55BFFE41F2E2D3200415DFF /* HTMLDocument+XPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTMLDocument+XPath.swift"; sourceTree = "<group>"; };
 		F55BFFF11F2E391F00415DFF /* ScrollWordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollWordCell.swift; sourceTree = "<group>"; };
+		F5CF980A1F2E5D30005CAF49 /* ChangeSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSetTests.swift; sourceTree = "<group>"; };
+		F5CF980C1F2E7235005CAF49 /* ChangeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,7 @@
 				F53623E71F2B6E8E006F1FC0 /* Dragon.swift */,
 				F53624021F2B6E8E006F1FC0 /* Word.swift */,
 				F55BFFC91F2D204A00415DFF /* WordToDragon.swift */,
+				F5CF980C1F2E7235005CAF49 /* ChangeSet.swift */,
 			);
 			name = Models;
 			path = "Dragon Cave Name Checker";
@@ -333,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				F55BFFDB1F2E29C500415DFF /* ScrollParserTests.swift */,
+				F5CF980A1F2E5D30005CAF49 /* ChangeSetTests.swift */,
 				F55BFFDD1F2E29C500415DFF /* Info.plist */,
 			);
 			path = UnitTests;
@@ -582,6 +588,7 @@
 				F55BFFCA1F2D204A00415DFF /* WordToDragon.swift in Sources */,
 				F53624271F2B6E8E006F1FC0 /* String+Words.swift in Sources */,
 				F53624101F2B6E8E006F1FC0 /* DragonWebPageViewController.swift in Sources */,
+				F5CF980D1F2E7235005CAF49 /* ChangeSet.swift in Sources */,
 				F536240A1F2B6E8E006F1FC0 /* ScrollDragonCell.swift in Sources */,
 				F53624261F2B6E8E006F1FC0 /* ScrollWordsViewController.swift in Sources */,
 				F53624251F2B6E8E006F1FC0 /* ScrollParser.swift in Sources */,
@@ -599,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5CF980B1F2E5D30005CAF49 /* ChangeSetTests.swift in Sources */,
 				F55BFFDC1F2E29C500415DFF /* ScrollParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
