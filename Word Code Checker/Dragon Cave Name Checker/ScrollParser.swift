@@ -42,7 +42,7 @@ extension ScrollParser {
     func start() {
         self.delegate.parser(self, startedScroll: scrollName)
         
-        parse(page: 10)
+        parse(page: 1)
     }
     
     private func parse(page pageNumber: Int) {
@@ -108,24 +108,3 @@ extension ScrollParser {
     }
 }
 
-fileprivate extension HTMLDocument {
-    
-    func hasMoreScrollPages() -> Bool {
-//        return true
-        
-        // TODO: This doesn't work for: https://dragcave.net/user/Velociraptor/100
-        // There are more pages if the text "Last" is not a <span>
-            let allLastMatches = xpath("//span[@class=\"_29_1\"]")
-            .flatMap { element -> String? in
-                if let text = element.text, text.contains("Last") {
-                    return text
-                }
-                return nil
-            }
-            return Set(allLastMatches).count == 0
-    }
-    
-    func dragonHTML() -> XPathObject {
-        return xpath("//*[@id=\"udragonlist\"]/tbody/tr")
-    }
-}

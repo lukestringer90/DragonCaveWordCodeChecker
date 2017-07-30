@@ -13,13 +13,13 @@
         <!--Scroll-->
         <scene sceneID="MVf-Sm-r3x">
             <objects>
-                <tableViewController storyboardIdentifier="DragonsViewController" id="2bJ-av-Z7k" customClass="ScrollDragonsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DragonsViewController" id="2bJ-av-Z7k" customClass="ScrollDragonsViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="kfv-AH-53c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processing" rowHeight="60" id="fbd-3D-1Xz" customClass="CodeCell" customModule="Dragon_Cave" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processing" rowHeight="60" id="fbd-3D-1Xz" customClass="CodeCell" customModule="Word_Code_Checker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" tableViewCell="fbd-3D-1Xz" id="1Xt-5A-O33">
@@ -65,7 +65,7 @@
                                     <outlet property="nameLabel" destination="v5i-75-t5o" id="uqZ-gc-TOh"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processed" rowHeight="60" id="BYR-AP-Gqz" customClass="CodeCell" customModule="Dragon_Cave" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Processed" rowHeight="60" id="BYR-AP-Gqz" customClass="CodeCell" customModule="Word_Code_Checker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" layoutMarginsFollowReadableWidth="YES" tableViewCell="BYR-AP-Gqz" id="5jC-qn-JYJ">
@@ -132,7 +132,7 @@
         <!--Scroll-->
         <scene sceneID="6oD-1S-FeA">
             <objects>
-                <tableViewController storyboardIdentifier="WordsViewController" id="eFh-Dt-lvQ" customClass="ScrollWordsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WordsViewController" id="eFh-Dt-lvQ" customClass="ScrollWordsViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V88-99-i2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,7 +184,7 @@
         <!--Dragon Name-->
         <scene sceneID="3Fu-ZZ-SoP">
             <objects>
-                <viewController storyboardIdentifier="DragonWebViewController" title="Dragon Name" id="GSV-rQ-ad0" customClass="DragonWebPageViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DragonWebViewController" title="Dragon Name" id="GSV-rQ-ad0" customClass="DragonWebPageViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JgO-k2-JOe"/>
                         <viewControllerLayoutGuide type="bottom" id="uUK-Jp-15Q"/>
@@ -241,7 +241,7 @@
         <!--Scroll View Controller-->
         <scene sceneID="Gsf-bd-GAo">
             <objects>
-                <viewController id="6Gs-22-JWZ" customClass="ScrollViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Gs-22-JWZ" customClass="ScrollViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3b1-eB-ogQ"/>
                         <viewControllerLayoutGuide type="bottom" id="hLS-lW-qse"/>
@@ -296,8 +296,8 @@
                         <outlet property="containerView" destination="oLg-rg-cUV" id="Ene-94-72c"/>
                         <outlet property="processingTextBarButtonItem" destination="9np-b9-911" id="1GX-I4-rhv"/>
                         <outlet property="segmentedControl" destination="Dfi-1F-Ek4" id="cvY-zB-ZnU"/>
-                        <segue destination="eFh-Dt-lvQ" kind="custom" identifier="EmbedWords" customClass="EmptySegue" customModule="Dragon_Cave" customModuleProvider="target" id="I9q-Td-Lqa"/>
-                        <segue destination="2bJ-av-Z7k" kind="custom" identifier="EmbedDragons" customClass="EmptySegue" customModule="Dragon_Cave" customModuleProvider="target" id="p2R-0d-s2v"/>
+                        <segue destination="eFh-Dt-lvQ" kind="custom" identifier="EmbedWords" customClass="EmptySegue" customModule="Word_Code_Checker" customModuleProvider="target" id="I9q-Td-Lqa"/>
+                        <segue destination="2bJ-av-Z7k" kind="custom" identifier="EmbedDragons" customClass="EmptySegue" customModule="Word_Code_Checker" customModuleProvider="target" id="p2R-0d-s2v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJN-5H-mjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,7 +307,7 @@
         <!--Code-->
         <scene sceneID="mxK-vc-aGc">
             <objects>
-                <tableViewController id="CI8-vf-sXE" customClass="WordsViewController" customModule="Dragon_Cave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CI8-vf-sXE" customClass="WordsViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RG6-eV-XfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

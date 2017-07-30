@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		231D07FBF90609640034A33D /* Pods_Word_Code_Checker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB2B75019B83C0C28AC78B2 /* Pods_Word_Code_Checker.framework */; };
+		BD71BC8507CA0AD51BB52C99 /* Pods_UnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAE919941173C879292FD7E /* Pods_UnitTests.framework */; };
 		F53621EB1F2B6E40006F1FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F53621EA1F2B6E40006F1FC0 /* Assets.xcassets */; };
 		F53624051F2B6E8E006F1FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623DC1F2B6E8E006F1FC0 /* AppDelegate.swift */; };
 		F53624061F2B6E8E006F1FC0 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53623DD1F2B6E8E006F1FC0 /* Array+Helpers.swift */; };
@@ -49,11 +50,38 @@
 		F55BFFCE1F2D2D5300415DFF /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFCD1F2D2D5300415DFF /* ScrollViewController.swift */; };
 		F55BFFD21F2DF8B200415DFF /* DisplayDragons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFD11F2DF8B200415DFF /* DisplayDragons.swift */; };
 		F55BFFD41F2E099000415DFF /* velociraptor_10.html in Resources */ = {isa = PBXBuildFile; fileRef = F55BFFD31F2E099000415DFF /* velociraptor_10.html */; };
+		F55BFFDC1F2E29C500415DFF /* ScrollParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFDB1F2E29C500415DFF /* ScrollParserTests.swift */; };
+		F55BFFE31F2E2B4A00415DFF /* velociraptor_10.html in Resources */ = {isa = PBXBuildFile; fileRef = F55BFFD31F2E099000415DFF /* velociraptor_10.html */; };
+		F55BFFE51F2E2D3200415DFF /* HTMLDocument+XPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BFFE41F2E2D3200415DFF /* HTMLDocument+XPath.swift */; };
+		F55BFFE61F2E2F2000415DFF /* lulu_witch_1.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623EE1F2B6E8E006F1FC0 /* lulu_witch_1.html */; };
+		F55BFFE71F2E2F2000415DFF /* lulu_witch_10.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623EF1F2B6E8E006F1FC0 /* lulu_witch_10.html */; };
+		F55BFFE81F2E2F2000415DFF /* lulu_witch_11.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F01F2B6E8E006F1FC0 /* lulu_witch_11.html */; };
+		F55BFFE91F2E2F2000415DFF /* lulu_witch_12.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F11F2B6E8E006F1FC0 /* lulu_witch_12.html */; };
+		F55BFFEA1F2E2F2000415DFF /* lulu_witch_13.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F21F2B6E8E006F1FC0 /* lulu_witch_13.html */; };
+		F55BFFEB1F2E2F2000415DFF /* lulu_witch_2.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F31F2B6E8E006F1FC0 /* lulu_witch_2.html */; };
+		F55BFFEC1F2E2F2000415DFF /* lulu_witch_3.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F41F2B6E8E006F1FC0 /* lulu_witch_3.html */; };
+		F55BFFED1F2E2F2000415DFF /* lulu_witch_4.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F51F2B6E8E006F1FC0 /* lulu_witch_4.html */; };
+		F55BFFEE1F2E2F2000415DFF /* lulu_witch_5.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F61F2B6E8E006F1FC0 /* lulu_witch_5.html */; };
+		F55BFFEF1F2E2F2000415DFF /* lulu_witch_6.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F71F2B6E8E006F1FC0 /* lulu_witch_6.html */; };
+		F55BFFF01F2E2F2000415DFF /* lulu_witch_7.html in Resources */ = {isa = PBXBuildFile; fileRef = F53623F81F2B6E8E006F1FC0 /* lulu_witch_7.html */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F55BFFDE1F2E29C500415DFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F53621D81F2B6E40006F1FC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F53621DF1F2B6E40006F1FC0;
+			remoteInfo = "Word Code Checker";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0EAE919941173C879292FD7E /* Pods_UnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BC35BCFE1CD1314FBDECAB /* Pods-UnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2CB2B75019B83C0C28AC78B2 /* Pods_Word_Code_Checker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Word_Code_Checker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E78B0EF4CBF5CEF46FACDB2 /* Pods-Word Code Checker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word Code Checker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Word Code Checker/Pods-Word Code Checker.release.xcconfig"; sourceTree = "<group>"; };
+		4E4979917C3DE91A74C8F0E2 /* Pods-UnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests.release.xcconfig"; sourceTree = "<group>"; };
 		6488939A557D80E8062BB3EF /* Pods-Word Code Checker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word Code Checker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Word Code Checker/Pods-Word Code Checker.debug.xcconfig"; sourceTree = "<group>"; };
 		F53621E01F2B6E40006F1FC0 /* Dragon Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F53621EA1F2B6E40006F1FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +126,10 @@
 		F55BFFCD1F2D2D5300415DFF /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		F55BFFD11F2DF8B200415DFF /* DisplayDragons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayDragons.swift; sourceTree = "<group>"; };
 		F55BFFD31F2E099000415DFF /* velociraptor_10.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = velociraptor_10.html; sourceTree = "<group>"; };
+		F55BFFD91F2E29C500415DFF /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55BFFDB1F2E29C500415DFF /* ScrollParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollParserTests.swift; sourceTree = "<group>"; };
+		F55BFFDD1F2E29C500415DFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55BFFE41F2E2D3200415DFF /* HTMLDocument+XPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTMLDocument+XPath.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +141,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F55BFFD61F2E29C500415DFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD71BC8507CA0AD51BB52C99 /* Pods_UnitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,6 +157,8 @@
 			children = (
 				6488939A557D80E8062BB3EF /* Pods-Word Code Checker.debug.xcconfig */,
 				3E78B0EF4CBF5CEF46FACDB2 /* Pods-Word Code Checker.release.xcconfig */,
+				22BC35BCFE1CD1314FBDECAB /* Pods-UnitTests.debug.xcconfig */,
+				4E4979917C3DE91A74C8F0E2 /* Pods-UnitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -125,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB2B75019B83C0C28AC78B2 /* Pods_Word_Code_Checker.framework */,
+				0EAE919941173C879292FD7E /* Pods_UnitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				F53621E21F2B6E40006F1FC0 /* Word Code Checker */,
+				F55BFFDA1F2E29C500415DFF /* UnitTests */,
 				F53621E11F2B6E40006F1FC0 /* Products */,
 				0E4A03DCC9D544D3388BD447 /* Pods */,
 				37500DE4E9A147233CECF9B8 /* Frameworks */,
@@ -143,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				F53621E01F2B6E40006F1FC0 /* Dragon Cave.app */,
+				F55BFFD91F2E29C500415DFF /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +266,7 @@
 			children = (
 				F53623DD1F2B6E8E006F1FC0 /* Array+Helpers.swift */,
 				F53623E41F2B6E8E006F1FC0 /* Config.swift */,
+				F55BFFE41F2E2D3200415DFF /* HTMLDocument+XPath.swift */,
 			);
 			name = Helpers;
 			path = "Dragon Cave Name Checker";
@@ -283,6 +329,15 @@
 			name = Dragon;
 			sourceTree = "<group>";
 		};
+		F55BFFDA1F2E29C500415DFF /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F55BFFDB1F2E29C500415DFF /* ScrollParserTests.swift */,
+				F55BFFDD1F2E29C500415DFF /* Info.plist */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +361,27 @@
 			productReference = F53621E01F2B6E40006F1FC0 /* Dragon Cave.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F55BFFD81F2E29C500415DFF /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F55BFFE01F2E29C500415DFF /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				372A72657A5B05858A5253DB /* [CP] Check Pods Manifest.lock */,
+				F55BFFD51F2E29C500415DFF /* Sources */,
+				F55BFFD61F2E29C500415DFF /* Frameworks */,
+				F55BFFD71F2E29C500415DFF /* Resources */,
+				8E7AC8F397AF763116716FE5 /* [CP] Embed Pods Frameworks */,
+				047BA9988E4D0A26E2237CBB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F55BFFDF1F2E29C500415DFF /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = F55BFFD91F2E29C500415DFF /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,6 +395,11 @@
 					F53621DF1F2B6E40006F1FC0 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
+					};
+					F55BFFD81F2E29C500415DFF = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F53621DF1F2B6E40006F1FC0;
 					};
 				};
 			};
@@ -336,6 +417,7 @@
 			projectRoot = "";
 			targets = (
 				F53621DF1F2B6E40006F1FC0 /* Word Code Checker */,
+				F55BFFD81F2E29C500415DFF /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -370,9 +452,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F55BFFD71F2E29C500415DFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55BFFEA1F2E2F2000415DFF /* lulu_witch_13.html in Resources */,
+				F55BFFE71F2E2F2000415DFF /* lulu_witch_10.html in Resources */,
+				F55BFFE61F2E2F2000415DFF /* lulu_witch_1.html in Resources */,
+				F55BFFE81F2E2F2000415DFF /* lulu_witch_11.html in Resources */,
+				F55BFFEF1F2E2F2000415DFF /* lulu_witch_6.html in Resources */,
+				F55BFFEB1F2E2F2000415DFF /* lulu_witch_2.html in Resources */,
+				F55BFFE91F2E2F2000415DFF /* lulu_witch_12.html in Resources */,
+				F55BFFEE1F2E2F2000415DFF /* lulu_witch_5.html in Resources */,
+				F55BFFEC1F2E2F2000415DFF /* lulu_witch_3.html in Resources */,
+				F55BFFED1F2E2F2000415DFF /* lulu_witch_4.html in Resources */,
+				F55BFFF01F2E2F2000415DFF /* lulu_witch_7.html in Resources */,
+				F55BFFE31F2E2B4A00415DFF /* velociraptor_10.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		047BA9988E4D0A26E2237CBB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		09DDC1BEC3F1743626A00464 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +502,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		372A72657A5B05858A5253DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E7AC8F397AF763116716FE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UnitTests/Pods-UnitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C2E87A1534928F5D150C9D32 /* [CP] Copy Pods Resources */ = {
@@ -440,6 +586,7 @@
 				F53624281F2B6E8E006F1FC0 /* ViewController.swift in Sources */,
 				F55BFFD21F2DF8B200415DFF /* DisplayDragons.swift in Sources */,
 				F55BFFCE1F2D2D5300415DFF /* ScrollViewController.swift in Sources */,
+				F55BFFE51F2E2D3200415DFF /* HTMLDocument+XPath.swift in Sources */,
 				F53624241F2B6E8E006F1FC0 /* ScrollDragonsViewController.swift in Sources */,
 				F536240E1F2B6E8E006F1FC0 /* Dragon.swift in Sources */,
 				F536240F1F2B6E8E006F1FC0 /* DragonCodeProcessor.swift in Sources */,
@@ -447,7 +594,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F55BFFD51F2E29C500415DFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55BFFDC1F2E29C500415DFF /* ScrollParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F55BFFDF1F2E29C500415DFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F53621DF1F2B6E40006F1FC0 /* Word Code Checker */;
+			targetProxy = F55BFFDE1F2E29C500415DFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F53623DF1F2B6E8E006F1FC0 /* LaunchScreen.storyboard */ = {
@@ -572,6 +735,7 @@
 				INFOPLIST_FILE = "Word Code Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
+				PRODUCT_MODULE_NAME = Word_Code_Checker;
 				PRODUCT_NAME = "Dragon Cave";
 				SWIFT_VERSION = 3.0;
 			};
@@ -585,8 +749,37 @@
 				INFOPLIST_FILE = "Word Code Checker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
+				PRODUCT_MODULE_NAME = Word_Code_Checker;
 				PRODUCT_NAME = "Dragon Cave";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F55BFFE11F2E29C500415DFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22BC35BCFE1CD1314FBDECAB /* Pods-UnitTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.lukestringer.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon Cave.app/Dragon Cave";
+			};
+			name = Debug;
+		};
+		F55BFFE21F2E29C500415DFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E4979917C3DE91A74C8F0E2 /* Pods-UnitTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.lukestringer.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon Cave.app/Dragon Cave";
 			};
 			name = Release;
 		};
@@ -607,6 +800,15 @@
 			buildConfigurations = (
 				F53621F31F2B6E40006F1FC0 /* Debug */,
 				F53621F41F2B6E40006F1FC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F55BFFE01F2E29C500415DFF /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55BFFE11F2E29C500415DFF /* Debug */,
+				F55BFFE21F2E29C500415DFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

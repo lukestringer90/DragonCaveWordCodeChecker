@@ -3,3 +3,9 @@ target 'Word Code Checker' do
 	
 	pod 'Kanna'
 end
+
+target 'UnitTests' do
+    use_frameworks!
+    
+    pod 'Kanna'
+end
