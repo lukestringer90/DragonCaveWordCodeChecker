@@ -13,7 +13,7 @@ extension HTMLDocument {
     
     func hasMoreScrollPages() -> Bool {
         // There are more pages if the text "Last" is a span
-        let allLastMatches = xpath("//span[@class=\"_29_1\"]")
+        let allLastMatches = xpath("//span[@class=\"_2n_1\"]")
             .flatMap { element -> String? in
                 if let text = element.text, text.contains("Last") {
                     return text
