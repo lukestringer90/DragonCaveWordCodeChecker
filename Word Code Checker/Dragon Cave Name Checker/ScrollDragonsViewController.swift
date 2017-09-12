@@ -57,15 +57,12 @@ extension ScrollDragonsViewController: DisplayDragons {
                 return words.count > 0
             }
         
-        let before = self.dragons
         
-        self.dragons.append(contentsOf: dragonsWithWords)
-        self.dragons.sort()
+        dragons.append(contentsOf: dragonsWithWords)
+        dragons = Array(Set(dragons))
+        dragons.sort()
         
-        let after = self.dragons
-        
-        let changeSet = before.changes(to: after)
-        changeSet.executeUpdates(to: tableView)
+        tableView.reloadData()
     }
     
     func reset() {
