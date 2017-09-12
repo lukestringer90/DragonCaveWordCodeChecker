@@ -37,16 +37,11 @@ extension ScrollWordsViewController: DisplayDragons {
             }
             .flatMap { $0 }
         
-        let before = wordToDragons
-        
         wordToDragons.append(contentsOf: newEntries)
         wordToDragons = Array(Set(wordToDragons))
         wordToDragons.sort()
         
-        let after = wordToDragons
-        
-        let changeSet = before.changes(to: after)
-        changeSet.executeUpdates(to: tableView)
+        tableView.reloadData()
     }
     
     func reset() {
