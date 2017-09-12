@@ -19,6 +19,7 @@ class DragonCodeProcessor {
     
     private func setupOperationQueue() {
         operationQueue = OperationQueue()
+        operationQueue.qualityOfService = .userInitiated
         operationQueue.maxConcurrentOperationCount = 1
     }
     
