@@ -37,11 +37,18 @@ extension ScrollWordsViewController: DisplayDragons {
             }
             .flatMap { $0 }
         
+        let before = wordToDragons
+        
         wordToDragons.append(contentsOf: newEntries)
         wordToDragons = Array(Set(wordToDragons))
         wordToDragons.sort()
         
-        tableView.reloadData()
+        if before != wordToDragons {
+            tableView.reloadData()
+        }
+        else {
+            print("No reload needed")
+        }
     }
     
     func reset() {
