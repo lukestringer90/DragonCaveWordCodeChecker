@@ -19,6 +19,12 @@ extension WordToDragon: Equatable {
     }
 }
 
+extension WordToDragon: Hashable {
+    var hashValue: Int {
+        return dragon.hashValue + word.hashValue
+    }
+}
+
 extension WordToDragon: Comparable {
     
     var wordLength: Int { return word.text().characters.count }

@@ -39,8 +39,9 @@ extension ScrollWordsViewController: DisplayDragons {
         
         let before = wordToDragons
         
-        self.wordToDragons.append(contentsOf: newEntries)
-        self.wordToDragons.sort()
+        wordToDragons.append(contentsOf: newEntries)
+        wordToDragons = Array(Set(wordToDragons))
+        wordToDragons.sort()
         
         let after = wordToDragons
         

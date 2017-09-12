@@ -53,6 +53,12 @@ extension Dragon: Equatable {
     }
 }
 
+extension Dragon: Hashable {
+    var hashValue: Int {
+        return code.hash
+    }
+}
+
 // Dragons with more words should come before dragons with fewer words
 // Dragons with same amount of words are sorted on code alphabetically
 extension Dragon: Comparable {

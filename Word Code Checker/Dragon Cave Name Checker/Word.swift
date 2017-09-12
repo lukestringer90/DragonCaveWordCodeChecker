@@ -74,3 +74,9 @@ extension Word: Comparable {
         return lhs.charactersCount() > rhs.charactersCount()
     }
 }
+
+extension Word: Hashable {
+    var hashValue: Int {
+        return text().hash
+    }
+}
