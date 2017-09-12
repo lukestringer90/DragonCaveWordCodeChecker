@@ -130,8 +130,7 @@ extension ScrollViewController {
             destination.didMove(toParentViewController: self)
         }
         
-        if
-            destination.traitCollection.forceTouchCapability == .available,
+        if destination.traitCollection.forceTouchCapability == .available,
             let previewingDelegate = destination as? UIViewControllerPreviewingDelegate {
             destination.registerForPreviewing(with: previewingDelegate, sourceView: destination.view)
         }

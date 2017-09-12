@@ -16,6 +16,10 @@ class ScrollWordsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
+        
         if let dataSource = dragonDataSource {
             display(dragons: dataSource.initalDragons())
         }
@@ -54,7 +58,7 @@ extension ScrollWordsViewController: UIViewControllerPreviewingDelegate {
         guard let cell = tableView?.cellForRow(at: indexPath) else { return nil }
         guard let viewController = storyboard?.instantiateViewController(withIdentifier: "DragonWebViewController") as? DragonWebPageViewController else { return nil }
         
-        let dragon = wordToDragons[indexPath.section].dragon
+        let dragon = wordToDragons[indexPath.row].dragon
         viewController.dragon = dragon
         
         previewingContext.sourceRect = cell.frame
