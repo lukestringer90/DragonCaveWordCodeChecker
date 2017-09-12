@@ -17,10 +17,7 @@ class ScrollDragonsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if traitCollection.forceTouchCapability == .available {
-            registerForPreviewing(with: self, sourceView: view)
-        }
+
         
         if let dataSource = dragonDataSource {
             display(dragons: dataSource.initalDragons())
@@ -70,6 +67,8 @@ extension ScrollDragonsViewController: DisplayDragons {
         tableView.reloadSections(IndexSet([0]), with: .automatic)
     }
 }
+
+
 
 extension ScrollDragonsViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

@@ -99,7 +99,7 @@ extension ScrollViewController: ScrollParserDelegate {
         wordsViewController?.display(dragons: newDragons)
         dragonsViewController?.display(dragons: newDragons)
         
-        let batchSize = 5
+        let batchSize = 1
         for batch in newDragons.batches(of: batchSize) {
             DragonCodeProcessor.shared.process(dragons: batch) { processedDragons in
                 
@@ -128,6 +128,12 @@ extension ScrollViewController {
         transition(from: source, to: destination, duration: 0.0, options: .layoutSubviews, animations: nil) { _ in
             source.removeFromParentViewController()
             destination.didMove(toParentViewController: self)
+        }
+        
+        if
+            destination.traitCollection.forceTouchCapability == .available,
+            let previewingDelegate = destination as? UIViewControllerPreviewingDelegate {
+            destination.registerForPreviewing(with: previewingDelegate, sourceView: destination.view)
         }
     }
     

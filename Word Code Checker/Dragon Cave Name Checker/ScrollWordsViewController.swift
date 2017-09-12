@@ -16,10 +16,6 @@ class ScrollWordsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if traitCollection.forceTouchCapability == .available {
-            registerForPreviewing(with: self, sourceView: view)
-        }
-        
         if let dataSource = dragonDataSource {
             display(dragons: dataSource.initalDragons())
         }
