@@ -8,14 +8,9 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
+class ScrollViewController: UITableViewController {
     
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var processingTextBarButtonItem: UIBarButtonItem!
-    
-    fileprivate var wordsViewController: ScrollWordsViewController?
-    fileprivate var dragonsViewController: ScrollDragonsViewController?
     
     fileprivate var dragons = [Dragon]()
     fileprivate var scrollParser: ScrollParser?
@@ -54,12 +49,16 @@ class ScrollViewController: UIViewController {
         }
         return "\(wordCount) words from \(totalDragonsSeen) dragons"
     }
+
+}
+
+extension ScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        performSegue(withIdentifier: "EmbedWords", sender: nil)
         
-        showScrollNameEntry()
+        parseScroll(named: Config.defaultScrollName)
+        //        showScrollNameEntry()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,16 +70,59 @@ class ScrollViewController: UIViewController {
         super.viewDidDisappear(animated)
         navigationController?.isToolbarHidden = true
     }
+}
+
+fileprivate extension ScrollViewController {
     
+    func process(dragons newDragons: [Dragon]) {
+        let dragonsWithWords = newDragons
+            .filter { dragon -> Bool in
+                guard let words = dragon.words else { return false }
+                return words.count > 0 && !self.dragons.contains(dragon)
+        }
+        
+        let before = dragons
+        
+        dragons.append(contentsOf: dragonsWithWords)
+        
+        if before != dragons {
+            tableView.reloadData()
+        }
+        
+        
+        tableView.reloadData()
+    }
+    
+    func resetDragons() {
+        dragons = []
+        tableView.reloadSections(IndexSet([0]), with: .automatic)
+    }
     
     fileprivate func updateProcessingText() {
         processingTextBarButtonItem.title = processingText
     }
 }
 
-extension ScrollViewController: DragonsDataSource {
-    func initalDragons() -> [Dragon] {
-        return dragons
+extension ScrollViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dragons.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let dragon = dragons[indexPath.row]
+        let wordTexts = dragon.words!.map { $0.text() }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Dragon")!
+        
+        cell.textLabel?.text = "(\(dragon.code)) - \(dragon.name)"
+        cell.detailTextLabel?.text = wordTexts.joined(separator: ", ")
+        
+        return cell
     }
 }
 
@@ -96,100 +138,30 @@ extension ScrollViewController: ScrollParserDelegate {
         remainingDragonsToProcess +=  newDragons.count
         self.updateProcessingText()
         
-        wordsViewController?.display(dragons: newDragons)
-        dragonsViewController?.display(dragons: newDragons)
-        
         let batchSize = 1
         for batch in newDragons.batches(of: batchSize) {
             DragonCodeProcessor.shared.process(dragons: batch) { processedDragons in
                 
-                self.dragons.append(contentsOf: processedDragons)
                 self.remainingDragonsToProcess -=  batchSize
                 
                 DispatchQueue.main.async {
                     self.updateProcessingText()
                     
-                    self.wordsViewController?.display(dragons: processedDragons)
-                    self.dragonsViewController?.display(dragons: processedDragons)
+                    self.process(dragons: processedDragons)
                 }
             }
         }
-
-        
     }
-}
-
-extension ScrollViewController {
-    fileprivate func swap(from source: UIViewController, to destination: UIViewController) {
-        destination.view.frame = containerView.frame
-        
-        source.willMove(toParentViewController: nil)
-        addChildViewController(destination)
-        transition(from: source, to: destination, duration: 0.0, options: .layoutSubviews, animations: nil) { _ in
-            source.removeFromParentViewController()
-            destination.didMove(toParentViewController: self)
-        }
-        
-        if destination.traitCollection.forceTouchCapability == .available,
-            let previewingDelegate = destination as? UIViewControllerPreviewingDelegate {
-            destination.registerForPreviewing(with: previewingDelegate, sourceView: destination.view)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var viewControllerToSwap: UIViewController!
-        
-        if segue.identifier == "EmbedWords" {
-            if wordsViewController == nil {
-                wordsViewController = segue.destination as? ScrollWordsViewController
-                wordsViewController?.dragonDataSource = self
-            }
-            
-            viewControllerToSwap = wordsViewController!
-        }
-        else if segue.identifier == "EmbedDragons" {
-            if dragonsViewController == nil {
-                dragonsViewController = segue.destination as? ScrollDragonsViewController
-                dragonsViewController?.dragonDataSource = self
-            }
-            
-            viewControllerToSwap = dragonsViewController!
-        }
-        
-        guard childViewControllers.count > 0 else {
-            addChildViewController(wordsViewController!)
-            view.addSubview(wordsViewController!.view)
-            segue.destination.view.frame = containerView.frame
-            segue.destination.didMove(toParentViewController: self)
-            return
-        }
-        
-        swap(from: childViewControllers.first!, to: viewControllerToSwap)
-    }
-    
-    
 }
 
 fileprivate extension ScrollViewController {
     
-    @IBAction func segmentedControlValueChanged(_ sender: Any) {
-        let nextSegueID: String = {
-            switch segmentedControl.selectedSegmentIndex {
-            case 0: return "EmbedWords"
-            case 1: return "EmbedDragons"
-            default:
-                fatalError("Unknown Segment")
-            }
-        }()
-        
-        performSegue(withIdentifier: nextSegueID, sender: nil)
-    }
-    
-    @IBAction func inputScrollTapped(_ sender: Any) {
-        showScrollNameEntry()
-    }
-    
     @IBAction func filterTapped(_ sender: Any) {
+
+    }
+    
+    @IBAction func startTapped(_ sender: Any) {
+        showScrollNameEntry()
     }
 }
 
@@ -217,14 +189,14 @@ fileprivate extension ScrollViewController {
     }
     
     func parseScroll(named scrollName: String) {
+        title = scrollName
         scrollParser = nil
         DragonCodeProcessor.shared.cancelAllProcessing()
         dragons.removeAll()
         remainingDragonsToProcess = 0
         totalDragonsSeen = 0
         updateProcessingText()
-        wordsViewController?.reset()
-        dragonsViewController?.reset()
+        resetDragons()
         
         scrollParser = ScrollParser(scrollName: scrollName, delegate: self )
         scrollParser?.start()
