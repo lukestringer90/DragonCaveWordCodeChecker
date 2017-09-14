@@ -173,7 +173,7 @@
                             <constraint firstItem="5UO-3p-Uyh" firstAttribute="centerY" secondItem="GQc-tF-gmN" secondAttribute="centerY" id="zCS-61-vqN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dragon" id="utw-AB-Jum"/>
+                    <tabBarItem key="tabBarItem" title="Dragon" image="dragon" id="utw-AB-Jum"/>
                     <navigationItem key="navigationItem" title="Dragon Name" id="Z9o-cs-Z5F"/>
                     <connections>
                         <outlet property="webView" destination="5UO-3p-Uyh" id="ed0-gG-5Kb"/>
@@ -272,7 +272,7 @@
                             <outlet property="delegate" destination="CI8-vf-sXE" id="zVV-he-46a"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Words" id="Ugj-zK-Tcn"/>
+                    <tabBarItem key="tabBarItem" title="Words" image="words" id="Ugj-zK-Tcn"/>
                     <navigationItem key="navigationItem" title="Code" id="7de-r0-rNN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Jm-cG-F7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,6 +300,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dragon" width="30" height="29"/>
         <image name="placeholder" width="21" height="21"/>
+        <image name="words" width="30" height="30"/>
     </resources>
 </document>
