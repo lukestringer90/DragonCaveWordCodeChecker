@@ -34,7 +34,7 @@ class DragonCodeProcessor {
         
         let operation = BlockOperation {
             processedDragons = dragons.map { dragon -> Dragon in
-                let words = dragon.codeLowerCased.allScrabbleWords() + dragon.codeLowerCased.allEnglishNames()
+                let words = dragon.codeLowerCased.allScrabbleWords()
                 let sorted = words.sorted()
                 return Dragon(code: dragon.code, codeLowerCased: dragon.codeLowerCased, name: dragon.name, imageURL: dragon.imageURL, words: sorted)
             }

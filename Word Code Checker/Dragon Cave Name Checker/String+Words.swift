@@ -33,28 +33,31 @@ fileprivate extension Int {
 
 fileprivate extension Array where Iterator.Element == Word {
     
-    func filter(matching strings: [String]) -> [Word] {
-        return filter { word -> Bool in
-            let stringContainsWords = strings.contains(where: { string -> Bool in
-                return string == word.text()
-            })
-            return stringContainsWords
-        }
+    func filter(matching tokenWords: [Word]) -> [Word] {
+        
+        let reference = Set(self)
+        let stringsAsWords = Set(tokenWords)
+        
+        return Array(reference.intersection(stringsAsWords))
     }
 }
 
 extension String {
     
     func allScrabbleWords() -> [Word] {
-        return WordReference.scrabble.filter(matching: tokens())
+        let tokenWords = tokens().map { Word.scrabble($0) }
+        return WordReference.scrabble.filter(matching: tokenWords)
     }
     
     func allEnglishNames() -> [Word] {
-        return WordReference.englishNames.filter(matching: tokens())
+        let tokenWords = tokens().map { Word.englishName($0) }
+        return WordReference.englishNames.filter(matching: tokenWords)
     }
     
     func allCountryCodes() -> [Word] {
-        return WordReference.countryCodes.filter(matching: tokens())
+        // Does not work
+        let tokenWords = tokens().map { Word.countryCode(code: $0, country: $0) }
+        return WordReference.countryCodes.filter(matching: tokenWords)
     }
     
     func tokens() -> [String] {
