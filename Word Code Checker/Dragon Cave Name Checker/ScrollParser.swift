@@ -92,7 +92,7 @@ extension ScrollParser {
                             return nil
                     }
                     
-                    return Dragon(code: code, name: name, imageURL: imageURL, words: nil)
+                    return Dragon(code: code, codeLowerCased: code.lowercased(), name: name, imageURL: imageURL, words: nil)
                     
                 }
                 

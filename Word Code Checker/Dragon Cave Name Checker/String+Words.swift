@@ -36,7 +36,7 @@ fileprivate extension Array where Iterator.Element == Word {
     func filter(matching strings: [String]) -> [Word] {
         return filter { word -> Bool in
             let stringContainsWords = strings.contains(where: { string -> Bool in
-                return string.lowercased() == word.text().lowercased()
+                return string == word.text()
             })
             return stringContainsWords
         }
