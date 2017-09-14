@@ -85,6 +85,8 @@ extension ScrollViewController {
         destinationTabBarController.title = dragon.friendlyName
         wordsViewController.dragon = dragon
         webViewController.dragon = dragon
+        
+        navigationController?.setToolbarHidden(true, animated: false)
     }
 }
 
