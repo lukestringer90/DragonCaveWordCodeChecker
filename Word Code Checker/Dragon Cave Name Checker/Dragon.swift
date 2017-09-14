@@ -15,6 +15,7 @@ struct Dragon {
     let words: [Word]?
     
     var friendlyName: String {
+        // If not given an explicit name then the Dragons's name is the same as it's code
         return name != code ? name : code
     }
 }
