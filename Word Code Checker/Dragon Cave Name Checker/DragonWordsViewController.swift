@@ -16,7 +16,6 @@ class DragonWordsViewController: UITableViewController {
     
     var dragon: Dragon! {
         didSet {
-            title = "\(dragon.name)"
             if let allWords = dragon.words {
                 scrabbleWords = allWords
                     .filter { word -> Bool in
@@ -39,6 +38,7 @@ class DragonWordsViewController: UITableViewController {
             }
         }
     }
+
 }
 
 fileprivate extension DragonWordsViewController {

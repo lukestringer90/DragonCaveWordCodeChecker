@@ -13,7 +13,12 @@ struct Dragon {
     let name: String
     let imageURL: URL
     let words: [Word]?
+    
+    var friendlyName: String {
+        return name != code ? name : code
+    }
 }
+
 
 extension Array where Iterator.Element == Dragon {
     func sortedByKeepUnprocessedOrder() -> [Dragon] {

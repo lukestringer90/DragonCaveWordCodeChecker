@@ -71,6 +71,21 @@ extension ScrollViewController {
         super.viewDidDisappear(animated)
         navigationController?.isToolbarHidden = true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let destinationTabBarController = segue.destination as? UITabBarController,
+            let viewControllers = destinationTabBarController.viewControllers,
+            let wordsViewController = viewControllers[0] as? DragonWordsViewController,
+            let webViewController = viewControllers[1] as? DragonWebPageViewController,
+            let selectedIndexPath = tableView.indexPathForSelectedRow
+            else { return }
+        
+        let dragon = dragons[selectedIndexPath.row]
+        destinationTabBarController.title = dragon.friendlyName
+        wordsViewController.dragon = dragon
+        webViewController.dragon = dragon
+    }
 }
 
 fileprivate extension ScrollViewController {
@@ -120,20 +135,11 @@ extension ScrollViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Dragon")!
         
-        cell.textLabel?.text = "(\(dragon.code)) - \(dragon.name)"
+        cell.textLabel?.text = "\(dragon.friendlyName)"
         cell.detailTextLabel?.text = wordTexts.joined(separator: ", ")
         cell.imageView?.af_setImage(withURL: dragon.imageURL, placeholderImage: UIImage(named: "placeholder")!)
         
         return cell
-    }
-    
-    private func description(for dragon: Dragon) -> String {
-        if dragon.name.characters.count > 0 {
-            return "(\(dragon.code)) - \(dragon.name)"
-        }
-        else {
-            return "(\(dragon.code))"
-        }
     }
 }
 

@@ -47,7 +47,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="vXa-Ci-mw2" kind="show" trigger="accessoryAction" id="M4E-hk-wQt"/>
+                                    <segue destination="vXa-Ci-mw2" kind="show" id="n3R-CO-1fE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,7 +66,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="eRl-Et-utw"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Scroll" id="xUO-Jl-YAe">
-                        <barButtonItem key="leftBarButtonItem" title="Start" id="PZX-ni-PcY">
+                        <barButtonItem key="leftBarButtonItem" title="Scroll" id="PZX-ni-PcY">
                             <connections>
                                 <action selector="startTapped:" destination="2bJ-av-Z7k" id="zG2-4T-pW3"/>
                             </connections>
@@ -202,7 +202,7 @@
         <!--Code-->
         <scene sceneID="mxK-vc-aGc">
             <objects>
-                <tableViewController id="CI8-vf-sXE" customClass="DragonWordsViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="CI8-vf-sXE" customClass="DragonWordsViewController" customModule="Word_Code_Checker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RG6-eV-XfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,7 +282,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2CZ-pi-fmO">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vXa-Ci-mw2" sceneMemberID="viewController">
+                <tabBarController id="vXa-Ci-mw2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="iEJ-N0-ISw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
