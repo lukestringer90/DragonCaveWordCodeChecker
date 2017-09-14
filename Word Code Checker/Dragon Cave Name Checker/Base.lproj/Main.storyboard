@@ -27,21 +27,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xZW-q1-soG">
-                                            <rect key="frame" x="62" y="13" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="51" y="13" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Run-b4-GAF">
-                                            <rect key="frame" x="62" y="33.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="51" y="33.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="placeholder" id="uX3-6s-PUk">
-                                            <rect key="frame" x="15" y="13" width="32" height="32"/>
+                                            <rect key="frame" x="15" y="19" width="21" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -285,6 +285,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vXa-Ci-mw2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="iEJ-N0-ISw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -299,6 +300,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder" width="32" height="32"/>
+        <image name="placeholder" width="21" height="21"/>
     </resources>
 </document>

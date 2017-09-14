@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ScrollViewController: UITableViewController {
     
@@ -121,8 +122,18 @@ extension ScrollViewController {
         
         cell.textLabel?.text = "(\(dragon.code)) - \(dragon.name)"
         cell.detailTextLabel?.text = wordTexts.joined(separator: ", ")
+        cell.imageView?.af_setImage(withURL: dragon.imageURL, placeholderImage: UIImage(named: "placeholder")!)
         
         return cell
+    }
+    
+    private func description(for dragon: Dragon) -> String {
+        if dragon.name.characters.count > 0 {
+            return "(\(dragon.code)) - \(dragon.name)"
+        }
+        else {
+            return "(\(dragon.code))"
+        }
     }
 }
 

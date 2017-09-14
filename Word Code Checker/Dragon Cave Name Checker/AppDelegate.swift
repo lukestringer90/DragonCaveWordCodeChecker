@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kanna
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
