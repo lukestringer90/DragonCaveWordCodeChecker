@@ -11,6 +11,7 @@ import Foundation
 struct Dragon {
     let code: String
     let name: String
+    let imageURL: URL
     let words: [Word]?
 }
 

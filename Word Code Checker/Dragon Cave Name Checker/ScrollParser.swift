@@ -84,13 +84,15 @@ extension ScrollParser {
                     
                     guard
                         let name = pathObject.xpath("td[2]").first?.text,
+                        let imageURLText = pathObject.xpath("td[1]/a/img").first?["src"],
+                        let imageURL = URL(string: "https://dragcave.net\(imageURLText)"),
                         let codeTag = pathObject.xpath("td[1]/a").first?["href"],
                         let code = codeTag.components(separatedBy: "/").last
                         else {
                             return nil
                     }
                     
-                    return Dragon(code: code, name: name, words: nil)
+                    return Dragon(code: code, name: name, imageURL: imageURL, words: nil)
                     
                 }
                 

@@ -36,7 +36,7 @@ class DragonCodeProcessor {
             processedDragons = dragons.map { dragon -> Dragon in
                 let words = dragon.code.allScrabbleWords() + dragon.code.allEnglishNames()
                 let sorted = words.sorted()
-                return Dragon(code: dragon.code, name: dragon.name, words: sorted)
+                return Dragon(code: dragon.code, name: dragon.name, imageURL: dragon.imageURL, words: sorted)
             }
         }
         
