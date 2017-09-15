@@ -65,13 +65,6 @@ extension ScrollParser {
             
             if let doc = HTML(html: html, encoding: .utf8) {
                 
-                guard pageNumber == 1 || doc.hasMoreScrollPages() else {
-                    DispatchQueue.main.async {
-                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
-                    }
-                    return
-                }
-                
                 let dragonHTML = doc.dragonHTML()
                 guard dragonHTML.count > 0 else {
                     DispatchQueue.main.async {
@@ -99,7 +92,16 @@ extension ScrollParser {
                 DispatchQueue.main.async {
                     self.delegate.parser(self, parsed: dragons, from: self.scrollName)
                 }
-                self.parse(page: pageNumber + 1)
+                
+                
+                if doc.hasMoreScrollPages() {
+                    self.parse(page: pageNumber + 1)
+                }
+                else {
+                    DispatchQueue.main.async {
+                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
+                    }
+                }
             }
             else {
                  DispatchQueue.main.async {
