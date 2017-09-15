@@ -3,16 +3,24 @@
 //  Dragon Cave Name Checker
 //
 //  Created by Luke Stringer on 26/07/2017.
-//  Copyright © 2017 3Squared. All rights reserved.
+//  Copyright © 2017 Luke Stringer.. All rights reserved.
 //
 
 import Foundation
 
 struct Dragon {
     let code: String
+    let codeLowerCased: String
     let name: String
+    let imageURL: URL
     let words: [Word]?
+    
+    var friendlyName: String {
+        // If not given an explicit name then the Dragons's name is the same as it's code
+        return name != code ? name : code
+    }
 }
+
 
 extension Array where Iterator.Element == Dragon {
     func sortedByKeepUnprocessedOrder() -> [Dragon] {

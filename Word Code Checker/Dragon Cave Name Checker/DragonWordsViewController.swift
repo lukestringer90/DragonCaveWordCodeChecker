@@ -3,7 +3,7 @@
 //  Dragon Cave Name Checker
 //
 //  Created by Luke Stringer on 26/07/2017.
-//  Copyright © 2017 3Squared. All rights reserved.
+//  Copyright © 2017 Luke Stringer.. All rights reserved.
 //
 
 import UIKit
@@ -13,10 +13,10 @@ class DragonWordsViewController: UITableViewController {
     fileprivate var scrabbleWords = [Word]()
     fileprivate var englishNames = [Word]()
     fileprivate var countryCodes = [Word]()
+    @IBOutlet weak var dragonInfoLabel: UILabel!
     
     var dragon: Dragon! {
         didSet {
-            title = "\(dragon.name)"
             if let allWords = dragon.words {
                 scrabbleWords = allWords
                     .filter { word -> Bool in
@@ -39,6 +39,18 @@ class DragonWordsViewController: UITableViewController {
             }
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let wordsCount = dragon.words?.count ?? 0
+        let prefix = "Code \"\(dragon.code)\" has \(wordsCount)"
+        
+        
+        dragonInfoLabel.text = wordsCount == 1 ? prefix
+            .appending(" word") : prefix
+        .appending(" words")
+    }
+
 }
 
 fileprivate extension DragonWordsViewController {
@@ -117,10 +129,10 @@ extension DragonWordsViewController {
         switch section {
         case .scrabble:
             guard scrabbleWords.count > 0 else { return nil }
-            return "Words (\(scrabbleWords.count))"
+            return "Scrabble Words (\(scrabbleWords.count))"
         case .englishNames:
             guard englishNames.count > 0 else { return nil }
-            return "Names (\(englishNames.count))"
+            return "English Names (\(englishNames.count))"
         case .countryCodes:
             guard countryCodes.count > 0 else { return nil }
             return "Country Codes (\(countryCodes.count))"

@@ -1,11 +1,10 @@
+use_frameworks!
+
 target 'Word Code Checker' do
-	use_frameworks!
-	
 	pod 'Kanna'
+    pod 'AlamofireImage'
 end
 
 target 'UnitTests' do
-    use_frameworks!
-    
     pod 'Kanna'
 end

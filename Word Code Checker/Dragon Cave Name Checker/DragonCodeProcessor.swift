@@ -3,7 +3,7 @@
 //  Dragon Cave Name Checker
 //
 //  Created by Luke Stringer on 26/07/2017.
-//  Copyright © 2017 3Squared. All rights reserved.
+//  Copyright © 2017 Luke Stringer.. All rights reserved.
 //
 
 import Foundation
@@ -34,9 +34,9 @@ class DragonCodeProcessor {
         
         let operation = BlockOperation {
             processedDragons = dragons.map { dragon -> Dragon in
-                let words = dragon.code.allScrabbleWords() + dragon.code.allEnglishNames()
+                let words = dragon.codeLowerCased.allScrabbleWords()
                 let sorted = words.sorted()
-                return Dragon(code: dragon.code, name: dragon.name, words: sorted)
+                return Dragon(code: dragon.code, codeLowerCased: dragon.codeLowerCased, name: dragon.name, imageURL: dragon.imageURL, words: sorted)
             }
         }
         

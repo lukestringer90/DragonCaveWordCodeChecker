@@ -3,7 +3,7 @@
 //  Dragon Cave Name Checker
 //
 //  Created by Luke Stringer on 23/07/2017.
-//  Copyright © 2017 3Squared. All rights reserved.
+//  Copyright © 2017 Luke Stringer.. All rights reserved.
 //
 
 import Foundation
@@ -65,13 +65,6 @@ extension ScrollParser {
             
             if let doc = HTML(html: html, encoding: .utf8) {
                 
-                guard pageNumber == 1 || doc.hasMoreScrollPages() else {
-                    DispatchQueue.main.async {
-                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
-                    }
-                    return
-                }
-                
                 let dragonHTML = doc.dragonHTML()
                 guard dragonHTML.count > 0 else {
                     DispatchQueue.main.async {
@@ -84,20 +77,31 @@ extension ScrollParser {
                     
                     guard
                         let name = pathObject.xpath("td[2]").first?.text,
+                        let imageURLText = pathObject.xpath("td[1]/a/img").first?["src"],
+                        let imageURL = URL(string: "https://dragcave.net\(imageURLText)"),
                         let codeTag = pathObject.xpath("td[1]/a").first?["href"],
                         let code = codeTag.components(separatedBy: "/").last
                         else {
                             return nil
                     }
                     
-                    return Dragon(code: code, name: name, words: nil)
+                    return Dragon(code: code, codeLowerCased: code.lowercased(), name: name, imageURL: imageURL, words: nil)
                     
                 }
                 
                 DispatchQueue.main.async {
                     self.delegate.parser(self, parsed: dragons, from: self.scrollName)
                 }
-                self.parse(page: pageNumber + 1)
+                
+                
+                if doc.hasMoreScrollPages() {
+                    self.parse(page: pageNumber + 1)
+                }
+                else {
+                    DispatchQueue.main.async {
+                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
+                    }
+                }
             }
             else {
                  DispatchQueue.main.async {
