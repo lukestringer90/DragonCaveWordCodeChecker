@@ -137,7 +137,7 @@ extension ScrollViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Dragon")!
         
-        cell.textLabel?.text = "\(dragon.friendlyName)"
+        cell.textLabel?.text = dragon.friendlyName
         cell.detailTextLabel?.text = wordTexts.joined(separator: ", ")
         cell.imageView?.af_setImage(withURL: dragon.imageURL, placeholderImage: UIImage(named: "placeholder")!)
         

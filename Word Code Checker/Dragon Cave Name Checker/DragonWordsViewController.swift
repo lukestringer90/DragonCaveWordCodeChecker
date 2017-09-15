@@ -13,6 +13,7 @@ class DragonWordsViewController: UITableViewController {
     fileprivate var scrabbleWords = [Word]()
     fileprivate var englishNames = [Word]()
     fileprivate var countryCodes = [Word]()
+    @IBOutlet weak var dragonInfoLabel: UILabel!
     
     var dragon: Dragon! {
         didSet {
@@ -37,6 +38,17 @@ class DragonWordsViewController: UITableViewController {
                     .sorted()
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let wordsCount = dragon.words?.count ?? 0
+        let prefix = "Code \"\(dragon.code)\" has \(wordsCount)"
+        
+        
+        dragonInfoLabel.text = wordsCount == 1 ? prefix
+            .appending(" word") : prefix
+        .appending(" words")
     }
 
 }
@@ -117,10 +129,10 @@ extension DragonWordsViewController {
         switch section {
         case .scrabble:
             guard scrabbleWords.count > 0 else { return nil }
-            return "Words (\(scrabbleWords.count))"
+            return "Scrabble Words (\(scrabbleWords.count))"
         case .englishNames:
             guard englishNames.count > 0 else { return nil }
-            return "Names (\(englishNames.count))"
+            return "English Names (\(englishNames.count))"
         case .countryCodes:
             guard countryCodes.count > 0 else { return nil }
             return "Country Codes (\(countryCodes.count))"
