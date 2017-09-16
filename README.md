@@ -15,15 +15,12 @@ An iOS app to check your Dragon Cave scroll for interesting words in dragon code
 
 # Prototype
 
-Currently the app can perform most of the logic detailed above (the scroll scraper doesn't properly terminate on the last page of a scroll) and can displayed results in one of two ways.
+![](https://user-images.githubusercontent.com/987146/30514905-6ac9df60-9b16-11e7-93f3-5f6779226577.gif)
 
-1. **Word list** - A list of all the valid words from all the dragon codes in the scroll.
-2. **Dragon List** - A list of dragons that have at least one word in it's code.
+# Wishlist
 
-## Word List
+See [this GitHub issue](https://github.com/lukestringer90/DragonCaveWordCodeChecker/issues/2) for what I want to do next
 
-![](https://user-images.githubusercontent.com/987146/28723462-b7538b18-73ae-11e7-8895-917874a1b47d.gif)
+# Disclaimer
 
-## Dragon List
-
-![](https://user-images.githubusercontent.com/987146/28723461-b72e0582-73ae-11e7-8780-6589fd23f88d.gif)
+In the current protoype the app uses the DragonCave logo as the app icon and in the tab bar. This image is owned by **Dragon Cave Copyright © 2006–2017 T.J. Lipscomb.** I will remove the image in future versions before launch. 
