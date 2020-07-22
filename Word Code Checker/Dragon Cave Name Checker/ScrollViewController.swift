@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import AlamofireImage
+import AlamofireImage
 
 class ScrollViewController: UITableViewController {
     
@@ -139,7 +139,7 @@ extension ScrollViewController {
         
         cell.textLabel?.text = dragon.friendlyName
         cell.detailTextLabel?.text = wordTexts.joined(separator: ", ")
-//        cell.imageView?.af_setImage(withURL: dragon.imageURL, placeholderImage: UIImage(named: "placeholder")!)
+        cell.imageView?.af_setImage(withURL: dragon.imageURL, placeholderImage: UIImage(named: "placeholder")!)
         
         return cell
     }
