@@ -7,24 +7,24 @@
 //
 
 import Foundation
-//import Kanna
+import Kanna
 
-//extension HTMLDocument {
-//    
-//    func hasMoreScrollPages() -> Bool {
-//        // There are more pages if the text "Last" is a span
-//        let allLastMatches = xpath("//span[@class=\"_2n_1\"]")
-//            .flatMap { element -> String? in
-//                if let text = element.text, text.contains("Last") {
-//                    return text
-//                }
-//                return nil
-//        }
-//        
-//        return Set(allLastMatches).count == 0
-//    }
-//    
-//    func dragonHTML() -> XPathObject {
-//        return xpath("//*[@id=\"udragonlist\"]/tbody/tr")
-//    }
-//}
+extension HTMLDocument {
+    
+    func hasMoreScrollPages() -> Bool {
+        // There are more pages if the text "Last" is a span
+        let allLastMatches = xpath("//span[@class=\"_2n_1\"]")
+            .flatMap { element -> String? in
+                if let text = element.text, text.contains("Last") {
+                    return text
+                }
+                return nil
+        }
+        
+        return Set(allLastMatches).count == 0
+    }
+    
+    func dragonHTML() -> XPathObject {
+        return xpath("//*[@id=\"udragonlist\"]/tbody/tr")
+    }
+}
