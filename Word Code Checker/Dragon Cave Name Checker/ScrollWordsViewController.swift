@@ -29,7 +29,7 @@ class ScrollWordsViewController: UITableViewController {
 extension ScrollWordsViewController: DisplayDragons {
     func display(dragons: [Dragon]) {
         let newEntries = dragons
-            .flatMap { dragon -> [WordToDragon]? in
+            .compactMap { dragon -> [WordToDragon]? in
                 if let words = dragon.words {
                     return words.map { WordToDragon(word: $0, dragon: dragon) }
                 }

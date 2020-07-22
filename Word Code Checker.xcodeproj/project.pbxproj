@@ -401,10 +401,12 @@
 					F53621DF1F2B6E40006F1FC0 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 5PMKY4NNPB;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					F55BFFD81F2E29C500415DFF = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F53621DF1F2B6E40006F1FC0;
 					};
@@ -762,7 +764,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
 				PRODUCT_MODULE_NAME = Word_Code_Checker;
 				PRODUCT_NAME = "Dragon Cave";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -778,7 +781,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.lukestringer.Word-Code-Checker";
 				PRODUCT_MODULE_NAME = Word_Code_Checker;
 				PRODUCT_NAME = "Dragon Cave";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -792,7 +796,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lukestringer.UnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon Cave.app/Dragon Cave";
 			};
 			name = Debug;
@@ -807,7 +812,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lukestringer.UnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dragon Cave.app/Dragon Cave";
 			};
 			name = Release;

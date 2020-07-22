@@ -80,7 +80,7 @@ extension Array where Iterator.Element: Equatable {
     
     func changes(to next: Array<Iterator.Element>) -> ChangeSet {
         
-        let mappedInsertions = next.flatMap { nextElement -> Int? in
+        let mappedInsertions = next.compactMap { nextElement -> Int? in
             if !contains(nextElement) {
                 return next.index(of: nextElement)
             }
@@ -88,7 +88,7 @@ extension Array where Iterator.Element: Equatable {
         }
         let insertions = mappedInsertions.count > 0 ? mappedInsertions : nil
         
-        let mappedMoves = flatMap { currentElement -> Move? in
+        let mappedMoves = compactMap { currentElement -> Move? in
             if next.contains(currentElement) {
                 let currentIndex = index(of: currentElement)!
                 let newIndex = next.index(of: currentElement)!
@@ -101,7 +101,7 @@ extension Array where Iterator.Element: Equatable {
         }
         let moves = mappedMoves.count > 0 ? mappedMoves : nil
         
-        let mappedDeletions = flatMap { currentElement -> Int? in
+        let mappedDeletions = compactMap { currentElement -> Int? in
             if !next.contains(currentElement) {
                 return index(of: currentElement)
             }
