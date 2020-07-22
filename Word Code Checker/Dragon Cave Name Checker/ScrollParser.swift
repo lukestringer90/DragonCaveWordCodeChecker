@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Kanna
+//import Kanna
 
 protocol ScrollParserDelegate {
     func parser(_ parser: ScrollParser, startedScroll scrollName: String)
@@ -63,51 +63,51 @@ extension ScrollParser {
                 return
             }
             
-            if let doc = HTML(html: html, encoding: .utf8) {
-                
-                let dragonHTML = doc.dragonHTML()
-                guard dragonHTML.count > 0 else {
-                    DispatchQueue.main.async {
-                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
-                    }
-                    return
-                }
-                
-                let dragons = dragonHTML.flatMap { pathObject -> Dragon? in
-                    
-                    guard
-                        let name = pathObject.xpath("td[2]").first?.text,
-                        let imageURLText = pathObject.xpath("td[1]/a/img").first?["src"],
-                        let imageURL = URL(string: "https://dragcave.net\(imageURLText)"),
-                        let codeTag = pathObject.xpath("td[1]/a").first?["href"],
-                        let code = codeTag.components(separatedBy: "/").last
-                        else {
-                            return nil
-                    }
-                    
-                    return Dragon(code: code, codeLowerCased: code.lowercased(), name: name, imageURL: imageURL, words: nil)
-                    
-                }
-                
-                DispatchQueue.main.async {
-                    self.delegate.parser(self, parsed: dragons, from: self.scrollName)
-                }
-                
-                
-                if doc.hasMoreScrollPages() {
-                    self.parse(page: pageNumber + 1)
-                }
-                else {
-                    DispatchQueue.main.async {
-                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
-                    }
-                }
-            }
-            else {
-                 DispatchQueue.main.async {
-                    self.delegate.parser(self, finishedScroll: self.scrollName, error: .invalid)
-                }
-            }
+//            if let doc = HTML(html: html, encoding: .utf8) {
+//                
+//                let dragonHTML = doc.dragonHTML()
+//                guard dragonHTML.count > 0 else {
+//                    DispatchQueue.main.async {
+//                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
+//                    }
+//                    return
+//                }
+//                
+//                let dragons = dragonHTML.flatMap { pathObject -> Dragon? in
+//                    
+//                    guard
+//                        let name = pathObject.xpath("td[2]").first?.text,
+//                        let imageURLText = pathObject.xpath("td[1]/a/img").first?["src"],
+//                        let imageURL = URL(string: "https://dragcave.net\(imageURLText)"),
+//                        let codeTag = pathObject.xpath("td[1]/a").first?["href"],
+//                        let code = codeTag.components(separatedBy: "/").last
+//                        else {
+//                            return nil
+//                    }
+//                    
+//                    return Dragon(code: code, codeLowerCased: code.lowercased(), name: name, imageURL: imageURL, words: nil)
+//                    
+//                }
+//                
+//                DispatchQueue.main.async {
+//                    self.delegate.parser(self, parsed: dragons, from: self.scrollName)
+//                }
+//                
+//                
+//                if doc.hasMoreScrollPages() {
+//                    self.parse(page: pageNumber + 1)
+//                }
+//                else {
+//                    DispatchQueue.main.async {
+//                        self.delegate.parser(self, finishedScroll: self.scrollName, error: nil)
+//                    }
+//                }
+//            }
+//            else {
+//                 DispatchQueue.main.async {
+//                    self.delegate.parser(self, finishedScroll: self.scrollName, error: .invalid)
+//                }
+//            }
         }
     }
 }

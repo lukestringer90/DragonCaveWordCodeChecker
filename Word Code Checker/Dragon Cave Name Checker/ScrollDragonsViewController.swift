@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kanna
+//import Kanna
 
 class ScrollDragonsViewController: UITableViewController {
     
