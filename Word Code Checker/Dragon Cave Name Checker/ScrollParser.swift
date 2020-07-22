@@ -63,7 +63,7 @@ extension ScrollParser {
                 return
             }
             
-            if let doc = HTML(html: html, encoding: .utf8) {
+            if let doc = try? HTML(html: html, encoding: .utf8) {
                 
                 let dragonHTML = doc.dragonHTML()
                 guard dragonHTML.count > 0 else {

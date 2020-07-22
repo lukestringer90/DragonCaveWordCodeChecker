@@ -36,7 +36,7 @@ class WordReference {
     
     static var countryCodes: [Word] {
         if countryCodesStorage == nil {
-            countryCodesStorage = WordReference.loadCSVLines(from: "country_codes").flatMap { csvLine -> Word? in                
+            countryCodesStorage = WordReference.loadCSVLines(from: "country_codes").compactMap { csvLine -> Word? in                
                 let code = csvLine[4]
                 let name = csvLine[1]
                 
